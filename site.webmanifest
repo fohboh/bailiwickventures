@@ -1,0 +1,14 @@
+{
+  "name": "Bailiwick Ventures, Inc.",
+  "short_name": "Bailiwick",
+  "description": "A privately held investment and operating company.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F4",
+  "theme_color": "#12304F",
+  "icons": [
+    { "src": "/brand/png/tile-navy-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/brand/png/tile-navy-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/brand/svg/tile-navy.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
