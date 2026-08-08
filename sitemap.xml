@@ -1,68 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bailiwickventures.com/about.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bailiwickventures.com/advisory.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bailiwickventures.com/blog.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bailiwickventures.com/book.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bailiwickventures.com/pre-order.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bailiwickventures.com/contact.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://bailiwickventures.com/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bailiwickventures.com/insights.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.7</priority>
+    <loc>https://bailiwickventures.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/advisory.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bailiwickventures.com/investing.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bailiwickventures.com/portfolio.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bailiwickventures.com/privacy.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bailiwickventures.com/studio.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bailiwickventures.com/vibe.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/insights.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/blog.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/book.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/pre-order.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/the-impact-of-data-inconsistency-on-business-performance.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/why-ai-is-useless-without-data-integrity.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/the-trust-imperative-metric-governance.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/bolt-on-ai-vs-native-ai.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/why-you-cant-just-connect-your-pos-to-chatgpt.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/evaluating-your-restaurants-tech-stack-health.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/restaurant-digital-transformation-data-management.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/leveraging-ai-for-workforce-management.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/how-software-companies-master-go-to-market.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/technology-in-restaurant-back-of-house.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/revolutionizing-inventory-management-in-hospitality.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/ai-driven-procurement-marketplaces.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/the-rising-value-of-voice-technology.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bailiwickventures.com/embracing-technology-modern-restaurant-industry.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
