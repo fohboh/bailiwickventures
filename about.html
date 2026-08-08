@@ -344,14 +344,14 @@ footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
 
 /* archive list */
 .arch{border-top:1px solid var(--line)}
-.arch a{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
+.arch a,.arch .row{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
   padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .18s}
 .arch a:hover{padding-left:8px}
 .arch .t{font-family:var(--serif);font-size:16.5px;line-height:1.35;color:var(--ink);flex:1 1 auto}
 .arch a:hover .t{color:var(--navy)}
 .arch .tg{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);
   white-space:nowrap;flex:0 0 auto}
-@media (max-width:620px){.arch a{flex-direction:column;gap:6px}}
+@media (max-width:620px){.arch a,.arch .row{flex-direction:column;gap:6px}}
 
 .gate{border:1px solid var(--navy);border-left-width:3px;border-radius:2px;background:var(--warm);
   padding:clamp(20px,2.4vw,28px) clamp(20px,2.4vw,30px);margin-bottom:clamp(24px,3vw,34px)}

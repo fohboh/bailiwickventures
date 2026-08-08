@@ -344,14 +344,14 @@ footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
 
 /* archive list */
 .arch{border-top:1px solid var(--line)}
-.arch a{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
+.arch a,.arch .row{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
   padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .18s}
 .arch a:hover{padding-left:8px}
 .arch .t{font-family:var(--serif);font-size:16.5px;line-height:1.35;color:var(--ink);flex:1 1 auto}
 .arch a:hover .t{color:var(--navy)}
 .arch .tg{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);
   white-space:nowrap;flex:0 0 auto}
-@media (max-width:620px){.arch a{flex-direction:column;gap:6px}}
+@media (max-width:620px){.arch a,.arch .row{flex-direction:column;gap:6px}}
 
 .gate{border:1px solid var(--navy);border-left-width:3px;border-radius:2px;background:var(--warm);
   padding:clamp(20px,2.4vw,28px) clamp(20px,2.4vw,30px);margin-bottom:clamp(24px,3vw,34px)}
@@ -592,7 +592,7 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
       <div class="card"><h3>Enterprise Venture Architecture</h3><p>The structural design process applied by Bailiwick Venture Studio to move a venture from diagnosis through capital calibration and execution.</p></div>
       <div class="card"><h3>Certified Intelligence</h3><p>The framework behind <i>The Certified Enterprise</i> — the argument that AI should never be trusted more than the evidence on which it depends.</p></div>
       <div class="card"><h3>The Certified Enterprise</h3><p>The book. <i>Taming Data Anarchy in the AI Era</i> — self-published on Amazon, expected November 2026. <a class="tlink" href="book.html">Read more</a></p></div>
-      <div class="card"><h3>Roadmap to Certified</h3><p>The phased certification framework that moves an organization from tribal knowledge to governed logic. <a class="tlink" href="https://www.bailiwickventures.com/roadmap-to-certified" target="_blank" rel="noopener">View ↗</a></p></div>
+      <div class="card"><h3>Roadmap to Certified</h3><p>The phased certification framework that moves an organization from tribal knowledge to governed logic.</p></div>
       <div class="card"><h3>Published work</h3><p>Essays, frameworks, research, and applied methods developed and held through Bailiwick Ventures. <a class="tlink" href="blog.html">See the writing</a></p></div>
     </div>
   </div>

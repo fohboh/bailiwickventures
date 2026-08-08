@@ -344,14 +344,14 @@ footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
 
 /* archive list */
 .arch{border-top:1px solid var(--line)}
-.arch a{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
+.arch a,.arch .row{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
   padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .18s}
 .arch a:hover{padding-left:8px}
 .arch .t{font-family:var(--serif);font-size:16.5px;line-height:1.35;color:var(--ink);flex:1 1 auto}
 .arch a:hover .t{color:var(--navy)}
 .arch .tg{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);
   white-space:nowrap;flex:0 0 auto}
-@media (max-width:620px){.arch a{flex-direction:column;gap:6px}}
+@media (max-width:620px){.arch a,.arch .row{flex-direction:column;gap:6px}}
 
 .gate{border:1px solid var(--navy);border-left-width:3px;border-radius:2px;background:var(--warm);
   padding:clamp(20px,2.4vw,28px) clamp(20px,2.4vw,30px);margin-bottom:clamp(24px,3vw,34px)}
@@ -567,24 +567,24 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
         <h2 style="max-width:20ch">Published earlier.</h2>
       </div>
       <div>
-        <p class="body" style="margin:0">Fourteen posts already live on the current Bailiwick Ventures site. They migrate across as-is when the new site goes up — the list below is the inventory. Each title still links to the live version until the copy is moved.</p>
+        <p class="body" style="margin:0">Fourteen posts published on the previous Bailiwick Ventures site. The list below is the inventory; the copy migrates onto this site post by post. Titles are not yet linked — the originals came down when this domain moved.</p>
       </div>
     </div>
     <div class="arch">
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">The Impact of Data Inconsistency on Business Performance</span><span class="tg">Metrics governance ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Why AI Is Useless Without Data Integrity</span><span class="tg">Restaurant AI ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">The Trust Imperative: Why Metric Governance is the Foundation of FohBoh.ai</span><span class="tg">Trust ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Bolt-On AI vs. Native AI: Why It Matters for Restaurants</span><span class="tg">Gen AI ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Why You Can't Just Connect Your POS to ChatGPT</span><span class="tg">LLM ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Why Evaluating Your Restaurant's Tech-Stack Health is Essential Right Now</span><span class="tg">ResTech ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Restaurant Digital Transformation and Performance Improvement</span><span class="tg">Data management ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Leveraging AI for Optimal Workforce Management in the Restaurant Industry</span><span class="tg">Workforce ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">How Software Companies Master Go-To-Market Strategies</span><span class="tg">GTM ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Unlocking Success: The Vital Role of Technology in Restaurant Back-of-House Management</span><span class="tg">Operations ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Revolutionizing Inventory Management in Hospitality</span><span class="tg">Inventory ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Revolutionizing Restaurant Operations: AI-Driven Procurement Marketplaces</span><span class="tg">Procurement ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">The Rising Value of Voice Technology and Embedded Voice Apps</span><span class="tg">VoiceTech ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Embracing Technology: A Recipe for Success in the Modern Restaurant Industry</span><span class="tg">ResTech ↗</span></a>
+        <div class="row"><span class="t">The Impact of Data Inconsistency on Business Performance</span><span class="tg">Metrics governance</span></div>
+        <div class="row"><span class="t">Why AI Is Useless Without Data Integrity</span><span class="tg">Restaurant AI</span></div>
+        <div class="row"><span class="t">The Trust Imperative: Why Metric Governance is the Foundation of FohBoh.ai</span><span class="tg">Trust</span></div>
+        <div class="row"><span class="t">Bolt-On AI vs. Native AI: Why It Matters for Restaurants</span><span class="tg">Gen AI</span></div>
+        <div class="row"><span class="t">Why You Can't Just Connect Your POS to ChatGPT</span><span class="tg">LLM</span></div>
+        <div class="row"><span class="t">Why Evaluating Your Restaurant's Tech-Stack Health is Essential Right Now</span><span class="tg">ResTech</span></div>
+        <div class="row"><span class="t">Restaurant Digital Transformation and Performance Improvement</span><span class="tg">Data management</span></div>
+        <div class="row"><span class="t">Leveraging AI for Optimal Workforce Management in the Restaurant Industry</span><span class="tg">Workforce</span></div>
+        <div class="row"><span class="t">How Software Companies Master Go-To-Market Strategies</span><span class="tg">GTM</span></div>
+        <div class="row"><span class="t">Unlocking Success: The Vital Role of Technology in Restaurant Back-of-House Management</span><span class="tg">Operations</span></div>
+        <div class="row"><span class="t">Revolutionizing Inventory Management in Hospitality</span><span class="tg">Inventory</span></div>
+        <div class="row"><span class="t">Revolutionizing Restaurant Operations: AI-Driven Procurement Marketplaces</span><span class="tg">Procurement</span></div>
+        <div class="row"><span class="t">The Rising Value of Voice Technology and Embedded Voice Apps</span><span class="tg">VoiceTech</span></div>
+        <div class="row"><span class="t">Embracing Technology: A Recipe for Success in the Modern Restaurant Industry</span><span class="tg">ResTech</span></div>
     </div>
     <div class="gate" style="margin-top:clamp(26px,3vw,36px);margin-bottom:0">
       <div class="lbl">Second source — not yet merged</div>
