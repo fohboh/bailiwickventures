@@ -71,6 +71,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://bailiwickventures.com/one-node-is-vermilion.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bailiwickventures.com/systems-of-record-were-never-designed-to-certify-truth.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
