@@ -6,42 +6,16 @@ source: ""
 series: ""
 ---
 
-Every few weeks someone asks us to build "an AI agent for the business." Singular. One system, pointed at everything, answering whatever gets asked.
+Every few weeks someone asks us to build an AI agent for the business. Singular. One system, pointed at everything, answering whatever gets asked. We don't build that, and not because it is difficult. It is the wrong shape.
 
-We don't build that. Not because it's difficult — because it's the wrong shape.
+Consider what we have actually built inside our own portfolio. FohBoh Sentry recovers money restaurants are owed, and it does that through modules that barely resemble one another: one reconciles delivery-service settlements against point-of-sale orders, a second reconciles merchant processor statements against deposits, a third tests franchise royalty calculations against the disclosure document. The delivery module carries eighty-three rules and the merchant module carries a hundred and seven, and they overlap almost nowhere, because an aggregator's fee schedule and an interchange table have nothing in common except that both are used to take money out of an operator's account. FohBoh Cortex is narrow in a different direction entirely — it answers operational questions in voice and text but reconciles nothing, reading only what the Metrics Governance Engine has already certified. StarBar's VoiceINV does one thing that sounds trivial until you have watched somebody do it with a clipboard: it listens to a person walk a stockroom and turns speech into a count that holds up, in restaurants and in surgical centers alike. BailiwickQuikFix runs field applications over a licensed governance engine for a different operating problem again. None of these could be merged into a single agent without making every one of them worse.
 
-## What narrow actually looks like
+The reasons are structural rather than stylistic. A narrow agent can be tested, because when the job is finding fee variances in a settlement file you can write down what correct means and then check it, whereas helping with the business cannot be scored and so you never find out that it is wrong. A narrow agent also fails visibly, which matters more than anything else here: a general-purpose system producing a bad answer sounds exactly like one producing a good answer, while a scoped agent has a defined output with defined bounds, and a violation looks like a violation. Constraints are cheaper to encode when the job is small — a hundred rules about merchant fees is a tractable body of knowledge, while a hundred rules covering everything a restaurant company does is a rewrite of the company. And a narrow scope gives domain expertise somewhere to land.
 
-In our own ventures, every agent is deliberately small. FohBoh Sentry recovers money restaurants are owed, and it does that through separate modules that barely resemble each other. One reconciles delivery-service settlements against point-of-sale orders. Another reconciles merchant processor statements against deposits. A third, in beta, tests franchise royalty calculations against the disclosure document. The delivery module carries 83 rules. The merchant module carries 107. They overlap almost nowhere, because a delivery aggregator's fee schedule and an interchange table have nothing in common except that both are used to take money from an operator.
+That last point carries more weight than it usually gets, because two kinds of standards govern any agent and both are routinely underestimated. Brand standards decide what an agent is permitted to say — voice, register, the claims it must never make, the questions it must escalate rather than answer — and an agent talking to your franchisees is speaking as you. Business standards decide what it is permitted to conclude: which formula is authoritative, which denominator is approved, which source of record wins a disagreement, what variance threshold requires a human being. Those are the same questions a governance engine asks, they have real answers inside every company, and the answers are usually undocumented and held by three people.
 
-FohBoh Cortex is different again. It answers operational questions in voice and text, but it reconciles nothing. It reads what the Metrics Governance Engine has already certified and explains it. Narrowing its job that severely is what makes its answers defensible.
+Both kinds of standards change. Fee structures move quarterly, brand positions move with leadership, and thresholds tighten as an operator learns what its own numbers actually look like. So we build them as reviewed configuration on a cadence rather than as prose buried in a prompt where nobody can audit it. An agent is not finished at handover; it is instrumented at handover.
 
-BailiwickQuikFix runs field applications over a licensed governance engine for a wholly different operating problem.
+None of this works without somebody on the build who already knows that a promotional adjustment and a chargeback are different things, that a comp is not a discount, and that food cost percentage means three different numbers depending on who is asking. Without that you get an agent that is fluent, fast and confidently wrong, which costs more than having built nothing at all.
 
-None of these could be merged into one agent without making all of them worse.
-
-## Four reasons narrow wins
-
-**A narrow agent can be tested.** When the job is "find fee variances in a settlement file," you can write down what correct means and check it. When the job is "help with the business," you cannot, and so you never find out that it is wrong.
-
-**A narrow agent fails visibly.** This is the one that matters most. A general-purpose agent producing a wrong answer sounds exactly like one producing a right answer. A scoped agent has a defined output with defined bounds, and a violation shows up as a violation.
-
-**Constraints are cheap to encode when the job is small.** A hundred rules about merchant fees is a tractable body of knowledge. A hundred rules about everything a restaurant company does is a rewrite of the company.
-
-**Domain expertise has somewhere to land.** Which is the next point, and the largest one.
-
-## Standards are inputs, not documentation
-
-Two kinds of standards govern an agent, and clients routinely underestimate both.
-
-**Brand standards** determine what the agent is permitted to say: voice, register, the claims it must never make, the questions it must escalate rather than answer. An agent talking to your franchisees is speaking as you.
-
-**Business standards** determine what the agent is permitted to conclude: which formula is authoritative, which denominator is approved, which source of record wins a disagreement, what variance threshold requires a human. These are the same questions a governance engine asks, and they have real answers inside a company — usually undocumented, usually held by three people.
-
-Both change. Fee structures change quarterly, brand positions change with leadership, thresholds tighten as an operator learns what its own numbers look like. So standards get built as reviewed configuration on a cadence, never as prose buried in a prompt where no one can audit it. An agent is not finished at handover. It is instrumented at handover.
-
-## Domain expertise is the prerequisite
-
-Someone on the build has to already know that a promotional adjustment and a chargeback are different things, that a comp is not a discount, that food cost percentage means three different numbers depending on who is asking. Without that, you get an agent that is fluent, fast, and confidently wrong — which costs more than having built nothing.
-
-And underneath all of it: no agent we build touches uncertified data. Trust layer first, then the agent. In that order, permanently.
+And underneath all of it, in every case: the trust layer first, then the agent. In that order, permanently.
