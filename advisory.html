@@ -342,6 +342,37 @@ footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
   border-left:2px solid var(--bronze);padding-left:20px;margin:24px 0 0;max-width:34ch;letter-spacing:-.01em}
 .on-ink .pull{color:var(--warm);border-color:var(--bronze-lt)}
 
+/* flywheel diagram */
+.flywheel{display:block;width:100%;max-width:840px;margin:0 auto}
+@media (max-width:760px){.flywheel{display:none}}
+
+/* reveal component on dark sections */
+.on-ink details.reveal{background:transparent;border-color:#274259}
+.on-ink details.reveal>summary:hover{background:#0F2942}
+.on-ink details.reveal .rl{color:var(--warm)}
+.on-ink details.reveal .rn{color:#8195A6}
+.on-ink details.reveal .chev{border-color:#2E4A63}
+.on-ink details.reveal>summary:hover .chev{border-color:var(--bronze-lt)}
+.on-ink details.reveal[open]>summary{border-bottom-color:#274259}
+.on-ink details.reveal .rbody{padding:0}
+.on-ink details.reveal .phases{background:#274259;border-color:#274259}
+.on-ink details.reveal .phase{background:#0F2942}
+.on-ink details.reveal .phase h4{color:var(--warm)}
+.on-ink details.reveal .phase .pn{color:var(--bronze-lt)}
+.on-ink details.reveal .phase p{color:#AEBDCA}
+
+/* long-form article body */
+.article{max-width:70ch;margin:0 auto}
+.article h3{font-size:clamp(19px,2vw,24px);margin:clamp(28px,3.2vw,42px) 0 14px;letter-spacing:-.01em}
+.article h3:first-child{margin-top:0}
+.article>p:first-child{font-size:clamp(17px,1.75vw,19.5px);line-height:1.62;color:var(--ink)}
+.article ul,.article ol{margin:0 0 22px}
+.article ol.ord{padding-left:24px;list-style:decimal}
+.article ol.ord li{margin-bottom:12px;font-size:15.4px;line-height:1.62;color:var(--slate);padding-left:4px}
+.article ol.ord li::marker{color:var(--bronze);font-weight:600}
+.article .ticks li{margin-bottom:11px}
+.article code{font-size:.92em;background:#EFE9DF;padding:1px 5px;border-radius:2px}
+
 /* archive list */
 .arch{border-top:1px solid var(--line)}
 .arch a,.arch .row{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
@@ -485,6 +516,7 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
     <p class="lede">Michael L. Atkinson advises executives, founders, investors, and private equity firms when the problem crosses traditional functional boundaries. His work combines operating experience, finance, investment banking, technology, venture architecture, and commercialization.</p>
     <div class="btns">
       <a class="btn btn-p" href="contact.html">Discuss an Engagement <span class="arrow">→</span></a>
+      <a class="btn btn-s" href="applied-ai.html">Applied AI &amp; Agent Engineering <span class="arrow">→</span></a>
     </div>
   </div>
 </div>
@@ -564,6 +596,20 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
   </div>
 </section>
 
+<section class="bord on-warm">
+  <div class="shell split">
+    <div>
+      <p class="eyebrow">A defined service line</p>
+      <h2>Applied AI &amp; Agent Engineering.</h2>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:22px">Some advisory engagements do not end with a recommendation. The client wants the thing built &mdash; task-specific AI agents, scoped and architected and engineered to their requirements, running in their stack under their ownership.</p>
+      <p class="body">We deliver those through Bailiwick Venture Studio and BailiwickVibe, in the industries we actually know: food, beverage, restaurants and fintech. It is client work, not a venture and not a division &mdash; and the output belongs to you.</p>
+      <a class="tlink" href="applied-ai.html">How these engagements run <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="bord on-warm tight">
   <div class="shell" style="text-align:center">
     <h2 style="max-width:20ch;margin:0 auto">Describe the situation. We will tell you whether we can help.</h2>
@@ -602,6 +648,7 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="advisory.html">Advisory</a>
+        <a href="applied-ai.html">Applied AI</a>
         <a href="investing.html">Investing</a>
         <a href="investing.html#investors">For Investors</a>
         <a href="portfolio.html">Portfolio &amp; Holdings</a>

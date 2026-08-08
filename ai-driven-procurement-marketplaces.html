@@ -342,6 +342,25 @@ footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
   border-left:2px solid var(--bronze);padding-left:20px;margin:24px 0 0;max-width:34ch;letter-spacing:-.01em}
 .on-ink .pull{color:var(--warm);border-color:var(--bronze-lt)}
 
+/* flywheel diagram */
+.flywheel{display:block;width:100%;max-width:840px;margin:0 auto}
+@media (max-width:760px){.flywheel{display:none}}
+
+/* reveal component on dark sections */
+.on-ink details.reveal{background:transparent;border-color:#274259}
+.on-ink details.reveal>summary:hover{background:#0F2942}
+.on-ink details.reveal .rl{color:var(--warm)}
+.on-ink details.reveal .rn{color:#8195A6}
+.on-ink details.reveal .chev{border-color:#2E4A63}
+.on-ink details.reveal>summary:hover .chev{border-color:var(--bronze-lt)}
+.on-ink details.reveal[open]>summary{border-bottom-color:#274259}
+.on-ink details.reveal .rbody{padding:0}
+.on-ink details.reveal .phases{background:#274259;border-color:#274259}
+.on-ink details.reveal .phase{background:#0F2942}
+.on-ink details.reveal .phase h4{color:var(--warm)}
+.on-ink details.reveal .phase .pn{color:var(--bronze-lt)}
+.on-ink details.reveal .phase p{color:#AEBDCA}
+
 /* long-form article body */
 .article{max-width:70ch;margin:0 auto}
 .article h3{font-size:clamp(19px,2vw,24px);margin:clamp(28px,3.2vw,42px) 0 14px;letter-spacing:-.01em}
@@ -549,6 +568,7 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="advisory.html">Advisory</a>
+        <a href="applied-ai.html">Applied AI</a>
         <a href="investing.html">Investing</a>
         <a href="investing.html#investors">For Investors</a>
         <a href="portfolio.html">Portfolio &amp; Holdings</a>
