@@ -252,7 +252,19 @@ details.more .inner p:last-child{margin-bottom:0}
 
 /* ---------------- portrait ---------------- */
 .portrait{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--sand)}
-.portrait img{width:100%;height:auto}
+.portrait img{width:100%;height:auto;display:block}
+/* Sized so the portrait supports the copy rather than competing with it, and
+   cropped 4:5 to lose the dead headroom in the square original. */
+.portrait{max-width:340px}
+.portrait img{aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
+.portrait-row{display:grid;grid-template-columns:340px minmax(0,1fr);
+  gap:clamp(28px,5vw,72px);align-items:center}
+.portrait-row.flip{grid-template-columns:minmax(0,1fr) 340px}
+@media (max-width:980px){
+  .portrait-row,.portrait-row.flip{grid-template-columns:1fr;gap:32px}
+  .portrait{max-width:320px}
+  .portrait-row.flip .portrait{order:-1}
+}
 
 /* ---------------- process ---------------- */
 .phases{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);
