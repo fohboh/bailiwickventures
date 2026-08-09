@@ -1,5 +1,8 @@
 """Blog and Book — drafted content with clearly marked blanks."""
 from pages_a import more
+from posts import (load as _load_posts, archive_html as _archive,
+                   load_sub as _load_sub, sub_cards as _sub_cards,
+                   load_native as _load_native)
 
 _B1 = more("More on the problem", """
     <p>Modern multi-unit businesses are paralysed by a hidden dysfunction. They have invested in best-in-class systems for point-of-sale, inventory, labor, and finance, but these systems operate as isolated kingdoms. Each produces its own conflicting version of core metrics like "sales," "cost," and "labor."</p>
@@ -47,7 +50,7 @@ LEGACY_BOOK = """
         <p class="body" style="max-width:60ch">Expected November 2026, self-published on Amazon in hardcover and paperback. Pre-orders are open now.</p>
         <p class="pull" style="margin-top:20px;margin-bottom:24px">The future of AI in restaurants will not be defined by who builds the best model. It will be defined by who controls the integrity of the data those models rely on.</p>
         <div class="btns" style="margin-top:0">
-          <a class="btn btn-p" href="https://www.bailiwickventures.com/pre-order" target="_blank" rel="noopener">Pre-Order <span class="arrow">&#8599;</span></a>
+          <a class="btn btn-p" href="pre-order.html">Pre-Order <span class="arrow">&#8599;</span></a>
           <a class="btn btn-s" href="contact.html">Bulk or speaking <span class="arrow">&rarr;</span></a>
         </div>
 
@@ -70,7 +73,7 @@ def book(cover):
         <p class="lede" style="margin-top:20px">A new competitive paradigm for organizations that have ended their internal data civil war and now compete on trusted intelligence. In an age of analytic abundance, the ultimate advantage is not more data, but certified truth.</p>
         <p class="pull">&ldquo;The next billion-dollar restaurant advantage won't be more AI — it will be knowing which numbers to believe.&rdquo;</p>
         <div class="btns">
-          <a class="btn btn-p" href="https://www.bailiwickventures.com/pre-order" target="_blank" rel="noopener">Pre-Order <span class="arrow">↗</span></a>
+          <a class="btn btn-p" href="pre-order.html">Pre-Order <span class="arrow">↗</span></a>
           <a class="btn btn-s" href="#fullpage">Read the full book page <span class="arrow">↓</span></a>
         </div>
         <p class="fine" style="margin-top:20px">By Michael L. Atkinson · Self-published on Amazon · Expected November 2026 · Hardcover and paperback</p>
@@ -175,46 +178,6 @@ def book(cover):
   </div>
 </section>
 
-<!-- EARLY PRAISE — hidden until real endorsements are approved.
-     Three drafts (Sebes / Zat / Kadleck) are preserved below. To restore,
-     delete this comment wrapper. -->
-<!--
-<section class="bord on-warm">
-  <div class="shell">
-    <p class="eyebrow">Early praise</p>
-    <h2 style="max-width:20ch;margin-bottom:clamp(22px,2.6vw,32px)">What readers are saying.</h2>
-
-    <details class="reveal">
-      <summary>
-        <span class="rl">Read the early praise</span>
-        <span class="rn">Three perspectives — operator, technologist, data science</span>
-        <span class="chev"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="#12304F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </summary>
-      <div class="rbody">
-        <div class="grid g3">
-          <blockquote class="card quote">
-            <span class="unapproved">Draft &middot; not yet approved</span>
-            <p>Every multi-unit operator I know has lived this. You walk into a Monday meeting with three numbers for the same week and spend the first twenty minutes arguing about which one is real. Atkinson names the problem precisely and, more usefully, shows what has to change structurally before any of it gets better.</p>
-            <cite>Christopher Sebes &middot; Industry Advisor &middot; ResTech CEO</cite>
-          </blockquote>
-          <blockquote class="card quote">
-            <span class="unapproved">Draft &middot; not yet approved</span>
-            <p>We have spent a decade connecting systems that were never designed to agree with one another. This book makes the case that integration was never the hard part &mdash; reconciliation and governance were. It should be required reading for anyone shipping software into a restaurant back office.</p>
-            <cite>Sam Zat &middot; Executive Chairman &middot; Founder, Craftable</cite>
-          </blockquote>
-          <blockquote class="card quote">
-            <span class="unapproved">Draft &middot; not yet approved</span>
-            <p>Models do not fail because the math is wrong. They fail because the inputs were never reconciled and nobody could say which definition of a metric was authoritative. Atkinson gives that problem a name, a structure, and a remedy &mdash; without hiding behind the technology.</p>
-            <cite>Jan Kadleck &middot; Founder &amp; CEO, MBI.ai</cite>
-          </blockquote>
-        </div>
-        <p class="fine" style="margin-top:22px;margin-bottom:0">These are drafts written to show the shape and length of a usable endorsement. Nothing here has been said or approved by the people named. Send each one their quote, get it back in their own words, then remove this note and the draft markers.</p>
-      </div>
-    </details>
-  </div>
-</section>
--->
-
 <section class="bord">
   <div class="shell split">
     <div>
@@ -239,7 +202,7 @@ def book(cover):
       <div><h4 style="margin-bottom:8px">Expected</h4><p class="small">November 2026.</p></div>
       <div><h4 style="margin-bottom:8px">Formats</h4><p class="small">Hardcover and paperback.</p></div>
       <div><h4 style="margin-bottom:8px">Links</h4>
-        <p class="small" style="margin-bottom:8px"><a class="tlink" href="https://www.bailiwickventures.com/pre-order" target="_blank" rel="noopener">Pre-order <span class="arrow">↗</span></a></p>
+        <p class="small" style="margin-bottom:8px"><a class="tlink" href="pre-order.html">Pre-order <span class="arrow">↗</span></a></p>
         <p class="small" style="margin-bottom:0"><a class="tlink" href="#fullpage">Full book page <span class="arrow">↓</span></a></p>
       </div>
     </div>
@@ -251,7 +214,7 @@ def book(cover):
     <h2 style="max-width:22ch;margin:0 auto">Be told when it publishes.</h2>
     <p class="body" style="margin:18px auto 0;max-width:54ch">Pre-order now, or subscribe on Substack for the announcement and for the essays the book grew out of.</p>
     <div class="btns" style="justify-content:center">
-      <a class="btn btn-g" href="https://www.bailiwickventures.com/pre-order" target="_blank" rel="noopener">Pre-Order <span class="arrow">↗</span></a>
+      <a class="btn btn-g" href="pre-order.html">Pre-Order <span class="arrow">↗</span></a>
       <a class="btn btn-g" href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener">Subscribe on Substack <span class="arrow">↗</span></a>
       <a class="btn btn-g" href="contact.html">Bulk or Speaking <span class="arrow">→</span></a>
     </div>
@@ -298,7 +261,8 @@ def _post_card(kind, title, dek, topic, featured):
 
 
 def blog():
-    cards = "\n      ".join(_post_card(*p) for p in POSTS)
+    _ARCHIVE = _archive(_load_posts())
+    cards = _sub_cards(_load_native() + _load_sub())
     return f"""
 <div class="hero">
   <div class="shell hero-in" style="padding-bottom:clamp(36px,4vw,60px)">
@@ -319,7 +283,7 @@ def blog():
         <p class="eyebrow" style="margin-bottom:10px">Recent</p>
         <h2 style="max-width:18ch">Latest posts.</h2>
       </div>
-      <p class="fine" style="margin:0;max-width:40ch">Six confirmed posts. Summaries are my draft — edit freely. Dates fill in as they publish.</p>
+      <p class="fine" style="margin:0;max-width:40ch">The Certified Intelligence essays, hosted here in full. Each one first appeared on Substack.</p>
     </div>
     <div class="grid g3">
       {cards}
@@ -336,29 +300,30 @@ def blog():
         <h2 style="max-width:20ch">Published earlier.</h2>
       </div>
       <div>
-        <p class="body" style="margin:0">Fourteen posts already live on the current Bailiwick Ventures site. They migrate across as-is when the new site goes up — the list below is the inventory. Each title still links to the live version until the copy is moved.</p>
+        <p class="body" style="margin:0">Fourteen posts carried over from the previous Bailiwick Ventures site, now hosted here in full. Every title below opens the complete piece.</p>
       </div>
     </div>
     <div class="arch">
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">The Impact of Data Inconsistency on Business Performance</span><span class="tg">Metrics governance ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Why AI Is Useless Without Data Integrity</span><span class="tg">Restaurant AI ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">The Trust Imperative: Why Metric Governance is the Foundation of FohBoh.ai</span><span class="tg">Trust ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Bolt-On AI vs. Native AI: Why It Matters for Restaurants</span><span class="tg">Gen AI ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Why You Can't Just Connect Your POS to ChatGPT</span><span class="tg">LLM ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Why Evaluating Your Restaurant's Tech-Stack Health is Essential Right Now</span><span class="tg">ResTech ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Restaurant Digital Transformation and Performance Improvement</span><span class="tg">Data management ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Leveraging AI for Optimal Workforce Management in the Restaurant Industry</span><span class="tg">Workforce ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">How Software Companies Master Go-To-Market Strategies</span><span class="tg">GTM ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Unlocking Success: The Vital Role of Technology in Restaurant Back-of-House Management</span><span class="tg">Operations ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Revolutionizing Inventory Management in Hospitality</span><span class="tg">Inventory ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Revolutionizing Restaurant Operations: AI-Driven Procurement Marketplaces</span><span class="tg">Procurement ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">The Rising Value of Voice Technology and Embedded Voice Apps</span><span class="tg">VoiceTech ↗</span></a>
-        <a href="https://www.bailiwickventures.com/blog" target="_blank" rel="noopener"><span class="t">Embracing Technology: A Recipe for Success in the Modern Restaurant Industry</span><span class="tg">ResTech ↗</span></a>
+        {_ARCHIVE}
     </div>
-    <div class="gate" style="margin-top:clamp(26px,3vw,36px);margin-bottom:0">
-      <div class="lbl">Second source — not yet merged</div>
-      <p>The FohBoh.ai Learning Center still needs to be folded in.</p>
-      <p class="sub">Its posts sit behind categories — Research, Store-Level Stories, Above-Store Intel, Guides, Restaurant AI — and the page renders client-side, so I could not read the list. Grant fohboh.ai in the browser extension, or paste the titles, and I will merge both sources into one list and strip any duplicates. <span class="tofill">to fill</span></p>
+    <div class="split" style="margin-top:clamp(34px,4vw,50px);margin-bottom:clamp(18px,2.2vw,26px)">
+      <div>
+        <p class="eyebrow">Elsewhere</p>
+        <h2 style="max-width:20ch">Also writing at FohBoh.ai.</h2>
+      </div>
+      <div>
+        <p class="body" style="margin:0">The FohBoh.ai Learning Center carries the operator-facing work &mdash; research, certified case studies, and technical guides on revenue recovery and deterministic AI. It lives on the FohBoh site, where its audience is.</p>
+      </div>
+    </div>
+    <div class="arch">
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">Why Deterministic AI Is the Future of Restaurant Intelligence</span><span class="tg">Research &middot; Apr 2026 &#8599;</span></a>
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">Hallucination Risk in Restaurant AI: What Operators Need to Know</span><span class="tg">Restaurant AI &middot; Apr 2026 &#8599;</span></a>
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">How a 12-Unit Pizza Chain Recovered $4,200/Month Per Location</span><span class="tg">Store-level &middot; Mar 2026 &#8599;</span></a>
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">Regional Benchmarking with Certified Data: A GM&rsquo;s Perspective</span><span class="tg">Above-store &middot; Mar 2026 &#8599;</span></a>
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">Understanding Trust Scores: A Technical Deep Dive for Operators</span><span class="tg">Guide &middot; Mar 2026 &#8599;</span></a>
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">Night Shift Labor Leakage: One Manager&rsquo;s Discovery Through Sentry</span><span class="tg">Store-level &middot; Mar 2026 &#8599;</span></a>
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">What Is CAAR? The Foundation of Legally Defensible Intelligence</span><span class="tg">Research &middot; Feb 2026 &#8599;</span></a>
+        <a href="https://fohboh.ai/blog.html" target="_blank" rel="noopener"><span class="t">Multi-Unit P&amp;L Certification: How Corporate Teams Use MGE</span><span class="tg">Above-store &middot; Feb 2026 &#8599;</span></a>
     </div>
     <p class="fine" style="margin-top:20px">Further writing appears on <a class="tlink" href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener">Substack</a> and <a class="tlink" href="https://fohboh.ai" target="_blank" rel="noopener">FohBoh.ai</a>.</p>
   </div>
