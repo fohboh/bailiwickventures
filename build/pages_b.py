@@ -10,8 +10,23 @@ CASES = """
 
     <div class="grid g3">
 
+      <article class="card" style="border-left:2px solid var(--bronze)">
+        <div class="kicker">Case study 01 &middot; Operating company</div>
+        <h3>StarBar &middot; SnapCount</h3>
+        <p><b>The problem.</b> Periodic inventory is still done on a clipboard and typed in afterward. It is slow, it is error-prone, and because it is unpleasant it gets done late or approximated &mdash; which corrupts every cost metric downstream of it. Beverage shrinkage runs 15&ndash;25% at industry average, and one ounce in five from a keg never generates revenue.</p>
+        <p><b>What was architected.</b> SnapCount&trade;: per-shift, voice-driven counting against a locked watchlist. One item at a time, spoken, with tenthing for partial bottles. Mid-shift breakage and transfers are captured with a photo, so the variance math stays clean and custody is never inferred.</p>
+        <p><b>What changed.</b> The count stops being a chore performed against the operator and becomes two minutes of talking &mdash; and stops being an estimate. Certification is deterministic: named opening count, named closing count, both inside the shift window, variance within threshold, trust score at or above 85, and no open exception. All six or it is not certified. Every certified event is SHA-256 anchored and publicly verifiable.</p>
+        <p><b>The long way round.</b> The first version of this shipped on 17 March 2020 &mdash; the day American dining rooms closed. The product worked; the market disappeared. It was rebuilt on a certification layer that did not exist five years ago, which is why the count is now evidence rather than a number somebody typed in.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Majority owned</dd></div>
+          <div><dt>Sector</dt><dd>ResTech</dd></div>
+          <div><dt>Trust layer</dt><dd>MGE licensee</dd></div>
+        </dl>
+        <p class="fine" style="margin-top:-4px">StarBar is majority owned by Bailiwick Ventures and partners with FohBoh.ai as a licensee of the Metrics Governance Engine, shipping as a module within FohBoh Sentry&trade;.</p>
+        <a class="tlink" href="https://starbar.ai" target="_blank" rel="noopener" style="margin-top:auto">starbar.ai <span class="arrow">&#8599;</span></a>
+      </article>
       <article class="card" style="border-left:2px solid var(--cobalt)">
-        <div class="kicker">Case study 01 &middot; Certified infrastructure</div>
+        <div class="kicker">Case study 02 &middot; Certified infrastructure</div>
         <h3>FohBoh.ai</h3>
         <p><b>The problem.</b> A restaurant group runs point-of-sale, inventory, labor, payroll and accounting on separate systems, each producing its own version of &ldquo;sales&rdquo; and &ldquo;cost.&rdquo; Nobody can say which number is authoritative &mdash; and AI trained on those numbers inherits the contradiction.</p>
         <p><b>What was architected.</b> The Metrics Governance Engine: a deterministic certification layer that sits between operational systems and every system of record. Data is sealed on arrival, normalized, reconciled across authoritative sources, scored against trust gates, and issued as a certified operational fact rather than a raw number.</p>
@@ -25,7 +40,7 @@ CASES = """
       </article>
 
       <article class="card" style="border-left:2px solid var(--signal)">
-        <div class="kicker">Case study 02 &middot; Venture architecture</div>
+        <div class="kicker">Case study 03 &middot; Venture architecture</div>
         <h3>BailiwickQuikFix</h3>
         <p><b>The problem.</b> On-demand home and commercial repair is a $600&nbsp;billion market with no dependable promise attached to it. Response times are estimates, dispatch is manual, and margin leaks everywhere between the customer and the tradesperson.</p>
         <p><b>What was architected.</b> Three applications, a licensed governance engine, and a 60-minute service commitment set by drive-time geofence rather than optimism &mdash; combined with voice and AI into an intelligence stack no competitor has assembled. Six weeks from consequential idea to complete investor package.</p>
@@ -38,20 +53,6 @@ CASES = """
         <a class="tlink" href="vibe.html" style="margin-top:auto">The method behind it <span class="arrow">&rarr;</span></a>
       </article>
 
-      <article class="card" style="border-left:2px solid var(--bronze)">
-        <div class="kicker">Case study 03 &middot; Operating company</div>
-        <h3>StarBar &middot; SnapCount</h3>
-        <p><b>The problem.</b> Periodic inventory is still done on a clipboard and typed in afterward. It is slow, it is error-prone, and because it is unpleasant it gets done late or approximated &mdash; which corrupts every cost metric downstream of it. Beverage shrinkage runs 15&ndash;25% at industry average, and one ounce in five from a keg never generates revenue.</p>
-        <p><b>What was architected.</b> SnapCount&trade;: per-shift, voice-driven counting against a locked watchlist. One item at a time, spoken, with tenthing for partial bottles. Mid-shift breakage and transfers are captured with a photo, so the variance math stays clean and custody is never inferred.</p>
-        <p><b>What changed.</b> The count stops being a chore performed against the operator and becomes two minutes of talking &mdash; and stops being an estimate. Certification is deterministic: named opening count, named closing count, both inside the shift window, variance within threshold, trust score at or above 85, and no open exception. All six or it is not certified. Every certified event is SHA-256 anchored and publicly verifiable.</p>
-        <dl class="meta">
-          <div><dt>Role</dt><dd>Majority owned</dd></div>
-          <div><dt>Sector</dt><dd>ResTech</dd></div>
-          <div><dt>Trust layer</dt><dd>MGE licensee</dd></div>
-        </dl>
-        <p class="fine" style="margin-top:-4px">StarBar is majority owned by Bailiwick Ventures and partners with FohBoh.ai as a licensee of the Metrics Governance Engine, shipping as a module within FohBoh Sentry&trade;.</p>
-        <a class="tlink" href="https://starbar.ai" target="_blank" rel="noopener" style="margin-top:auto">starbar.ai <span class="arrow">&#8599;</span></a>
-      </article>
 
     </div>
 
