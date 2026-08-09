@@ -1,5 +1,20 @@
 """Home, About, Advisory."""
 from theme import mark
+from flywheel import build as _flywheel
+
+_FW_JS = """<script>
+(function(){
+  var m=document.getElementById('fwm'); if(!m) return;
+  var c=m.querySelector('.fw-close');
+  function open(){ m.hidden=false; document.body.style.overflow='hidden'; c.focus(); }
+  function shut(){ m.hidden=true; document.body.style.overflow=''; }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-fw]'),function(b){b.addEventListener('click',open);});
+  c.addEventListener('click',shut);
+  m.addEventListener('click',function(e){ if(e.target===m) shut(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!m.hidden) shut(); });
+})();
+</script>"""
+
 
 def more(label, inner):
     return (f'<details class="more"><summary>'
@@ -81,6 +96,8 @@ LIFECYCLE = """<svg class="lifecycle" viewBox="0 0 1000 200" role="img" aria-lab
 
 
 def home(portrait):
+    _FLYWHEEL = _flywheel()
+    _FLYWHEEL_LG = _flywheel("fwx")
     return f"""
 <div class="hero">
   {HERO_MOTIF}
@@ -219,6 +236,70 @@ def home(portrait):
     </div>
   </div>
 </section>
+
+<section class="on-ink">
+  <div class="shell">
+    <p class="eyebrow">How it compounds</p>
+    <div class="split" style="margin-bottom:clamp(30px,3.6vw,44px)">
+      <div>
+        <h2 style="max-width:20ch">Bailiwick is a flywheel, not just a firm.</h2>
+      </div>
+      <div>
+        <p class="body" style="margin-bottom:14px">Each venture produces the thing the next one needs. The Studio architects, Vibe builds, the venture becomes an operating company &mdash; and the people who shipped it, along with the method that got them there, return to the top of the wheel.</p>
+        <p class="body" style="margin-bottom:0"><b>Every turn lowers the cost and raises the odds of the next one.</b> That is the asset. Not a headcount.</p>
+      </div>
+    </div>
+
+    <div class="fwbox">
+      <button class="fw-trigger" type="button" data-fw aria-label="Expand the flywheel diagram to full screen">
+        {_FLYWHEEL}
+        <span class="fw-hint">Expand <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M4 1H1v3M7 10h3V7" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round"/><path d="M1 10L10 1" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round" opacity=".55"/></svg></span>
+      </button>
+      <button class="fw-tap" type="button" data-fw>View the flywheel <span class="arrow">&rarr;</span></button>
+    </div>
+
+    <div class="fw-modal" id="fwm" hidden>
+      <button class="fw-close" type="button" aria-label="Close the flywheel">&times;</button>
+      <div class="fw-stage">{_FLYWHEEL_LG}</div>
+    </div>
+
+    <details class="reveal" style="margin-top:clamp(26px,3.2vw,40px)">
+      <summary>
+        <span class="rl">The four turns, in detail</span>
+        <span class="rn">What happens at each stage, and who does it</span>
+        <span class="chev"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="#AEBDCA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </summary>
+      <div class="rbody">
+        <div class="phases p4">
+          <div class="phase">
+            <div class="pn">01</div>
+            <h4>Architect</h4>
+            <p>Bailiwick Venture Studio designs the venture itself &mdash; thesis, operating model, governance, capital plan &mdash; before anything is built.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">02</div>
+            <h4>Build</h4>
+            <p>BailiwickVibe carries the validated design into production: engineering, security, scale, productization, and market entry.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">03</div>
+            <h4>Operate</h4>
+            <p>The venture becomes a company, held or co-founded through Bailiwick, staffed by the people who actually shipped it.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">04</div>
+            <h4>Redeploy</h4>
+            <p>Those operators, engineers and hard-won methods return to the Studio &mdash; and the next venture starts further along than the last one did.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <p class="fine" style="margin-top:clamp(24px,2.8vw,34px);color:#8195A6;max-width:70ch">Michael L. Atkinson is Chief Executive Officer of Bailiwick Ventures and the architect at the center of the wheel. The divisions hold the people; the parent holds the method, the intellectual property, and the ownership.</p>
+  </div>
+</section>
+
+{_FW_JS}
 
 <section class="bord">
   <div class="shell split split-even" style="align-items:center">
@@ -396,7 +477,8 @@ def about(portrait):
   <div class="shell">
     <p class="eyebrow">The team</p>
     <h2 style="max-width:26ch">The team is the two divisions.</h2>
-    <p class="lede" style="margin-top:20px;margin-bottom:clamp(30px,3.6vw,44px)">Bailiwick does not carry a head office of generalists. Capability lives inside Bailiwick Venture Studio and BailiwickVibe, and is assembled around whichever venture needs it.</p>
+    <p class="lede" style="margin-top:20px">Bailiwick Ventures carries no operating headcount, and that is a structural choice rather than a stage of growth. Capability lives inside Bailiwick Venture Studio and BailiwickVibe, and is assembled around whichever venture needs it.</p>
+    <p class="body" style="max-width:64ch;margin-bottom:clamp(30px,3.6vw,44px)">There is no bench to feed between engagements and no head office of generalists to carry. A venture gets people who have already shipped certified infrastructure in this industry, not a team hired for the occasion. <b>Advisory engagements are led by Michael personally</b> &mdash; not scoped by a partner and handed to an associate.</p>
     <div class="grid g4">
       <div><h4 style="margin-bottom:10px">Build</h4><p class="body" style="font-size:14.4px">Engineers, AI agent developers, systems architects, and QA managers.</p></div>
       <div><h4 style="margin-bottom:10px">Intelligence</h4><p class="body" style="font-size:14.4px">Data and analytics specialists.</p></div>
@@ -438,6 +520,7 @@ def advisory():
     <p class="lede">Michael L. Atkinson advises executives, founders, investors, and private equity firms when the problem crosses traditional functional boundaries. His work combines operating experience, finance, investment banking, technology, venture architecture, and commercialization.</p>
     <div class="btns">
       <a class="btn btn-p" href="contact.html">Discuss an Engagement <span class="arrow">→</span></a>
+      <a class="btn btn-s" href="applied-ai.html">Applied AI &amp; Agent Engineering <span class="arrow">→</span></a>
     </div>
   </div>
 </div>
@@ -514,6 +597,20 @@ def advisory():
     </div>
     <hr class="rule" style="margin:clamp(34px,4vw,52px) 0 26px">
     <p class="small" style="color:#8FA1B1;max-width:74ch">Advisory engagements are undertaken through Bailiwick Ventures, Inc. For full venture development, product creation, or multidisciplinary execution, engagements may be undertaken through <a href="studio.html" style="color:var(--warm)">Bailiwick Venture Studio</a>. For production engineering and post-MVP commercialization, work may be undertaken through <a href="vibe.html" style="color:var(--warm)">BailiwickVibe</a>.</p>
+  </div>
+</section>
+
+<section class="bord on-warm">
+  <div class="shell split">
+    <div>
+      <p class="eyebrow">A defined service line</p>
+      <h2>Applied AI &amp; Agent Engineering.</h2>
+    </div>
+    <div>
+      <p class="lede" style="margin-bottom:22px">Some advisory engagements do not end with a recommendation. The client wants the thing built &mdash; task-specific AI agents, scoped and architected and engineered to their requirements, running in their stack under their ownership.</p>
+      <p class="body">We deliver those through Bailiwick Venture Studio and BailiwickVibe, in the industries we actually know: food, beverage, restaurants, CPG and fintech. It is client work, not a venture and not a division &mdash; and the output belongs to you.</p>
+      <a class="tlink" href="applied-ai.html">How these engagements run <span class="arrow">&rarr;</span></a>
+    </div>
   </div>
 </section>
 

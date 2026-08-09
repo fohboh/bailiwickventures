@@ -30,19 +30,28 @@ BRAND = {
 LINKS = "M10 52 L30 38 M30 38 L52 14 M30 38 L50 50"
 NODES = ((10, 52), (30, 38), (52, 14), (50, 50))
 
+# The terminal node — index 2, the oversized one — is the destination. It is the
+# only element in the identity that carries color. Everything else is structure.
+# Pass accent=None for one-color reproduction (print, embroidery, engraving);
+# the hierarchy survives, because the node is largest by geometry, not by hue.
+TERMINAL = 2
+VERMILION = "#E2551F"
 
-def mark(size=34, c="#12304F", label="Bailiwick Ventures", cls="mark", decorative=False):
+
+def mark(size=34, c="#12304F", label="Bailiwick Ventures", cls="mark",
+         decorative=False, accent=VERMILION):
     small = size <= 30
     sw = 4.5 if small else 3.5
     r = (7.5, 7.5, 9.5, 6.0) if small else (7.0, 7.0, 9.0, 5.5)
     circles = "".join(
-        f'<circle cx="{x}" cy="{y}" r="{rr}"/>' for (x, y), rr in zip(NODES, r))
+        f'<circle cx="{x}" cy="{y}" r="{rr}" fill="{accent if (accent and i == TERMINAL) else c}"/>'
+        for i, ((x, y), rr) in enumerate(zip(NODES, r)))
     a11y = ('aria-hidden="true"' if decorative
             else f'role="img" aria-label="{label}"')
     return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 64 64" {a11y}>'
             f'<g stroke="{c}" stroke-width="{sw}" stroke-linecap="round" fill="none">'
             f'<path d="{LINKS}"/></g>'
-            f'<g fill="{c}">{circles}</g></svg>')
+            f'{circles}</svg>')
 
 
 CSS = """
@@ -144,7 +153,7 @@ section.tight{padding:clamp(40px,5vw,68px) 0}
 .on-ink{background:var(--navy-deep);color:#D9E1E9}
 .on-ink h1,.on-ink h2,.on-ink h3,.on-ink h4{color:var(--warm)}
 .on-ink .body,.on-ink .lede,.on-ink p{color:#AEBDCA}
-/* list and small-text items do not inherit the light colour automatically */
+/* list and small-text items do not inherit the light color automatically */
 .on-ink .ticks li,.on-ink .crit li,.on-ink .toc li,.on-ink .appx li,
 .on-ink .phase p,.on-ink .small,.on-ink .tag,.on-ink li{color:#AEBDCA}
 .on-ink .ticks li b,.on-ink .crit li b,.on-ink .toc li b,.on-ink strong{color:var(--warm)}
@@ -337,16 +346,78 @@ footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
   border-left:2px solid var(--bronze);padding-left:20px;margin:24px 0 0;max-width:34ch;letter-spacing:-.01em}
 .on-ink .pull{color:var(--warm);border-color:var(--bronze-lt)}
 
+/* flywheel diagram */
+.flywheel{display:block;width:100%;max-width:840px;margin:0 auto}
+@media (max-width:760px){.flywheel{display:none}}
+
+.fw-trigger{display:block;width:100%;background:none;border:0;padding:0;margin:0;
+  cursor:zoom-in;position:relative;-webkit-appearance:none}
+.fw-hint{position:absolute;right:4px;bottom:2px;display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:#8195A6;opacity:0;transition:opacity .18s ease;pointer-events:none}
+.fw-trigger:hover .fw-hint,.fw-trigger:focus-visible .fw-hint{opacity:1}
+.fw-trigger:focus-visible{outline:2px solid var(--bronze-lt);outline-offset:6px}
+.fw-tap{display:none}
+@media (max-width:760px){
+  .fw-trigger{display:none}
+  .fw-tap{display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;
+    background:transparent;color:var(--warm);border:1px solid #2E4A63;border-radius:3px;
+    padding:16px 20px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer}
+  .fw-tap:hover{border-color:var(--bronze-lt)}
+}
+
+.fw-modal[hidden]{display:none}
+.fw-modal{position:fixed;inset:0;z-index:90;background:#091A2C;overflow:auto;
+  display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,52px)}
+.fw-stage{width:100%;max-width:1180px}
+.fw-stage .flywheel{display:block;width:100%;max-width:none}
+.fw-close{position:absolute;top:12px;right:16px;z-index:2;background:none;border:0;color:var(--warm);
+  font-size:32px;line-height:1;padding:6px 14px;cursor:pointer;opacity:.72}
+.fw-close:hover{opacity:1}
+/* on a portrait phone the wheel is turned to fill the screen, so it stays legible */
+@media (max-width:760px){
+  .fw-modal{padding:0;overflow:hidden}
+  .fw-stage{position:absolute;top:50%;left:50%;width:min(96vh,148vw);
+    transform:translate(-50%,-50%) rotate(90deg)}
+}
+
+/* reveal component on dark sections */
+.on-ink details.reveal{background:transparent;border-color:#274259}
+.on-ink details.reveal>summary:hover{background:#0F2942}
+.on-ink details.reveal .rl{color:var(--warm)}
+.on-ink details.reveal .rn{color:#8195A6}
+.on-ink details.reveal .chev{border-color:#2E4A63}
+.on-ink details.reveal>summary:hover .chev{border-color:var(--bronze-lt)}
+.on-ink details.reveal[open]>summary{border-bottom-color:#274259}
+.on-ink details.reveal .rbody{padding:0}
+.on-ink details.reveal .phases{background:#274259;border-color:#274259}
+.on-ink details.reveal .phase{background:#0F2942}
+.on-ink details.reveal .phase h4{color:var(--warm)}
+.on-ink details.reveal .phase .pn{color:var(--bronze-lt)}
+.on-ink details.reveal .phase p{color:#AEBDCA}
+
+/* long-form article body */
+.article{max-width:70ch;margin:0 auto}
+.article h3{font-size:clamp(19px,2vw,24px);margin:clamp(28px,3.2vw,42px) 0 14px;letter-spacing:-.01em}
+.article h3:first-child{margin-top:0}
+.article>p:first-child{font-size:clamp(17px,1.75vw,19.5px);line-height:1.62;color:var(--ink)}
+.article ul,.article ol{margin:0 0 22px}
+.article ol.ord{padding-left:24px;list-style:decimal}
+.article ol.ord li{margin-bottom:12px;font-size:15.4px;line-height:1.62;color:var(--slate);padding-left:4px}
+.article ol.ord li::marker{color:var(--bronze);font-weight:600}
+.article .ticks li{margin-bottom:11px}
+.article code{font-size:.92em;background:#EFE9DF;padding:1px 5px;border-radius:2px}
+
 /* archive list */
 .arch{border-top:1px solid var(--line)}
-.arch a{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
+.arch a,.arch .row{display:flex;gap:18px;align-items:baseline;justify-content:space-between;
   padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .18s}
 .arch a:hover{padding-left:8px}
 .arch .t{font-family:var(--serif);font-size:16.5px;line-height:1.35;color:var(--ink);flex:1 1 auto}
 .arch a:hover .t{color:var(--navy)}
 .arch .tg{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);
   white-space:nowrap;flex:0 0 auto}
-@media (max-width:620px){.arch a{flex-direction:column;gap:6px}}
+@media (max-width:620px){.arch a,.arch .row{flex-direction:column;gap:6px}}
 
 .gate{border:1px solid var(--navy);border-left-width:3px;border-radius:2px;background:var(--warm);
   padding:clamp(20px,2.4vw,28px) clamp(20px,2.4vw,30px);margin-bottom:clamp(24px,3vw,34px)}
@@ -571,6 +642,7 @@ FOOTER = """<footer class="site">
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="advisory.html">Advisory</a>
+        <a href="applied-ai.html">Applied AI</a>
         <a href="investing.html">Investing</a>
         <a href="investing.html#investors">For Investors</a>
         <a href="portfolio.html">Portfolio &amp; Holdings</a>
