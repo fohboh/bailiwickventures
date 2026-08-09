@@ -1,6 +1,65 @@
 """Investing, Portfolio, Studio, Vibe, Insights, Contact."""
 from pages_a import more
 
+CASES = """
+<section class="bord on-warm">
+  <div class="shell">
+    <p class="eyebrow">Case studies</p>
+    <h2 style="max-width:26ch">What the work actually produced.</h2>
+    <p class="body" style="margin-top:18px;margin-bottom:clamp(28px,3.4vw,42px);max-width:64ch">Three ventures, three different problems, one method. Each began as a structural diagnosis rather than a product idea &mdash; and in each case the architecture is what made the business possible.</p>
+
+    <div class="grid g3">
+
+      <article class="card" style="border-left:2px solid var(--cobalt)">
+        <div class="kicker">Case study 01 &middot; Certified infrastructure</div>
+        <h3>FohBoh.ai</h3>
+        <p><b>The problem.</b> A restaurant group runs point-of-sale, inventory, labor, payroll and accounting on separate systems, each producing its own version of &ldquo;sales&rdquo; and &ldquo;cost.&rdquo; Nobody can say which number is authoritative &mdash; and AI trained on those numbers inherits the contradiction.</p>
+        <p><b>What was architected.</b> The Metrics Governance Engine: a deterministic certification layer that sits between operational systems and every system of record. Data is sealed on arrival, normalized, reconciled across authoritative sources, scored against trust gates, and issued as a certified operational fact rather than a raw number.</p>
+        <p><b>What changed.</b> Certification happens <i>before</i> data reaches the system of record, so neither the source system nor the destination can influence the outcome. Sentry and Cortex are the first applications built on that foundation &mdash; proof that the engine works, not the reason it exists.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Founded and architected</dd></div>
+          <div><dt>Sector</dt><dd>Restaurant infrastructure</dd></div>
+          <div><dt>Status</dt><dd>Operating &middot; raising</dd></div>
+        </dl>
+        <a class="tlink" href="https://fohboh.ai" target="_blank" rel="noopener" style="margin-top:auto">fohboh.ai <span class="arrow">&#8599;</span></a>
+      </article>
+
+      <article class="card" style="border-left:2px solid var(--signal)">
+        <div class="kicker">Case study 02 &middot; Venture architecture</div>
+        <h3>BailiwickQuikFix</h3>
+        <p><b>The problem.</b> On-demand home and commercial repair is a $600&nbsp;billion market with no dependable promise attached to it. Response times are estimates, dispatch is manual, and margin leaks everywhere between the customer and the tradesperson.</p>
+        <p><b>What was architected.</b> Three applications, a licensed governance engine, and a 60-minute service commitment set by drive-time geofence rather than optimism &mdash; combined with voice and AI into an intelligence stack no competitor has assembled. Six weeks from consequential idea to complete investor package.</p>
+        <p><b>What changed.</b> No production backend was ever paid for. The venture was architected, modeled, governed and packaged &mdash; fifteen documents from pitch deck to engineering handoff, and three viable exit paths &mdash; before the expensive part began. That sequencing is the whole argument.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Originated in the Studio</dd></div>
+          <div><dt>Sector</dt><dd>Home &amp; commercial services</dd></div>
+          <div><dt>Status</dt><dd>In development</dd></div>
+        </dl>
+        <a class="tlink" href="vibe.html" style="margin-top:auto">The method behind it <span class="arrow">&rarr;</span></a>
+      </article>
+
+      <article class="card" style="border-left:2px solid var(--bronze)">
+        <div class="kicker">Case study 03 &middot; Operating company</div>
+        <h3>StarBar &middot; SnapCount</h3>
+        <p><b>The problem.</b> Periodic inventory is still done on a clipboard and typed in afterward. It is slow, it is error-prone, and because it is unpleasant it gets done late or approximated &mdash; which corrupts every cost metric downstream of it. Beverage shrinkage runs 15&ndash;25% at industry average, and one ounce in five from a keg never generates revenue.</p>
+        <p><b>What was architected.</b> SnapCount&trade;: per-shift, voice-driven counting against a locked watchlist. One item at a time, spoken, with tenthing for partial bottles. Mid-shift breakage and transfers are captured with a photo, so the variance math stays clean and custody is never inferred.</p>
+        <p><b>What changed.</b> The count stops being a chore performed against the operator and becomes two minutes of talking &mdash; and stops being an estimate. Certification is deterministic: named opening count, named closing count, both inside the shift window, variance within threshold, trust score at or above 85, and no open exception. All six or it is not certified. Every certified event is SHA-256 anchored and publicly verifiable.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Majority owned</dd></div>
+          <div><dt>Sector</dt><dd>ResTech</dd></div>
+          <div><dt>Trust layer</dt><dd>MGE licensee</dd></div>
+        </dl>
+        <p class="fine" style="margin-top:-4px">StarBar is majority owned by Bailiwick Ventures and partners with FohBoh.ai as a licensee of the Metrics Governance Engine, shipping as a module within FohBoh Sentry&trade;.</p>
+        <a class="tlink" href="https://starbar.ai" target="_blank" rel="noopener" style="margin-top:auto">starbar.ai <span class="arrow">&#8599;</span></a>
+      </article>
+
+    </div>
+
+    <p class="fine" style="margin-top:clamp(24px,2.8vw,34px);max-width:70ch">Figures shown are from each venture's own modeling and materials. Nothing here is an offer to sell or a solicitation of an offer to buy any security &mdash; see the disclosures on the <a class="tlink" href="investing.html">Investing</a> page.</p>
+  </div>
+</section>
+"""
+
 
 
 
@@ -248,11 +307,11 @@ def portfolio():
       <div class="card" style="border-left:2px solid var(--bronze)">
         <div class="kicker">Operating company</div>
         <h3><a href="https://starbar.ai" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--bronze)">StarBar.ai <span style="font-size:12px;opacity:.6">↗</span></a></h3>
-        <p>Voice-enabled inventory for restaurants and healthcare. VoiceINV&trade; replaces clipboard stock counts with speech-to-text AI — see it, say it, count it — completing a periodic count in minutes.</p>
+        <p>Certified inventory intelligence for restaurants and bars. SnapCount&trade; replaces the clipboard with per-shift voice counting, then certifies the result against six deterministic conditions and anchors it to an immutable ledger. Licensee of FohBoh&rsquo;s Metrics Governance Engine; ships as a module within FohBoh Sentry&trade;.</p>
         <dl class="meta">
           <div><dt>Status</dt><dd>Operating</dd></div>
-          <div><dt>Sector</dt><dd>ResTech / MedTech</dd></div>
-          <div><dt>Origin</dt><dd>Bailiwick Ventures</dd></div>
+          <div><dt>Sector</dt><dd>ResTech</dd></div>
+          <div><dt>Role</dt><dd>Majority owned</dd></div>
         </dl>
       </div>
       <div class="card" style="border-left:2px solid var(--bronze)">
@@ -262,15 +321,6 @@ def portfolio():
         <dl class="meta">
           <div><dt>Status</dt><dd>Operating</dd></div>
           <div><dt>Sector</dt><dd>Skincare / CPG</dd></div>
-          <div><dt>Origin</dt><dd>Bailiwick Ventures</dd></div>
-        </dl>
-      </div>
-      <div class="card" style="border-left:2px solid var(--bronze)">
-        <div class="kicker">Operating company</div>
-        <h3><a href="https://www.getcalder.com" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--bronze)">Calder <span style="font-size:12px;opacity:.6">↗</span></a></h3>
-        <p><span class="tofill">to fill</span> — one or two sentences on what Calder does and who it serves. The site did not respond when I tried to read it.</p>
-        <dl class="meta">
-          <div><dt>Status</dt><dd>Operating</dd></div>
           <div><dt>Origin</dt><dd>Bailiwick Ventures</dd></div>
         </dl>
       </div>
@@ -295,39 +345,13 @@ def portfolio():
       <div class="card"><h3>Enterprise Venture Architecture</h3><p>The structural design process applied by Bailiwick Venture Studio to move a venture from diagnosis through capital calibration and execution.</p></div>
       <div class="card"><h3>Certified Intelligence</h3><p>The framework behind <i>The Certified Enterprise</i> — the argument that AI should never be trusted more than the evidence on which it depends.</p></div>
       <div class="card"><h3>The Certified Enterprise</h3><p>The book. <i>Taming Data Anarchy in the AI Era</i> — self-published on Amazon, expected November 2026. <a class="tlink" href="book.html">Read more</a></p></div>
-      <div class="card"><h3>Roadmap to Certified</h3><p>The phased certification framework that moves an organization from tribal knowledge to governed logic. <a class="tlink" href="https://www.bailiwickventures.com/roadmap-to-certified" target="_blank" rel="noopener">View ↗</a></p></div>
+      <div class="card"><h3>Roadmap to Certified</h3><p>The phased certification framework that moves an organization from tribal knowledge to governed logic.</p></div>
       <div class="card"><h3>Published work</h3><p>Essays, frameworks, research, and applied methods developed and held through Bailiwick Ventures. <a class="tlink" href="blog.html">See the writing</a></p></div>
     </div>
   </div>
 </section>
 
-<section class="bord on-warm">
-  <div class="shell">
-    <p class="eyebrow">Case studies</p>
-    <h2 style="max-width:26ch">What the work actually produced.</h2>
-    <p class="body" style="margin-top:18px;margin-bottom:clamp(26px,3vw,40px)">The strongest thing this page can do is stop describing and start showing. Three slots, one per holding — the problem, what was architected, and what changed.</p>
-    <div class="grid g3">
-      <a class="card" href="contact.html" style="border-style:dashed;background:var(--sand)">
-        <div class="kicker">Case study 01</div>
-        <h3>FohBoh.ai</h3>
-        <p><span class="tofill">to fill</span> — thesis to certified infrastructure. The problem in the restaurant stack, what MGE certifies, and what an operator can now prove that they could not before.</p>
-        <span class="tlink" style="margin-top:auto">Coming <span class="arrow">→</span></span>
-      </a>
-      <a class="card" href="vibe.html" style="border-style:dashed;background:var(--sand)">
-        <div class="kicker">Case study 02</div>
-        <h3>BailiwickQuikFix</h3>
-        <p><span class="tofill">to fill</span> — six weeks from idea to investor package. The fullest worked example currently exists on the BailiwickVibe site; this is where the parent-company version belongs.</p>
-        <span class="tlink" style="margin-top:auto">See the summary <span class="arrow">→</span></span>
-      </a>
-      <a class="card" href="contact.html" style="border-style:dashed;background:var(--sand)">
-        <div class="kicker">Case study 03</div>
-        <h3>Selected engagement</h3>
-        <p><span class="tofill">to fill</span> — an advisory or venture-reconstruction engagement. Anonymised is fine; a named client is better.</p>
-        <span class="tlink" style="margin-top:auto">Coming <span class="arrow">→</span></span>
-      </a>
-    </div>
-  </div>
-</section>
+{CASES}
 
 <section class="on-ink">
   <div class="shell">
