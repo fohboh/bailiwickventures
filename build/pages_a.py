@@ -302,7 +302,7 @@ def home(portrait):
 {_FW_JS}
 
 <section class="bord">
-  <div class="shell split split-even" style="align-items:center">
+  <div class="shell portrait-row">
     <div class="portrait"><img src="{portrait}" alt="Michael L. Atkinson" width="900" height="900" loading="lazy"></div>
     <div>
       <p class="eyebrow">Michael L. Atkinson</p>
@@ -458,7 +458,7 @@ def about(portrait):
 </section>
 
 <section class="on-ink">
-  <div class="shell split split-even" style="align-items:center">
+  <div class="shell portrait-row flip">
     <div>
       <p class="eyebrow">Michael L. Atkinson</p>
       <h2>A career built across the systems that make enterprises work.</h2>
@@ -469,7 +469,7 @@ def about(portrait):
         <a class="btn btn-g" href="contact.html">Start a Conversation <span class="arrow">→</span></a>
       </div>
     </div>
-    <div class="portrait" style="border-color:#274259"><img src="{portrait}" alt="Michael L. Atkinson" width="900" height="900" loading="lazy"></div>
+    <div class="portrait" style="border-color:#274259;margin-left:auto"><img src="{portrait}" alt="Michael L. Atkinson" width="900" height="900" loading="lazy"></div>
   </div>
 </section>
 
