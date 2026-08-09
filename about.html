@@ -149,7 +149,7 @@ section.tight{padding:clamp(40px,5vw,68px) 0}
 .on-ink{background:var(--navy-deep);color:#D9E1E9}
 .on-ink h1,.on-ink h2,.on-ink h3,.on-ink h4{color:var(--warm)}
 .on-ink .body,.on-ink .lede,.on-ink p{color:#AEBDCA}
-/* list and small-text items do not inherit the light colour automatically */
+/* list and small-text items do not inherit the light color automatically */
 .on-ink .ticks li,.on-ink .crit li,.on-ink .toc li,.on-ink .appx li,
 .on-ink .phase p,.on-ink .small,.on-ink .tag,.on-ink li{color:#AEBDCA}
 .on-ink .ticks li b,.on-ink .crit li b,.on-ink .toc li b,.on-ink strong{color:var(--warm)}
@@ -345,6 +345,37 @@ footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
 /* flywheel diagram */
 .flywheel{display:block;width:100%;max-width:840px;margin:0 auto}
 @media (max-width:760px){.flywheel{display:none}}
+
+.fw-trigger{display:block;width:100%;background:none;border:0;padding:0;margin:0;
+  cursor:zoom-in;position:relative;-webkit-appearance:none}
+.fw-hint{position:absolute;right:4px;bottom:2px;display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:#8195A6;opacity:0;transition:opacity .18s ease;pointer-events:none}
+.fw-trigger:hover .fw-hint,.fw-trigger:focus-visible .fw-hint{opacity:1}
+.fw-trigger:focus-visible{outline:2px solid var(--bronze-lt);outline-offset:6px}
+.fw-tap{display:none}
+@media (max-width:760px){
+  .fw-trigger{display:none}
+  .fw-tap{display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;
+    background:transparent;color:var(--warm);border:1px solid #2E4A63;border-radius:3px;
+    padding:16px 20px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer}
+  .fw-tap:hover{border-color:var(--bronze-lt)}
+}
+
+.fw-modal[hidden]{display:none}
+.fw-modal{position:fixed;inset:0;z-index:90;background:#091A2C;overflow:auto;
+  display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,52px)}
+.fw-stage{width:100%;max-width:1180px}
+.fw-stage .flywheel{display:block;width:100%;max-width:none}
+.fw-close{position:absolute;top:12px;right:16px;z-index:2;background:none;border:0;color:var(--warm);
+  font-size:32px;line-height:1;padding:6px 14px;cursor:pointer;opacity:.72}
+.fw-close:hover{opacity:1}
+/* on a portrait phone the wheel is turned to fill the screen, so it stays legible */
+@media (max-width:760px){
+  .fw-modal{padding:0;overflow:hidden}
+  .fw-stage{position:absolute;top:50%;left:50%;width:min(96vh,148vw);
+    transform:translate(-50%,-50%) rotate(90deg)}
+}
 
 /* reveal component on dark sections */
 .on-ink details.reveal{background:transparent;border-color:#274259}
@@ -686,57 +717,6 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
         <p style="margin-bottom:0">General counsel is provided through Velawood, a full-service law firm for startups and early-stage companies, based in Dallas, Texas. <a class="tlink" href="https://velawood.com" target="_blank" rel="noopener">velawood.com <span class="arrow">↗</span></a></p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="on-ink">
-  <div class="shell">
-    <p class="eyebrow">How it compounds</p>
-    <div class="split" style="margin-bottom:clamp(30px,3.6vw,44px)">
-      <div>
-        <h2 style="max-width:20ch">Bailiwick is a flywheel, not just a firm.</h2>
-      </div>
-      <div>
-        <p class="body" style="margin-bottom:14px">Each venture produces the thing the next one needs. The Studio architects, Vibe builds, the venture becomes an operating company &mdash; and the people who shipped it, along with the method that got them there, return to the top of the wheel.</p>
-        <p class="body" style="margin-bottom:0"><b>Every turn lowers the cost and raises the odds of the next one.</b> That is the asset. Not a headcount.</p>
-      </div>
-    </div>
-
-    <svg class="flywheel" viewBox="0 0 1000 672" role="img" aria-label="The Bailiwick flywheel: Bailiwick Venture Studio architects a venture, BailiwickVibe builds it, it becomes an operating company, and its people and methods return to the Studio — each turn starting further out than the last."><defs><marker id="fw-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#C08A4A"/></marker></defs><path d="M500.00 186.00 L503.93 186.05 L507.85 186.21 L511.77 186.46 L515.68 186.82 L519.58 187.28 L523.47 187.85 L527.34 188.51 L531.19 189.28 L535.02 190.14 L538.82 191.11 L542.60 192.18 L546.35 193.34 L550.07 194.60 L553.76 195.96 L557.40 197.42 L561.01 198.97 L564.58 200.61 L568.10 202.35 L571.57 204.18 L575.00 206.10 L578.37 208.10 L581.70 210.20 L584.96 212.38 L588.17 214.65 L591.31 217.00 L594.40 219.43 L597.42 221.94 L600.37 224.53 L603.25 227.19 L606.07 229.93 L608.81 232.75 L611.47 235.63 L614.06 238.58 L616.57 241.60 L619.00 244.69 L621.35 247.83 L623.62 251.04 L625.80 254.30 L627.90 257.63 L629.90 261.00 L631.82 264.43 L633.65 267.90 L635.39 271.42 L637.03 274.99 L638.58 278.60 L640.04 282.24 L641.40 285.93 L642.66 289.65 L643.82 293.40 L644.89 297.18 L645.86 300.98 L646.72 304.81 L647.49 308.66 L648.15 312.53 L648.72 316.42 L649.18 320.32 L649.54 324.23 L649.79 328.15 L649.95 332.07 L650.00 336.00 L649.95 339.93 L649.79 343.85 L649.54 347.77 L649.18 351.68 L648.72 355.58 L648.15 359.47 L647.49 363.34 L646.72 367.19 L645.86 371.02 L644.89 374.82 L643.82 378.60 L642.66 382.35 L641.40 386.07 L640.04 389.76 L638.58 393.40 L637.03 397.01 L635.39 400.58 L633.65 404.10 L631.82 407.57 L629.90 411.00 L627.90 414.37 L625.80 417.70 L623.62 420.96 L621.35 424.17 L619.00 427.31 L616.57 430.40 L614.06 433.42 L611.47 436.37 L608.81 439.25 L606.07 442.07 L603.25 444.81 L600.37 447.47 L597.42 450.06 L594.40 452.57 L591.31 455.00 L588.17 457.35 L584.96 459.62 L581.70 461.80 L578.37 463.90 L575.00 465.90 L571.57 467.82 L568.10 469.65 L564.58 471.39 L561.01 473.03 L557.40 474.58 L553.76 476.04 L550.07 477.40 L546.35 478.66 L542.60 479.82 L538.82 480.89 L535.02 481.86 L531.19 482.72 L527.34 483.49 L523.47 484.15 L519.58 484.72 L515.68 485.18 L511.77 485.54 L507.85 485.79 L503.93 485.95 L500.00 486.00 L496.07 485.95 L492.15 485.79 L488.23 485.54 L484.32 485.18 L480.42 484.72 L476.53 484.15 L472.66 483.49 L468.81 482.72 L464.98 481.86 L461.18 480.89 L457.40 479.82 L453.65 478.66 L449.93 477.40 L446.24 476.04 L442.60 474.58 L438.99 473.03 L435.42 471.39 L431.90 469.65 L428.43 467.82 L425.00 465.90 L421.63 463.90 L418.30 461.80 L415.04 459.62 L411.83 457.35 L408.69 455.00 L405.60 452.57 L402.58 450.06 L399.63 447.47 L396.75 444.81 L393.93 442.07 L391.19 439.25 L388.53 436.37 L385.94 433.42 L383.43 430.40 L381.00 427.31 L378.65 424.17 L376.38 420.96 L374.20 417.70 L372.10 414.37 L370.10 411.00 L368.18 407.57 L366.35 404.10 L364.61 400.58 L362.97 397.01 L361.42 393.40 L359.96 389.76 L358.60 386.07 L357.34 382.35 L356.18 378.60 L355.11 374.82 L354.14 371.02 L353.28 367.19 L352.51 363.34 L351.85 359.47 L351.28 355.58 L350.82 351.68 L350.46 347.77 L350.21 343.85 L350.05 339.93 L350.00 336.00" fill="none" stroke="#AEBDCA" stroke-width="1.7" stroke-linecap="round"/><path d="M350.00 336.00 L350.01 332.07 L350.04 328.14 L350.09 324.20 L350.17 320.25 L350.29 316.29 L350.43 312.31 L350.61 308.31 L350.84 304.30 L351.11 300.26 L351.44 296.19 L351.81 292.11 L352.25 287.99 L352.75 283.86 L353.32 279.70 L353.97 275.51 L354.69 271.30 L355.49 267.07 L356.38 262.82 L357.37 258.56 L358.45 254.27 L359.62 249.98 L360.91 245.67 L362.30 241.36 L363.80 237.05 L365.42 232.73 L367.16 228.42 L369.01 224.13 L371.00 219.85 L373.11 215.58 L375.35 211.35 L377.72 207.14 L380.23 202.98 L382.87 198.85 L385.64 194.78 L388.56 190.76 L391.61 186.81 L394.79 182.93 L398.12 179.12 L401.58 175.39 L405.18 171.76 L408.90 168.22 L412.77 164.79 L416.75 161.47 L420.87 158.27 L425.11 155.20 L429.47 152.26 L433.94 149.45 L438.52 146.80 L443.22 144.30 L448.01 141.96 L452.89 139.78 L457.87 137.78 L462.92 135.96 L468.06 134.32 L473.26 132.87 L478.52 131.62 L483.83 130.57 L489.19 129.72 L494.58 129.08 L500.00 128.65 L505.44 128.44 L510.88 128.45 L516.32 128.68 L521.74 129.14" fill="none" stroke="#C08A4A" stroke-width="3.2" stroke-linecap="round" marker-end="url(#fw-a)"/><g transform="translate(480.2 316.2) scale(0.62)" opacity="0.5"><g stroke="#8195A6" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M10 52 L30 38 M30 38 L52 14 M30 38 L50 50"/></g><g fill="#8195A6"><circle cx="10" cy="52" r="6.0"/><circle cx="30" cy="38" r="6.0"/><circle cx="52" cy="14" r="8.0"/><circle cx="50" cy="50" r="5.0"/></g></g><circle cx="500.00" cy="186.00" r="10.5" fill="#F6F1E8"/><text x="500.0" y="34.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">01</text><text x="500.0" y="63.0" text-anchor="middle" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Architect</text><text x="500.0" y="85.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">The venture is designed</text><circle cx="650.00" cy="336.00" r="8" fill="#F6F1E8"/><text x="716.0" y="310.0" text-anchor="start" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">02</text><text x="716.0" y="339.0" text-anchor="start" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Build</text><text x="716.0" y="361.0" text-anchor="start" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">The design is made real</text><circle cx="500.00" cy="486.00" r="8" fill="#F6F1E8"/><text x="500.0" y="574.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">03</text><text x="500.0" y="603.0" text-anchor="middle" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Operate</text><text x="500.0" y="625.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">It becomes a company</text><circle cx="350.00" cy="336.00" r="8" fill="#F6F1E8"/><text x="284.0" y="310.0" text-anchor="end" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">04</text><text x="284.0" y="339.0" text-anchor="end" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Redeploy</text><text x="284.0" y="361.0" text-anchor="end" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">People and method return</text></svg>
-
-    <details class="reveal" style="margin-top:clamp(26px,3.2vw,40px)">
-      <summary>
-        <span class="rl">The four turns, in detail</span>
-        <span class="rn">What happens at each stage, and who does it</span>
-        <span class="chev"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="#AEBDCA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </summary>
-      <div class="rbody">
-        <div class="phases p4">
-          <div class="phase">
-            <div class="pn">01</div>
-            <h4>Architect</h4>
-            <p>Bailiwick Venture Studio designs the venture itself &mdash; thesis, operating model, governance, capital plan &mdash; before anything is built.</p>
-          </div>
-          <div class="phase">
-            <div class="pn">02</div>
-            <h4>Build</h4>
-            <p>BailiwickVibe carries the validated design into production: engineering, security, scale, productization, and market entry.</p>
-          </div>
-          <div class="phase">
-            <div class="pn">03</div>
-            <h4>Operate</h4>
-            <p>The venture becomes a company, held or co-founded through Bailiwick, staffed by the people who actually shipped it.</p>
-          </div>
-          <div class="phase">
-            <div class="pn">04</div>
-            <h4>Redeploy</h4>
-            <p>Those operators, engineers and hard-won methods return to the Studio &mdash; and the next venture starts further along than the last one did.</p>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <p class="fine" style="margin-top:clamp(24px,2.8vw,34px);color:#8195A6;max-width:70ch">Michael L. Atkinson is Chief Executive Officer of Bailiwick Ventures and the architect at the center of the wheel. The divisions hold the people; the parent holds the method, the intellectual property, and the ownership.</p>
   </div>
 </section>
 
