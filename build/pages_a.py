@@ -307,7 +307,7 @@ def home(portrait):
     <div>
       <p class="eyebrow">Michael L. Atkinson</p>
       <h2>Enterprise Venture Architect. Investor. Strategic Advisor.</h2>
-      <p class="body" style="margin-top:22px">Michael is a co-founder and the Chief Executive Officer of Bailiwick Ventures. His career spans operations, CFO leadership, investment banking, investing, software and systems architecture, venture creation, and commercialization.</p>
+      <p class="body" style="margin-top:22px">Michael is the Founder and Chief Executive Officer of Bailiwick Ventures. His career spans operations, CFO leadership, investment banking, investing, software and systems architecture, venture creation, and commercialization.</p>
       <p class="body">That experience gives him an unusual ability to examine a business simultaneously through the lenses of enterprise architecture, capital and economics, and execution.</p>
       <div class="btns" style="margin-top:26px">
         <a class="btn btn-s" href="about.html">Meet Michael <span class="arrow">→</span></a>
@@ -319,7 +319,7 @@ def home(portrait):
 
 
 ORG_SVG = """
-<svg class="org" viewBox="0 0 1000 470" role="img" aria-label="Bailiwick organizational structure: Michael L. Atkinson, Co-founder and CEO, above Bailiwick Ventures, Inc., the parent investment and operating company, which contains the operating divisions Bailiwick Venture Studio and BailiwickVibe and the studio-born portfolio asset FohBoh.ai. MichaelAtkinson.me and Michael L. Atkinson Advisory sit alongside.">
+<svg class="org" viewBox="0 0 1000 470" role="img" aria-label="Bailiwick organizational structure: Michael L. Atkinson, Founder and CEO, above Bailiwick Ventures, Inc., the parent investment and operating company, which contains the operating divisions Bailiwick Venture Studio and BailiwickVibe and the studio-born portfolio asset FohBoh.ai. MichaelAtkinson.me and Michael L. Atkinson Advisory sit alongside.">
   <defs>
     <style>
       .bx{fill:#FFFDF9;stroke:#12304F;stroke-width:1.4}
@@ -337,7 +337,7 @@ ORG_SVG = """
 
   <rect class="bx-p" x="360" y="10" width="280" height="56" rx="3"/>
   <text class="t1w" x="500" y="34" text-anchor="middle">Michael L. Atkinson</text>
-  <text class="t2w" x="500" y="52" text-anchor="middle">Co-founder &amp; Chief Executive Officer</text>
+  <text class="t2w" x="500" y="52" text-anchor="middle">Founder &amp; Chief Executive Officer</text>
 
   <path class="ln-d" d="M360 38 H150 V112"/>
   <path class="ln-d" d="M640 38 H850 V112"/>
@@ -394,7 +394,7 @@ def about(portrait):
   <div class="shell hero-in" style="padding-bottom:clamp(36px,4vw,60px)">
     <p class="eyebrow">About</p>
     <h1>A long-term platform for venture creation and ownership.</h1>
-    <p class="lede">Bailiwick Ventures, Inc. is Michael L. Atkinson's privately held investment and operating company. Michael serves as co-founder and Chief Executive Officer, directing the company's strategy, investments, operating divisions, and venture-development priorities.</p>
+    <p class="lede">Bailiwick Ventures, Inc. is Michael L. Atkinson's privately held investment and operating company. Michael serves as Founder and Chief Executive Officer, directing the company's strategy, investments, operating divisions, and venture-development priorities.</p>
   </div>
 </div>
 
