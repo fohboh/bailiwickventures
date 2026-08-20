@@ -53,12 +53,7 @@
   <url>
     <loc>https://bailiwickventures.com/book.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bailiwickventures.com/pre-order.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://bailiwickventures.com/applied-ai.html</loc>

@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/pre-order", "destination": "https://thecertifiedenterprise.com/", "permanent": true },
+    { "source": "/pre-order.html", "destination": "https://thecertifiedenterprise.com/", "permanent": true }
+  ]
+}
