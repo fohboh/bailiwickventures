@@ -16,7 +16,6 @@ C_PRICE = "$250,000"
 C_EQUITY = "3–6%"
 FLOOR = "$25,000"
 CREDIT_DAYS = "30 days"
-CONCURRENT = "four"
 
 
 # ---------------------------------------------------------------- helpers
@@ -306,7 +305,7 @@ def plans():
         <li><b>You need someone in the org chart.</b> We are not fractional executives, not interim staff, and not recruiters. If the gap is a person rather than a scope, hire the person &mdash; ideally someone you have already worked with.</li>
         <li><b>You need it in three weeks.</b> Blueprint is four, Buildout is ten at the fastest, and compressing either produces the thing you were trying to escape.</li>
       </ol>
-      <p class="fine" style="margin-top:22px">We run {CONCURRENT} engagements at a time. When those are full, the Triage still runs and the plan is scheduled &mdash; we do not take work we cannot staff.</p>
+      <p class="fine" style="margin-top:22px">We schedule against real capacity rather than selling past it. If the right start date is some weeks out, the Triage says so and your plan is scheduled with a date &mdash; we do not take work we cannot staff.</p>
     </div>
   </div>
 </section>
@@ -347,11 +346,11 @@ def plans():
 
       {_faq_group("Who does the work", [
         ("Is Michael personally involved, or is this a brochure?",
-         "<p>Personally involved in every engagement: the architecture, the judgment calls, the Triage memo, and the client relationship. He is not the person writing every line of code, and any firm that tells you their founder is should be asked how many clients they have.</p>"),
+         "<p>Involved in every engagement, on the parts where his involvement changes the outcome: the architecture, the judgment calls, the Triage memo, and the client relationship throughout. He is not writing every line of code, and he should not be &mdash; the Studio and BailiwickVibe carry their own teams. That is the arrangement you are buying: his judgment, and the people who execute against it.</p>"),
         ("Who writes the code?",
-         "<p>A small senior team working with AI pair-programming under human architecture review. Nothing is offshored, nothing is body-shopped, and no junior is left unsupervised on your foundation. The tools are modern; the review discipline is not.</p>"),
-        ("How many engagements do you run at once?",
-         f"<p>{CONCURRENT.capitalize()}. It is a real constraint rather than a scarcity tactic &mdash; the work depends on senior attention, and senior attention does not divide indefinitely. When the slots are full, the Triage still runs and your plan is scheduled with a start date.</p>"),
+         "<p>BailiwickVibe&rsquo;s engineering team, working with AI pair-programming under human architecture review. Nothing is offshored, nothing is body-shopped, and nobody junior is left unsupervised on your foundation. The tools are modern; the review discipline deliberately is not.</p>"),
+        ("How do I know we will get real attention and not be handed off?",
+         "<p>Because the scope, the deliverables and the acceptance conditions are named in writing before anyone starts, and because Michael is in the architecture and the relationship throughout rather than only at the kickoff. We also schedule against real capacity instead of selling past it &mdash; if the right start date is weeks out, the Triage tells you that rather than promising Monday.</p>"),
         ("Are you a fractional CTO, CFO, or interim executive?",
          "<p>No. We are not fractional staff and we do not take operating roles or titles inside your company. An engagement is a defined scope with named deliverables and an end date; Plan&nbsp;C adds a board observer or advisor seat, which is a seat, not a job. If what you need is someone in the org chart, you need to hire that person, and we will say so.</p>"),
         ("What happens if you disappear?",
@@ -409,7 +408,7 @@ def plans():
 
       {_faq_group("Timing and what we need from you", [
         ("When can you start?",
-         "<p>The Triage typically within two weeks of payment; the memo within five business days of the session. Plan start depends on the slots &mdash; we will give you a real date at Triage rather than an encouraging one.</p>"),
+         "<p>The Triage typically within two weeks of payment; the memo within five business days of the session. Plan start depends on the schedule &mdash; we will give you a real date at Triage rather than an encouraging one.</p>"),
         ("What do you need from us to hit the timeline?",
          "<p>A decision-maker who responds inside two business days, access to systems and data on day one rather than week three, and one person empowered to say yes. Those three things account for most of the difference between a plan that lands on schedule and one that does not.</p>"),
         ("What actually causes overruns?",
