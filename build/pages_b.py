@@ -455,8 +455,10 @@ def studio():
 <section class="bord on-warm tight">
   <div class="shell" style="text-align:center">
     <h2 style="max-width:20ch;margin:0 auto">Have an idea that deserves to be architected?</h2>
+    <p class="body" style="margin:18px auto 0;max-width:52ch">Studio work is sold as <b>Plan A — Blueprint</b>: four weeks, fixed price, published. It begins with the Triage.</p>
     <div class="btns" style="justify-content:center">
-      <a class="btn btn-p" href="contact.html" style="background:var(--cobalt);border-color:var(--cobalt)">Bring Us an Idea <span class="arrow">→</span></a>
+      <a class="btn btn-p" href="plans.html#blueprint" style="background:var(--cobalt);border-color:var(--cobalt)">See Plan A — Blueprint <span class="arrow">→</span></a>
+      <a class="btn btn-s" href="contact.html">Start a Conversation <span class="arrow">→</span></a>
     </div>
     <p class="fine" style="margin-top:18px">A dedicated Bailiwick Venture Studio site is in development. Until then, inquiries are handled here.</p>
   </div>
@@ -472,7 +474,7 @@ def vibe():
     <h1 style="max-width:15ch">Your AI prototype deserves finish carpentry.</h1>
     <p class="lede">BailiwickVibe takes AI-generated prototypes and vibe-coded experiments and turns them into production-safe, scalable, investable ventures.</p>
     <div class="btns">
-      <a class="btn btn-p" href="https://bailiwickvibe.com" target="_blank" rel="noopener" style="background:var(--signal);border-color:var(--signal)">Get a Free Diagnostic <span class="arrow">↗</span></a>
+      <a class="btn btn-p" href="plans.html" style="background:var(--signal);border-color:var(--signal)">Plans &amp; Pricing <span class="arrow">→</span></a>
       <a class="btn btn-s" href="#method">The 8-Phase Method <span class="arrow">→</span></a>
     </div>
     <div class="tagline" style="color:var(--signal)"><span>From vibe code</span><i style="background:var(--signal)"></i><span>to venture ready</span></div>
@@ -575,10 +577,10 @@ def vibe():
 <section class="bord on-warm tight">
   <div class="shell" style="text-align:center">
     <h2 style="max-width:22ch;margin:0 auto">Have a prototype that has to become dependable?</h2>
-    <p class="body" style="margin:18px auto 0;max-width:50ch">Start with the free diagnostic, or book a fifteen-minute triage call.</p>
+    <p class="body" style="margin:18px auto 0;max-width:50ch">Every engagement starts with the Triage — ninety minutes and a written assessment of what you actually have, credited in full against any plan.</p>
     <div class="btns" style="justify-content:center">
-      <a class="btn btn-p" href="https://bailiwickvibe.com" target="_blank" rel="noopener" style="background:var(--signal);border-color:var(--signal)">Visit bailiwickvibe.com <span class="arrow">↗</span></a>
-      <a class="btn btn-s" href="contact.html">Start a Conversation <span class="arrow">→</span></a>
+      <a class="btn btn-p" href="plans.html#triage" style="background:var(--signal);border-color:var(--signal)">Start With the Triage <span class="arrow">→</span></a>
+      <a class="btn btn-s" href="plans.html">See All Three Plans <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -686,8 +688,8 @@ def contact():
     <h1>Start a conversation.</h1>
     <p class="lede">Tell us the situation. If Bailiwick is the right partner we will say so quickly — and if we are not, we will usually be able to point you somewhere better.</p>
     <div class="btns">
-      <a class="btn btn-p" href="https://calendly.com/michael-atkinson" target="_blank" rel="noopener">Book Time With Michael <span class="arrow">↗</span></a>
-      <a class="btn btn-s" href="#form">Send a Written Inquiry <span class="arrow">→</span></a>
+      <a class="btn btn-p" href="#form">Send a Written Inquiry <span class="arrow">→</span></a>
+      <a class="btn btn-s" href="plans.html">Plans &amp; Pricing <span class="arrow">→</span></a>
     </div>
   </div>
 </div>
@@ -698,10 +700,14 @@ def contact():
       <p class="eyebrow">Before you write</p>
       <h2 style="font-size:clamp(21px,2.2vw,26px)">A few notes.</h2>
       <p class="small" style="margin-top:18px">Every inquiry is read by Michael. The more precisely you can describe the situation, the more useful the first conversation will be.</p>
-      <p class="small">There is no charge for an initial conversation, and no obligation on either side.</p>
+      <p class="small">Writing to us costs nothing and commits you to nothing. Engaging us is priced, published, and starts the same way for everyone.</p>
       <hr class="rule" style="margin:26px 0">
-      <p class="eyebrow" style="margin-bottom:10px">Prefer to just talk?</p>
-      <p class="small">Put time straight on Michael's calendar — no form, no gatekeeping.</p>
+      <p class="eyebrow" style="margin-bottom:10px">Building something?</p>
+      <p class="small">Advisory, Studio and BailiwickVibe are professional services and are not sold through a free consultation. The three plans are pre-priced and published, and every one of them begins with the paid Triage.</p>
+      <a class="tlink" href="plans.html">See plans &amp; pricing <span class="arrow">→</span></a>
+      <hr class="rule" style="margin:26px 0">
+      <p class="eyebrow" style="margin-bottom:10px">Investors and partners</p>
+      <p class="small">Investment, partnership, co-investment and portfolio conversations are not a service sale — those go straight onto Michael's calendar, no form and no fee.</p>
       <a class="tlink" href="https://calendly.com/michael-atkinson" target="_blank" rel="noopener">calendly.com/michael-atkinson <span class="arrow">↗</span></a>
       <hr class="rule" style="margin:26px 0">
       <p class="eyebrow" id="media" style="margin-bottom:10px">Speaking &amp; media</p>
@@ -733,6 +739,7 @@ def contact():
             <option value="">Select one</option>
             <option>Strategic Advisory</option>
             <option>Investment / Partnership</option>
+            <option>Plans &amp; Pricing — book the Triage</option>
             <option>Bailiwick Venture Studio</option>
             <option>BailiwickVibe</option>
             <option>Portfolio / Corporate Development</option>

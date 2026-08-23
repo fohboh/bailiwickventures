@@ -5,6 +5,7 @@ import pages_a as A
 import pages_b as B
 import pages_c as C
 import pages_d as D
+import pages_f as F
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "site"
@@ -51,6 +52,10 @@ PAGES = [
  ("vibe.html", "BailiwickVibe — Production Engineering & Market Entry",
   "BailiwickVibe takes validated prototypes and MVPs through the hard transition to production: engineering, security, scalability, productization, deployment, and go-to-market.",
   "vibe.html", B.vibe()),
+
+ ("plans.html", f"Plans &amp; Pricing — {S}",
+  "Three pre-priced engagements — Blueprint, Buildout and Venture — and the paid Triage that begins all of them. Published scope, published price, published exclusions.",
+  "plans.html", F.plans()),
 
  ("insights.html", f"Insights — {S}",
   "Writing on enterprise venture architecture, AI governance, operational intelligence, and the systems that decide whether a company can be trusted with its own data.",
