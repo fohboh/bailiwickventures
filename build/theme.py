@@ -259,14 +259,14 @@ details.more .inner p:last-child{margin-bottom:0}
 .portrait img{width:100%;height:auto;display:block}
 /* Sized so the portrait supports the copy rather than competing with it, and
    cropped 4:5 to lose the dead headroom in the square original. */
-.portrait{max-width:340px}
+.portrait{max-width:265px}
 .portrait img{aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
-.portrait-row{display:grid;grid-template-columns:340px minmax(0,1fr);
+.portrait-row{display:grid;grid-template-columns:265px minmax(0,1fr);
   gap:clamp(28px,5vw,72px);align-items:center}
-.portrait-row.flip{grid-template-columns:minmax(0,1fr) 340px}
+.portrait-row.flip{grid-template-columns:minmax(0,1fr) 265px}
 @media (max-width:980px){
   .portrait-row,.portrait-row.flip{grid-template-columns:1fr;gap:32px}
-  .portrait{max-width:320px}
+  .portrait{max-width:265px}
   .portrait-row.flip .portrait{order:-1}
 }
 
@@ -555,11 +555,18 @@ if(bg){bg.addEventListener('click',function(){
 });}
 """
 
+# Investing moved out of the primary nav in Aug 2026: a top-level link on every
+# page read as solicitation and drew inbound from people wanting Bailiwick to
+# fund them. It now sits inside Company — present for anyone looking, not
+# advertised to everyone who is not.
+COMPANY = [
+    ("about.html", "About", "The firm, its structure, and Michael"),
+    ("investing.html", "Investing", "Thesis, conditions, and co-investment"),
+    ("portfolio.html", "Portfolio &amp; Holdings", "Operating companies and studio ventures"),
+]
 NAV_ITEMS = [
-    ("about.html", "About"),
     ("advisory.html", "Advisory"),
-    ("investing.html", "Investing"),
-    ("portfolio.html", "Portfolio"),
+    ("plans.html", "Plans &amp; Pricing"),
 ]
 DIVISIONS = [
     ("studio.html", "Bailiwick Venture Studio", "Venture architecture &amp; POC / MVP development"),
@@ -573,41 +580,31 @@ IDEAS = [
 NAV_TAIL = []
 
 
-def nav(active):
-    items = ""
-    for href, label in NAV_ITEMS:
-        on = " class=\"on\"" if href == active else ""
-        items += f'<li><a href="{href}"{on}>{label}</a></li>'
-    dopen = " open" if active in ("studio.html", "vibe.html") else ""
+CHEV = ('<svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">'
+        '<path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>')
+
+
+def _drop(label, entries, align_right=False):
     sub = "".join(
         f'<li><a href="{h}"><span class="dt">{t}</span><span class="dd">{d}</span></a></li>'
-        for h, t, d in DIVISIONS)
-    items += (
-        '<li class="drop-wrap"><details class="drop">'
-        '<summary style="list-style:none"></summary></details></li>')
-    # replaced below by an explicit details block for accessibility
-    items = items.replace(
-        '<li class="drop-wrap"><details class="drop">'
-        '<summary style="list-style:none"></summary></details></li>',
-        '<li><details class="drop">'
-        '<summary><span>Divisions</span>'
-        '<svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">'
-        '<path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>'
-        '</summary>'
-        f'<ul class="drop-panel" style="list-style:none;margin:0;padding:8px">{sub}</ul>'
-        '</details></li>')
-    isub = "".join(
-        f'<li><a href="{h}"><span class="dt">{t}</span><span class="dd">{d}</span></a></li>'
-        for h, t, d in IDEAS)
-    items += ('<li><details class="drop">'
-              '<summary><span>Ideas</span>'
-              '<svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">'
-              '<path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>'
-              '</summary>'
-              f'<ul class="drop-panel" style="list-style:none;margin:0;padding:8px;left:auto;right:0">{isub}</ul>'
-              '</details></li>')
+        for h, t, d in entries)
+    side = ";left:auto;right:0" if align_right else ""
+    return ('<li><details class="drop">'
+            f'<summary><span>{label}</span>{CHEV}</summary>'
+            f'<ul class="drop-panel" style="list-style:none;margin:0;padding:8px{side}">{sub}</ul>'
+            '</details></li>')
 
-    mob = "".join(f'<a href="{h}">{l}</a>' for h, l in NAV_ITEMS)
+
+def nav(active):
+    items = _drop("Company", COMPANY)
+    for href, label in NAV_ITEMS:
+        on = ' class="on"' if href == active else ""
+        items += f'<li><a href="{href}"{on}>{label}</a></li>'
+    items += _drop("Divisions", DIVISIONS)
+    items += _drop("Ideas", IDEAS, align_right=True)
+
+    mob = "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in COMPANY)
+    mob += "".join(f'<a href="{h}">{l}</a>' for h, l in NAV_ITEMS)
     mob += "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in DIVISIONS)
     mob += "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in IDEAS)
     mob += '<a href="contact.html">Start a Conversation</a>'
@@ -616,7 +613,7 @@ def nav(active):
   <div class="nav-in">
     <a class="brand" href="index.html" aria-label="Bailiwick Ventures, Inc. home">
       {mark(32)}
-      <span><span class="bn">Bailiwick&nbsp;Ventures</span><span class="bs">Capital · Architecture · Execution</span></span>
+      <span><span class="bn">Bailiwick&nbsp;Ventures</span><span class="bs">Architecture · Execution · Capital</span></span>
     </a>
     <nav aria-label="Primary"><ul class="menu">{items}</ul></nav>
     <a class="nav-cta" href="contact.html">Start a Conversation</a>
@@ -654,6 +651,7 @@ FOOTER = """<footer class="site">
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="advisory.html">Advisory</a>
+        <a href="plans.html">Plans &amp; Pricing</a>
         <a href="applied-ai.html">Applied AI</a>
         <a href="investing.html">Investing</a>
         <a href="investing.html#investors">For Investors</a>

@@ -25,7 +25,7 @@ BOOK_3D = datauri_webp("assets/book-3d.webp")
 S = "Bailiwick Ventures, Inc."
 
 PAGES = [
- ("index.html", f"{S} — Capital. Architecture. Execution.",
+ ("index.html", f"{S} — Architecture. Execution. Capital.",
   "A privately held investment and operating company led by Enterprise Venture Architect Michael L. Atkinson. We build, own, and advise businesses at inflection points.",
   "index.html", A.home(PORTRAIT_LG)),
 

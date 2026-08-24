@@ -17,6 +17,12 @@ C_EQUITY = "3–6%"
 FLOOR = "$25,000"
 CREDIT_DAYS = "30 days"
 
+# The paid Calendly event, live and connected to PayPal under Bailiwick Ventures.
+# Payment and booking happen together, so this URL is the buy button as well as
+# the scheduler. Confirmed live Aug 23, 2026. If the event is ever renamed, the
+# slug changes with it — change this constant and nowhere else.
+TRIAGE_URL = "https://calendly.com/michael-atkinson/90-minute-triage-call"
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -75,8 +81,9 @@ def plans():
     <h1 style="max-width:16ch">Three ways to start. All of them priced.</h1>
     <p class="lede">Most firms make you sit through discovery before they will tell you what anything costs. We publish the number. You arrive knowing what you are buying, and we arrive knowing you are serious.</p>
     <div class="btns">
-      <a class="btn btn-p" href="#triage">Start With the Triage &mdash; {TRIAGE} <span class="arrow">&rarr;</span></a>
+      <a class="btn btn-p" href="{TRIAGE_URL}" target="_blank" rel="noopener">Schedule a Triage Call &mdash; {TRIAGE} <span class="arrow">&#8599;</span></a>
       <a class="btn btn-s" href="#plans">Compare the Three Plans <span class="arrow">&rarr;</span></a>
+      <a class="btn btn-s" href="#triage">What the Triage Is <span class="arrow">&rarr;</span></a>
     </div>
     <div class="tagline"><span>Blueprint</span><i></i><span>Buildout</span><i></i><span>Venture</span></div>
   </div>
@@ -89,10 +96,10 @@ def plans():
       <div>
         <p class="eyebrow">The front door</p>
         <h2 style="max-width:14ch">The Triage.</h2>
-        <span class="fig" style="margin-top:22px">{TRIAGE}<small>Credited in full &middot; 5 business days</small></span>
+        <span class="fig" style="margin-top:22px">{TRIAGE}<small>Two sessions &middot; written memo &middot; credited in full</small></span>
       </div>
       <div>
-        <p class="lede" style="margin-bottom:22px">There is one way into any of the three plans, and this is it. Ninety minutes with Michael, then a written assessment of what you actually have and what it would take to make it real.</p>
+        <p class="lede" style="margin-bottom:22px">There is one way into any of the three plans, and this is it. Ninety minutes with Michael, a written assessment of what you actually have and what it would take to make it real, then half an hour walking through it together.</p>
         <p class="body" style="margin-bottom:22px">It is paid because unpaid diagnostics get treated as free consulting, and because the memo is worth more than most people pay for a month of advice. The entire fee is credited against any plan booked within {CREDIT_DAYS} of delivery.</p>
         <p class="pull">If the honest answer is that you should not build this, the memo says so. That is a finished deliverable, not a failed sale.</p>
       </div>
@@ -116,11 +123,14 @@ def plans():
           <li>The three or four things most likely to kill it, ranked.</li>
           <li>Which plan fits, why the other two do not, and an indicative cost and elapsed time.</li>
           <li>What we would do in your position if you never hired us.</li>
+          <li>A <b>30-minute walkthrough</b> of the memo with Michael &mdash; findings discussed, not emailed and abandoned.</li>
         </ul>
       </div>
     </div>
 
-    <div class="gate" style="margin-top:clamp(32px,4vw,48px);margin-bottom:0">
+    <p class="fine" style="margin-top:clamp(24px,2.8vw,34px);max-width:82ch"><b style="color:#8FA1B1">What the Triage is not:</b> the diagnostic. Where a prototype already exists, the Triage is an experienced read &mdash; enough to say what is likely to break and which plan fits. The five-lens scored assessment of architecture, security, data integrity, scalability and deployment readiness is Buildout&rsquo;s first deliverable. That is days of work, not hours, and it is part of what the plan pays for.</p>
+
+    <div class="gate" style="margin-top:clamp(28px,3.4vw,42px);margin-bottom:0">
       <div class="lbl">The minimum</div>
       <p>We do not open a plan below {FLOOR}.</p>
       <p class="sub">Below that number there is no version of this work that is honest about what it can deliver, so we do not sell one. If your budget is under the floor, take the Triage anyway and use the memo yourself &mdash; that is a legitimate outcome and we will write it that way.</p>
@@ -128,6 +138,11 @@ def plans():
         <div class="lbl">And no free diagnostics</div>
         <p>Scoping calls, prototype reviews, architecture opinions and &ldquo;can I pick your brain&rdquo; all resolve to the same place: <b>the Triage</b>. One fee, one memo, credited if you proceed.</p>
       </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:clamp(30px,3.6vw,44px)">
+      <p class="body" style="margin:0;max-width:46ch">Payment and scheduling happen together. Ninety minutes, the memo, and the walkthrough &mdash; credited in full if you go ahead.</p>
+      <a class="btn btn-g" href="{TRIAGE_URL}" target="_blank" rel="noopener">Schedule a Triage Call &mdash; {TRIAGE} <span class="arrow">&#8599;</span></a>
     </div>
   </div>
 </section>
@@ -323,6 +338,8 @@ def plans():
          "<p>That is the ordinary case and it is what the Triage resolves. The memo names one plan and explains why the other does not fit. Our bias is downward: an oversold engagement produces a client who never refers anyone, and referrals are the entire business.</p>"),
         ("Can I do Plan A now and Plan B later?",
          f"<p>Yes, and it is the most common path. Blueprint&rsquo;s build specification is Buildout&rsquo;s input, so nothing is repeated. Blueprint credits in full against Plan&nbsp;B or Plan&nbsp;C begun within ninety days of delivery &mdash; you never pay twice for the same discovery.</p>"),
+        ("Is the Triage the same as Buildout&rsquo;s diagnostic?",
+         "<p>No, and the difference is hours versus days. The Triage is judgment applied quickly: Michael reads the code, the architecture and the business, and tells you what is most likely to kill it and which plan fits. Buildout&rsquo;s <i>Structural Diagnostic</i> is the systematic version &mdash; five lenses examined in turn, findings ranked by consequence, a scored Venture Readiness assessment you can hand to an investor. Think of a triage nurse deciding how urgent you are and which department you belong in, against the full workup that follows. Both are useful; only one of them costs {TRIAGE}.</p>"),
         ("What if the Triage says none of them fit?",
          "<p>Then the memo says that, in writing, with the reasoning. You keep the document. Roughly speaking, if we cannot see a path we will not invent one to fill a slot in the calendar.</p>"),
         ("I already have engineers. Does that change anything?",
@@ -348,7 +365,7 @@ def plans():
         ("Is Michael personally involved, or is this a brochure?",
          "<p>Involved in every engagement, on the parts where his involvement changes the outcome: the architecture, the judgment calls, the Triage memo, and the client relationship throughout. He is not writing every line of code, and he should not be &mdash; the Studio and BailiwickVibe carry their own teams. That is the arrangement you are buying: his judgment, and the people who execute against it.</p>"),
         ("Who writes the code?",
-         "<p>BailiwickVibe&rsquo;s engineering team, working with AI pair-programming under human architecture review. Nothing is offshored, nothing is body-shopped, and nobody junior is left unsupervised on your foundation. The tools are modern; the review discipline deliberately is not.</p>"),
+         "<p>BailiwickVibe&rsquo;s engineering team, working with AI pair-programming under human architecture review. The team is distributed, and some of it sits outside the United States &mdash; a fact about time zones rather than about accountability. What does not happen is your work being handed to an anonymous agency and forgotten: the architecture is ours, every review is ours, and nobody junior is left unsupervised on your foundation. The tools are modern; the review discipline deliberately is not.</p>"),
         ("How do I know we will get real attention and not be handed off?",
          "<p>Because the scope, the deliverables and the acceptance conditions are named in writing before anyone starts, and because Michael is in the architecture and the relationship throughout rather than only at the kickoff. We also schedule against real capacity instead of selling past it &mdash; if the right start date is weeks out, the Triage tells you that rather than promising Monday.</p>"),
         ("Are you a fractional CTO, CFO, or interim executive?",
@@ -373,6 +390,10 @@ def plans():
       {_faq_group("Money", [
         ("Is the Triage fee genuinely credited?",
          f"<p>In full, against any plan booked within {CREDIT_DAYS} of the memo&rsquo;s delivery. One Triage, one credit. There is no clawback, no partial credit, and no small print reducing it.</p>"),
+        ("How do I actually book and pay for the Triage?",
+         "<p>In one step. The booking page takes payment and puts the session on the calendar together, so there is no invoice to chase and no gap between deciding and starting. A few short questions at booking tell us what we are looking at. Companies that need an invoice, ACH or a purchase order should write to us instead and we will handle it that way.</p>"),
+        ("What if you decide we are not a fit after I have paid?",
+         "<p>We cancel and refund in full within one business day. The questions at booking exist precisely so that we can catch it before your time or ours is spent &mdash; and we would rather return $2,500 than run a session neither of us should be in.</p>"),
         ("What are the payment schedules?",
          f"<p><b>Blueprint</b> &mdash; 60% at signature, 40% on delivery. <b>Buildout</b> &mdash; 40% at signature, 30% at architecture sign-off, 30% at deployment acceptance. <b>Venture</b> &mdash; staged monthly against named milestones, with the equity documented at the start. Invoices are net 15.</p>"),
         ("Can either of us stop?",
@@ -434,10 +455,10 @@ def plans():
     <h2 style="max-width:22ch;margin:0 auto">Every plan starts the same way.</h2>
     <p class="body" style="margin:18px auto 0;max-width:52ch">Ninety minutes, a written assessment of what you actually have, and a straight answer about which plan fits &mdash; credited in full if you proceed.</p>
     <div class="btns" style="justify-content:center">
-      <a class="btn btn-p" href="contact.html">Book the Triage &mdash; {TRIAGE} <span class="arrow">&rarr;</span></a>
+      <a class="btn btn-p" href="{TRIAGE_URL}" target="_blank" rel="noopener">Schedule a Triage Call &mdash; {TRIAGE} <span class="arrow">&#8599;</span></a>
       <a class="btn btn-s" href="#faq">Read the Detail <span class="arrow">&rarr;</span></a>
     </div>
-    <p class="fine" style="margin-top:18px">Select <b>Plans &amp; Pricing</b> as the nature of your inquiry, and tell us which sentence sounded like you.</p>
+    <p class="fine" style="margin-top:18px;max-width:70ch;margin-left:auto;margin-right:auto">Payment and scheduling happen together. A few questions at booking tell us what we are looking at &mdash; and if they tell us we are not the right fit, we cancel and refund in full within one business day. Companies that need an invoice, ACH or a purchase order should <a class="tlink" href="contact.html">write to us</a> instead.</p>
   </div>
 </section>
 """
