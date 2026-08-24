@@ -255,14 +255,14 @@ details.more .inner p:last-child{margin-bottom:0}
 .portrait img{width:100%;height:auto;display:block}
 /* Sized so the portrait supports the copy rather than competing with it, and
    cropped 4:5 to lose the dead headroom in the square original. */
-.portrait{max-width:340px}
+.portrait{max-width:265px}
 .portrait img{aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
-.portrait-row{display:grid;grid-template-columns:340px minmax(0,1fr);
+.portrait-row{display:grid;grid-template-columns:265px minmax(0,1fr);
   gap:clamp(28px,5vw,72px);align-items:center}
-.portrait-row.flip{grid-template-columns:minmax(0,1fr) 340px}
+.portrait-row.flip{grid-template-columns:minmax(0,1fr) 265px}
 @media (max-width:980px){
   .portrait-row,.portrait-row.flip{grid-template-columns:1fr;gap:32px}
-  .portrait{max-width:320px}
+  .portrait{max-width:265px}
   .portrait-row.flip .portrait{order:-1}
 }
 
@@ -542,13 +542,13 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
   <div class="nav-in">
     <a class="brand" href="index.html" aria-label="Bailiwick Ventures, Inc. home">
       <svg class="mark" width="32" height="32" viewBox="0 0 64 64" role="img" aria-label="Bailiwick Ventures"><g stroke="#12304F" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M10 52 L30 38 M30 38 L52 14 M30 38 L50 50"/></g><circle cx="10" cy="52" r="7.0" fill="#12304F"/><circle cx="30" cy="38" r="7.0" fill="#12304F"/><circle cx="52" cy="14" r="9.0" fill="#E2551F"/><circle cx="50" cy="50" r="5.5" fill="#12304F"/></svg>
-      <span><span class="bn">Bailiwick&nbsp;Ventures</span><span class="bs">Capital · Architecture · Execution</span></span>
+      <span><span class="bn">Bailiwick&nbsp;Ventures</span><span class="bs">Architecture · Execution · Capital</span></span>
     </a>
-    <nav aria-label="Primary"><ul class="menu"><li><a href="about.html">About</a></li><li><a href="advisory.html">Advisory</a></li><li><a href="investing.html">Investing</a></li><li><a href="portfolio.html">Portfolio</a></li><li><details class="drop"><summary><span>Divisions</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px"><li><a href="studio.html"><span class="dt">Bailiwick Venture Studio</span><span class="dd">Venture architecture &amp; POC / MVP development</span></a></li><li><a href="vibe.html"><span class="dt">BailiwickVibe</span><span class="dd">Production engineering, productization &amp; GTM</span></a></li></ul></details></li><li><details class="drop"><summary><span>Ideas</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px;left:auto;right:0"><li><a href="insights.html"><span class="dt">Insights</span><span class="dd">Essays, themes, and speaking</span></a></li><li><a href="blog.html"><span class="dt">Blog</span><span class="dd">Shorter, more frequent working notes</span></a></li><li><a href="book.html"><span class="dt">The Book</span><span class="dd"><i>The Certified Enterprise</i></span></a></li></ul></details></li></ul></nav>
+    <nav aria-label="Primary"><ul class="menu"><li><details class="drop"><summary><span>Company</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px"><li><a href="about.html"><span class="dt">About</span><span class="dd">The firm, its structure, and Michael</span></a></li><li><a href="investing.html"><span class="dt">Investing</span><span class="dd">Thesis, conditions, and co-investment</span></a></li><li><a href="portfolio.html"><span class="dt">Portfolio &amp; Holdings</span><span class="dd">Operating companies and studio ventures</span></a></li></ul></details></li><li><a href="advisory.html">Advisory</a></li><li><a href="plans.html">Plans &amp; Pricing</a></li><li><details class="drop"><summary><span>Divisions</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px"><li><a href="studio.html"><span class="dt">Bailiwick Venture Studio</span><span class="dd">Venture architecture &amp; POC / MVP development</span></a></li><li><a href="vibe.html"><span class="dt">BailiwickVibe</span><span class="dd">Production engineering, productization &amp; GTM</span></a></li></ul></details></li><li><details class="drop"><summary><span>Ideas</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px;left:auto;right:0"><li><a href="insights.html"><span class="dt">Insights</span><span class="dd">Essays, themes, and speaking</span></a></li><li><a href="blog.html"><span class="dt">Blog</span><span class="dd">Shorter, more frequent working notes</span></a></li><li><a href="book.html"><span class="dt">The Book</span><span class="dd"><i>The Certified Enterprise</i></span></a></li></ul></details></li></ul></nav>
     <a class="nav-cta" href="contact.html">Start a Conversation</a>
     <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
   </div>
-  <div class="mobile"><a href="about.html">About</a><a href="advisory.html">Advisory</a><a href="investing.html">Investing</a><a href="portfolio.html">Portfolio</a><a href="studio.html">Bailiwick Venture Studio<span class="md">Venture architecture &amp; POC / MVP development</span></a><a href="vibe.html">BailiwickVibe<span class="md">Production engineering, productization &amp; GTM</span></a><a href="insights.html">Insights<span class="md">Essays, themes, and speaking</span></a><a href="blog.html">Blog<span class="md">Shorter, more frequent working notes</span></a><a href="book.html">The Book<span class="md"><i>The Certified Enterprise</i></span></a><a href="contact.html">Start a Conversation</a></div>
+  <div class="mobile"><a href="about.html">About<span class="md">The firm, its structure, and Michael</span></a><a href="investing.html">Investing<span class="md">Thesis, conditions, and co-investment</span></a><a href="portfolio.html">Portfolio &amp; Holdings<span class="md">Operating companies and studio ventures</span></a><a href="advisory.html">Advisory</a><a href="plans.html">Plans &amp; Pricing</a><a href="studio.html">Bailiwick Venture Studio<span class="md">Venture architecture &amp; POC / MVP development</span></a><a href="vibe.html">BailiwickVibe<span class="md">Production engineering, productization &amp; GTM</span></a><a href="insights.html">Insights<span class="md">Essays, themes, and speaking</span></a><a href="blog.html">Blog<span class="md">Shorter, more frequent working notes</span></a><a href="book.html">The Book<span class="md"><i>The Certified Enterprise</i></span></a><a href="contact.html">Start a Conversation</a></div>
 </header>
 <main id="main">
 
@@ -583,69 +583,6 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
           <span class="pdate">3 min read</span>
         </div>
       </a>
-      <a class="card post" href="one-node-is-vermilion.html">
-        <div class="kicker">Essay &middot; Brand &amp; method</div>
-        <h3>One Node Is Vermilion</h3>
-        <p>Creativity is not randomness. It is constrained choice.</p>
-        <div class="postmeta">
-          <span class="pdate">August 8, 2026</span>
-          <span class="pdate">4 min read</span>
-        </div>
-      </a>
-      <a class="card post" href="systems-of-record-were-never-designed-to-certify-truth.html">
-        <div class="kicker">Essay &middot; Independence</div>
-        <h3>Systems of Record Were Never Designed to Certify Truth</h3>
-        <p>An essay exploring trust, governance, and evidence in the age of enterprise AI.</p>
-        <div class="postmeta">
-          <span class="pdate">July 28, 2026</span>
-          <span class="pdate">5 min read</span>
-        </div>
-      </a>
-      <a class="card post" href="your-ai-isnt-wrong-your-data-is.html">
-        <div class="kicker">Essay &middot; Enterprise AI</div>
-        <h3>Your AI Isn&#x27;t Wrong. Your Data Is.</h3>
-        <p>An essay exploring trust, governance, and evidence in the age of enterprise AI.</p>
-        <div class="postmeta">
-          <span class="pdate">July 21, 2026</span>
-          <span class="pdate">5 min read</span>
-        </div>
-      </a>
-      <a class="card post" href="the-trust-crisis-in-enterprise-ai.html">
-        <div class="kicker">Essay &middot; Trust</div>
-        <h3>The Trust Crisis Nobody Is Talking About in Enterprise AI</h3>
-        <p>An essay exploring trust, governance, and evidence in the age of enterprise AI.</p>
-        <div class="postmeta">
-          <span class="pdate">July 14, 2026</span>
-          <span class="pdate">3 min read</span>
-        </div>
-      </a>
-      <a class="card post" href="the-intelligent-enterprise-is-a-certified-enterprise.html">
-        <div class="kicker">Essay &middot; Governance</div>
-        <h3>The Intelligent Enterprise is a Certified Enterprise: Why Governance is the Missing Layer</h3>
-        <p>Stop detecting data anarchy. Start fixing it with deterministic trust.</p>
-        <div class="postmeta">
-          <span class="pdate">June 7, 2026</span>
-          <span class="pdate">3 min read</span>
-        </div>
-      </a>
-      <a class="card post" href="the-invisible-force-behind-every-technology-revolution.html">
-        <div class="kicker">Essay &middot; Technology</div>
-        <h3>The Invisible Force Behind Every Technology Revolution</h3>
-        <p>Time Compression is a New Currency</p>
-        <div class="postmeta">
-          <span class="pdate">February 25, 2026</span>
-          <span class="pdate">7 min read</span>
-        </div>
-      </a>
-      <a class="card post" href="in-data-we-trust.html">
-        <div class="kicker">Essay &middot; Metrics governance</div>
-        <h3>In Data We Trust</h3>
-        <p>Trust is the only metric that matters</p>
-        <div class="postmeta">
-          <span class="pdate">December 10, 2025</span>
-          <span class="pdate">2 min read</span>
-        </div>
-      </a>
     </div>
   </div>
 </section>
@@ -663,20 +600,7 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
       </div>
     </div>
     <div class="arch">
-        <a href="the-impact-of-data-inconsistency-on-business-performance.html"><span class="t">The Impact of Data Inconsistency on Business Performance</span><span class="tg">Metrics governance &rarr;</span></a>
-        <a href="why-ai-is-useless-without-data-integrity.html"><span class="t">Why AI Is Useless Without Data Integrity</span><span class="tg">Restaurant AI &rarr;</span></a>
-        <a href="the-trust-imperative-metric-governance.html"><span class="t">The Trust Imperative: Why Metric Governance is the Foundation of FohBoh.ai</span><span class="tg">Trust &rarr;</span></a>
-        <a href="bolt-on-ai-vs-native-ai.html"><span class="t">Bolt-On AI vs. Native AI: Why It Matters for Restaurants</span><span class="tg">Gen AI &rarr;</span></a>
-        <a href="why-you-cant-just-connect-your-pos-to-chatgpt.html"><span class="t">Why You Can&#x27;t Just Connect Your POS to ChatGPT?</span><span class="tg">LLM &rarr;</span></a>
-        <a href="evaluating-your-restaurants-tech-stack-health.html"><span class="t">Why Evaluating Your Restaurant&#x27;s Tech-Stack Health is Essential Right Now</span><span class="tg">ResTech &rarr;</span></a>
-        <a href="restaurant-digital-transformation-data-management.html"><span class="t">Restaurant Digital Transformation and Performance Improvement: The Power of Centralized Data Management and Integrated Systems</span><span class="tg">Data management &rarr;</span></a>
-        <a href="leveraging-ai-for-workforce-management.html"><span class="t">Leveraging AI for Optimal Workforce Management in the Restaurant Industry</span><span class="tg">Workforce &rarr;</span></a>
         <a href="how-software-companies-master-go-to-market.html"><span class="t">How Software Companies Master Go-To-Market Strategies</span><span class="tg">GTM &rarr;</span></a>
-        <a href="technology-in-restaurant-back-of-house.html"><span class="t">Unlocking Success: The Vital Role of Technology in Restaurant Back-of-House Management</span><span class="tg">Operations &rarr;</span></a>
-        <a href="revolutionizing-inventory-management-in-hospitality.html"><span class="t">Revolutionizing Inventory Management in Hospitality</span><span class="tg">Inventory &rarr;</span></a>
-        <a href="ai-driven-procurement-marketplaces.html"><span class="t">Revolutionizing Restaurant Operations: The Power of AI-Driven Procurement Marketplaces</span><span class="tg">Procurement &rarr;</span></a>
-        <a href="the-rising-value-of-voice-technology.html"><span class="t">The Rising Value of Voice Technology and Embedded Voice Apps in B2C and B2B</span><span class="tg">VoiceTech &rarr;</span></a>
-        <a href="embracing-technology-modern-restaurant-industry.html"><span class="t">Embracing Technology: A Recipe for Success in the Modern Restaurant Industry</span><span class="tg">ResTech &rarr;</span></a>
     </div>
     <div class="split" style="margin-top:clamp(34px,4vw,50px);margin-bottom:clamp(18px,2.2vw,26px)">
       <div>
@@ -759,6 +683,7 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="advisory.html">Advisory</a>
+        <a href="plans.html">Plans &amp; Pricing</a>
         <a href="applied-ai.html">Applied AI</a>
         <a href="investing.html">Investing</a>
         <a href="investing.html#investors">For Investors</a>
