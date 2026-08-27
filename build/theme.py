@@ -570,7 +570,11 @@ NAV_ITEMS = [
 ]
 DIVISIONS = [
     ("studio.html", "Bailiwick Venture Studio", "Venture architecture &amp; POC / MVP development"),
+    ("https://bailiwickventurestudio.com", "bailiwickventurestudio.com",
+     "The Studio&rsquo;s own site &mdash; model, six phases, ventures, engagement"),
     ("vibe.html", "BailiwickVibe", "Production engineering, productization &amp; GTM"),
+    ("https://bailiwickvibe.com", "bailiwickvibe.com",
+     "BailiwickVibe&rsquo;s own site &mdash; method, plans, the Triage"),
 ]
 IDEAS = [
     ("insights.html", "Insights", "Essays, themes, and speaking"),
@@ -584,9 +588,18 @@ CHEV = ('<svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="t
         '<path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>')
 
 
+def _ext(h):
+    """External hrefs get a new tab, noopener, and a visible arrow."""
+    return h.startswith("http")
+
+
 def _drop(label, entries, align_right=False):
     sub = "".join(
-        f'<li><a href="{h}"><span class="dt">{t}</span><span class="dd">{d}</span></a></li>'
+        f'<li><a href="{h}"'
+        + (' target="_blank" rel="noopener"' if _ext(h) else '')
+        + f'><span class="dt">{t}'
+        + (' <span class="ext">&#8599;</span>' if _ext(h) else '')
+        + f'</span><span class="dd">{d}</span></a></li>'
         for h, t, d in entries)
     side = ";left:auto;right:0" if align_right else ""
     return ('<li><details class="drop">'
@@ -605,7 +618,11 @@ def nav(active):
 
     mob = "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in COMPANY)
     mob += "".join(f'<a href="{h}">{l}</a>' for h, l in NAV_ITEMS)
-    mob += "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in DIVISIONS)
+    mob += "".join(
+        f'<a href="{h}"' + (' target="_blank" rel="noopener"' if _ext(h) else '')
+        + f'>{t}' + (' <span class="ext">&#8599;</span>' if _ext(h) else '')
+        + f'<span class="md">{d}</span></a>'
+        for h, t, d in DIVISIONS)
     mob += "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in IDEAS)
     mob += '<a href="contact.html">Start a Conversation</a>'
 
@@ -661,7 +678,9 @@ FOOTER = """<footer class="site">
       <div>
         <h4>Divisions</h4>
         <a href="studio.html">Bailiwick Venture Studio</a>
+        <a href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">bailiwickventurestudio.com <span class="ext">&#8599;</span></a>
         <a href="vibe.html">BailiwickVibe</a>
+        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">bailiwickvibe.com <span class="ext">&#8599;</span></a>
         <h4 style="margin-top:22px">Portfolio</h4>
         <a href="portfolio.html#fohboh">FohBoh.ai</a>
         <a href="portfolio.html#kokomo">Club Kokomo Spirits</a>

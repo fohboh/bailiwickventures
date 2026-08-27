@@ -327,10 +327,10 @@ def portfolio():
       </div>
       <div class="card" style="border-left:2px solid var(--cobalt)">
         <div class="kicker">Division property</div>
-        <h3>studio.bailiwickventures.com</h3>
-        <p>The venture architecture and development division. Confirmed as a subdomain of the corporate site rather than a separate domain. Site in development.</p>
+        <h3><a href="https://www.bailiwickventures.com/studio.html" style="text-decoration:none;border-bottom:1px solid var(--cobalt)">Bailiwick Venture Studio</a></h3>
+        <p>The venture architecture and development division. Enterprise Venture Architecture applied from consequential idea to usable proof of concept &mdash; six phases, a defined handoff to BailiwickVibe, and Plan&nbsp;A Blueprint as the way in.</p>
         <dl class="meta">
-          <div><dt>Status</dt><dd>Planned</dd></div>
+          <div><dt>Status</dt><dd>Live</dd></div>
           <div><dt>Origin</dt><dd>Bailiwick Ventures</dd></div>
         </dl>
       </div>
@@ -389,6 +389,7 @@ def studio():
     <div class="btns">
       <a class="btn btn-p" href="contact.html" style="background:var(--cobalt);border-color:var(--cobalt)">Bring Us an Idea <span class="arrow">→</span></a>
       <a class="btn btn-s" href="#process">Explore the Process <span class="arrow">→</span></a>
+      <a class="btn btn-g" href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">Visit the Studio Site <span class="arrow">&#8599;</span></a>
     </div>
     <p class="fine" style="margin-top:22px;max-width:62ch"><span style="color:var(--cobalt)">*</span> The 60-day objective applies to appropriately scoped engagements with available decision-makers, defined access to necessary subject-matter expertise, and timely validation.</p>
   </div>
@@ -460,7 +461,8 @@ def studio():
       <a class="btn btn-p" href="plans.html#blueprint" style="background:var(--cobalt);border-color:var(--cobalt)">See Plan A — Blueprint <span class="arrow">→</span></a>
       <a class="btn btn-s" href="contact.html">Start a Conversation <span class="arrow">→</span></a>
     </div>
-    <p class="fine" style="margin-top:18px">A dedicated Bailiwick Venture Studio site is in development. Until then, inquiries are handled here.</p>
+    <p class="fine" style="margin-top:20px">The Studio publishes its full model, its six phases, its ventures and its
+      engagement terms at <a class="tlink" href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">bailiwickventurestudio.com&nbsp;&#8599;</a></p>
   </div>
 </section>
 """
