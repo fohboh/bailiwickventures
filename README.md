@@ -22,6 +22,7 @@ Deployed on **Vercel** from this repository's root, on every push to `main`. `CN
 | `portfolio.html` | Portfolio, holdings, three case studies |
 | `studio.html` | Bailiwick Venture Studio |
 | `vibe.html` | BailiwickVibe |
+| `production-gate.html` | The Production Gate — the two certification gates in the Vibe method |
 | `insights.html` | Themes, public speaking |
 | `blog.html` | Blog and archive |
 | `book.html` | The Certified Enterprise |
@@ -50,6 +51,7 @@ python3 export_logos.py     # regenerates the logo kit
 - `build/pages_c.py` — blog, book
 - `build/pages_d.py` — privacy, 404, thanks, pre-order
 - `build/pages_e.py` — applied AI
+- `build/pages_g.py` — the Production Gate page and its inline funnel graphic
 - `build/posts.py` — loads and renders everything under `content/`
 - `build/flywheel.py` — the flywheel diagram on `about.html`
 
