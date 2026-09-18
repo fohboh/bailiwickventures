@@ -573,6 +573,7 @@ DIVISIONS = [
     ("https://bailiwickventurestudio.com", "bailiwickventurestudio.com",
      "The Studio&rsquo;s own site &mdash; model, six phases, ventures, engagement"),
     ("vibe.html", "BailiwickVibe", "Production engineering, productization &amp; GTM"),
+    ("production-gate.html", "The Production Gate", "Where the Vibe method becomes evidence &mdash; two certification gates"),
     ("https://bailiwickvibe.com", "bailiwickvibe.com",
      "BailiwickVibe&rsquo;s own site &mdash; method, plans, the Triage"),
 ]

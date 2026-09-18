@@ -532,6 +532,13 @@ def vibe():
       <div class="phase"><div class="pn">08</div><h4>Investor &amp; Acquisition Readiness</h4><p>Pitch decks, buyer briefings, data room, demo materials, and exit-path planning — for ventures whose endpoint is a raise, a partnership, or a sale.</p></div>
     </div>
     <p class="fine" style="margin-top:18px">Phases 01 through 06 are the structural work; 07 and 08 are what turn a working product into something fundable.</p>
+
+    <div class="gate" style="margin-top:clamp(28px,3.5vw,44px);margin-bottom:0;border-color:var(--signal)">
+      <div class="lbl" style="color:var(--signal)">Where the method becomes evidence</div>
+      <p>Two of the eight phases end at a gate, not a review.</p>
+      <p class="sub">After the diagnostic, the prototype is scored by rule and the findings are sealed &mdash; the same prototype scores the same way twice. After the first ninety days live, the actuals are measured against the phase 05 model and sealed again. An investor or buyer can reproduce both from the record.</p>
+      <a class="tlink" href="production-gate.html" style="margin-top:14px">The Production Gate <span class="arrow">&rarr;</span></a>
+    </div>
   </div>
 </section>
 
