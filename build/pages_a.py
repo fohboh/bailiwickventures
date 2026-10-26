@@ -63,256 +63,124 @@ HERO_MOTIF = """<svg class="hero-motif" viewBox="0 0 400 300" fill="none" aria-h
   </g>
 </svg>"""
 
-LIFECYCLE = """<svg class="lifecycle" viewBox="0 0 1000 200" role="img" aria-label="The venture lifecycle: an idea becomes a thesis, then an architecture, design, proof, validation and capital plan inside Bailiwick Venture Studio, then is hardened, productized and taken to market by BailiwickVibe, reaching growth. Validation iterates back to architecture.">
-  <g stroke="#C7D0D9" stroke-width="1" stroke-dasharray="4 5"><path d="M195 26 V186 M645 26 V186"/></g>
-  <g font-size="10" font-weight="700" letter-spacing=".18em" fill="#6B8AA6">
-    <text x="14" y="22">ORIGINATION</text>
-    <text x="211" y="22">BAILIWICK STUDIO</text>
-    <text x="661" y="22">BAILIWICKVIBE</text>
-  </g>
 
-  <defs><marker id="ah" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-    <path d="M0 0 L8 4 L0 8 Z" fill="#9BA9B6"/></marker></defs>
-  <path d="M510 128 C 468 74, 282 74, 240 128" fill="none" stroke="#9BA9B6" stroke-width="1.5"
-        stroke-dasharray="5 4" marker-end="url(#ah)"/>
-  <text x="375" y="80" font-size="10.5" font-style="italic" fill="#7A858F" text-anchor="middle">iterate</text>
 
-  <g stroke="#12304F" stroke-width="2.6" stroke-linecap="round" fill="none">
-    <path d="M60 138 H950"/>
-  </g>
-  <g fill="#12304F">
-    <circle cx="60" cy="138" r="7"/><circle cx="150" cy="138" r="7"/><circle cx="240" cy="138" r="7"/>
-    <circle cx="330" cy="138" r="7"/><circle cx="420" cy="138" r="7"/><circle cx="510" cy="138" r="7"/>
-    <circle cx="600" cy="138" r="7"/><circle cx="690" cy="138" r="7"/><circle cx="780" cy="138" r="7"/>
-    <circle cx="870" cy="138" r="7"/><circle cx="950" cy="138" r="11"/>
-  </g>
-  <g font-size="11" font-weight="600" fill="#14181D" text-anchor="middle">
-    <text x="60" y="172">Idea</text><text x="150" y="172">Thesis</text><text x="240" y="172">Architecture</text>
-    <text x="330" y="172">Design</text><text x="420" y="172">Proof</text><text x="510" y="172">Validation</text>
-    <text x="600" y="172">Capital plan</text><text x="690" y="172">Harden</text><text x="780" y="172">Productize</text>
-    <text x="870" y="172">Market entry</text><text x="950" y="172">Growth</text>
-  </g>
-</svg>"""
+
+STAGES = [
+    ("01", "BV pre-seed", "Bailiwick Ventures supplies the initial capital."),
+    ("02", "Studio", "Bailiwick Venture Studio architects and validates the venture."),
+    ("03", "Vibe builds", "BailiwickVibe engineers and develops the MVP."),
+    ("04", "MVP ready", "The product and its supporting evidence are ready to evaluate."),
+    ("05", "Seed round", "Project investing begins. Outside investors join the selected venture."),
+    ("06", "GTM", "Seed capital funds commercialization, market entry, and early scale."),
+]
+
+
+def _stages():
+    cells = "".join(
+        f'<div class="stg{" out" if n in ("05", "06") else ""}" style="--i:{i}">'
+        f'<span class="n">Stage {n}</span><h3>{h}</h3><p>{d}</p></div>'
+        for i, (n, h, d) in enumerate(STAGES, 1))
+    return f"""<div class="stages">
+      {cells}
+      <div class="band bv"><span>Funded by Bailiwick Ventures</span></div>
+      <div class="band inv"><span>Outside project investing</span></div>
+      <div class="band ceo"><span>CEO recruitment and transition &mdash; before or after Seed</span></div>
+    </div>"""
 
 
 def home(portrait):
-    _FLYWHEEL = _flywheel()
-    _FLYWHEEL_LG = _flywheel("fwx")
     return f"""
-<div class="hero">
+<section class="hero" aria-labelledby="h-top">
   {HERO_MOTIF}
   <div class="shell hero-in">
     <p class="eyebrow">Bailiwick Ventures, Inc.</p>
-    <h1>We build, own, and advise businesses at inflection points.</h1>
-    <p class="lede">A privately held investment and operating company led by Michael&nbsp;L.&nbsp;Atkinson. We invest in, develop, and advise companies where technology, operating complexity, capital, and market transformation intersect.</p>
+    <h1 id="h-top">We build, own, and advise businesses at inflection points.</h1>
+    <p class="lede">Bailiwick Ventures is a privately held investment and operating company led by Michael&nbsp;L.&nbsp;Atkinson. We commit capital and operating experience to developing ventures, building businesses, and working with aligned investors and strategic partners.</p>
     <div class="btns">
-      <a class="btn btn-p" href="about.html">Explore Bailiwick <span class="arrow">→</span></a>
-      <a class="btn btn-s" href="advisory.html">Strategic Advisory <span class="arrow">→</span></a>
-    </div>
-    <div class="tagline"><span>Capital</span><i></i><span>Architecture</span><i></i><span>Execution</span></div>
-  </div>
-</div>
-
-<section class="on-warm">
-  <div class="shell split">
-    <div>
-      <p class="eyebrow">The company</p>
-      <h2>An active owner, not a passive holding company.</h2>
-    </div>
-    <div>
-      <p class="lede" style="margin-bottom:26px">Bailiwick Ventures combines investment discipline with operating experience. Our work spans venture creation, strategic advisory, technology commercialization, enterprise architecture, and selective investment.</p>
-      <ul class="ticks">
-        <li><b>Invest</b> in businesses and intellectual property where active involvement can create disproportionate value.</li>
-        <li><b>Advise</b> executives, founders, and investors confronting consequential strategic or capital decisions.</li>
-        <li><b>Build</b> new ventures through Bailiwick Venture Studio, and take validated products to production through BailiwickVibe.</li>
-      </ul>
-      {_M1}
+      <a class="btn btn-p" href="contact.html">Start a Conversation <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-s" href="portfolio.html">Explore Our Ventures <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<section class="bord">
+<section class="bord" aria-labelledby="h-build">
   <div class="shell">
-    <p class="eyebrow">Our platform</p>
-    <h2 style="max-width:20ch;margin-bottom:clamp(30px,4vw,50px)">Four ways Bailiwick creates value.</h2>
-    <div class="grid g4">
-      <a class="card k-adv" href="advisory.html">
-        <div class="swatch"></div>
-        <div class="kicker">Counsel</div>
-        <h3>Strategic Advisory</h3>
-        <p>Michael L. Atkinson advises private equity firms, founders, ResTech companies, finance businesses, and CPG organizations on strategy, technology, commercialization, operations, and capital.</p>
-        <span class="tlink">Explore Advisory <span class="arrow">→</span></span>
-      </a>
-      <a class="card k-studio" href="studio.html">
-        <div class="swatch"></div>
-        <div class="kicker">Division</div>
-        <h3>Bailiwick Venture Studio</h3>
-        <p>Our AI-native venture architecture division transforms consequential ideas into validated, fundable ventures — from thesis through usable proof of concept.</p>
-        <span class="tlink">Visit the Studio <span class="arrow">→</span></span>
-      </a>
-      <a class="card k-vibe" href="vibe.html">
-        <div class="swatch"></div>
-        <div class="kicker">Division</div>
-        <h3>BailiwickVibe</h3>
-        <p>Venture-In-a-Box Engineering. Our production engineering and market-entry division takes validated prototypes to production, and from production to first customers and first capital.</p>
-        <span class="tlink">Visit BailiwickVibe <span class="arrow">→</span></span>
-      </a>
-      <a class="card" href="portfolio.html">
-        <div class="swatch"></div>
-        <div class="kicker">Holdings</div>
-        <h3>Portfolio</h3>
-        <p>Operating companies, studio-developed ventures, strategic investments, and intellectual property owned or supported through Bailiwick Ventures.</p>
-        <span class="tlink">View Portfolio <span class="arrow">→</span></span>
-      </a>
+    <p class="eyebrow">How we build</p>
+    <h2 id="h-build" style="max-width:24ch">We fund the early work. Investors join after the MVP.</h2>
+    <p class="lede" style="margin-top:20px;margin-bottom:clamp(30px,3.6vw,44px)">Bailiwick funds the early work, develops the venture through its Studio and engineering division, and invites outside investors to participate after the MVP is complete.</p>
+    {_stages()}
+    <div class="stage-notes">
+      <p><b>Outside investors participate in the selected venture</b>, under that venture&rsquo;s own structure and terms, beginning at Stage&nbsp;5.</p>
+      <p><b>That participation does not grant ownership</b> in Bailiwick Ventures or its operating divisions.</p>
     </div>
+    <a class="tlink" href="overview.html">The full venture model: Company &amp; Investor Overview <span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </section>
 
-<section class="on-warm bord">
+<section class="on-warm bord" aria-labelledby="h-ventures">
   <div class="shell">
-    <p class="eyebrow">The venture lifecycle</p>
-    <h2 style="max-width:24ch">One company, end to end.</h2>
-    <p class="body" style="margin-top:18px;margin-bottom:clamp(30px,4vw,46px)">An idea becomes a thesis, an architecture, and a proof inside Bailiwick Venture Studio. BailiwickVibe hardens it, productizes it, and takes it to market. Bailiwick Ventures owns, funds, and governs the whole path.</p>
-    <div style="border:1px solid var(--line);border-radius:3px;background:var(--warm);padding:clamp(18px,2.4vw,30px);overflow-x:auto">
-      {LIFECYCLE}
-    </div>
-  </div>
-</section>
-
-<section class="on-ink">
-  <div class="shell split">
-    <div>
-      <p class="eyebrow">The investment thesis</p>
-      <h2>We prefer complex problems.</h2>
-      <p class="body" style="margin-top:22px">Bailiwick is attracted to opportunities where domain expertise, technology, capital, and business architecture must work together.</p>
-      <a class="tlink" href="investing.html" style="margin-top:8px">How we invest <span class="arrow">→</span></a>
-    </div>
-    <div>
-      <ul class="ticks" style="margin-bottom:14px">
-        <li>Consequential problems with measurable economic value.</li>
-        <li>Structural inefficiency or market fragmentation.</li>
-        <li>Differentiated technology, operating models, or intellectual property.</li>
-      </ul>
-      {_M2}
-    </div>
-  </div>
-</section>
-
-<section class="on-warm">
-  <div class="shell">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,3.5vw,44px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,36px)">
       <div>
-        <p class="eyebrow">Portfolio &amp; holdings</p>
-        <h2 style="max-width:22ch">A portfolio of companies, ventures, and intellectual property.</h2>
+        <p class="eyebrow">Selected ventures</p>
+        <h2 id="h-ventures">FohBoh.ai</h2>
       </div>
-      <a class="tlink" href="portfolio.html">View the full portfolio <span class="arrow">→</span></a>
+      <a class="tlink" href="portfolio.html">The full portfolio <span class="arrow" aria-hidden="true">→</span></a>
     </div>
-    <div class="grid g3">
-      <a class="card" href="portfolio.html#fohboh" style="border-left:2px solid var(--bronze)">
-        <div class="kicker">Studio-born portfolio asset</div>
-        <h3>FohBoh.ai</h3>
-        <p>Certified intelligence infrastructure for enterprise operational data and AI, built for the restaurant industry. Sentry, Cortex and the Metrics Governance Engine.</p>
-        <dl class="meta">
-          <div><dt>Status</dt><dd>Operating</dd></div>
-          <div><dt>Sector</dt><dd>Enterprise AI / ResTech</dd></div>
-          <div><dt>Origin</dt><dd>Bailiwick Venture Studio</dd></div>
+    <div class="split">
+      <div>
+        <p class="lede" style="margin-bottom:24px">FohBoh.ai is developing certification infrastructure that checks business data against evidence and governing rules, with restaurant operations as its first configured sector.</p>
+        <p class="body">Its first modules address fees and costs restaurants pay every day:</p>
+        <dl class="mods">
+          <div><dt>M01 &middot; Merchant processing</dt><dd>Reconciles processing charges, settlements, and deposits against agreements and records.</dd></div>
+          <div><dt>M02 &middot; Delivery marketplace fees</dt><dd>Checks marketplace charges against the applicable agreements and transaction evidence.</dd></div>
+          <div><dt>M04 &middot; Supply chain and supplier invoices</dt><dd>Checks purchasing, invoice, receiving, payment, and credit evidence.</dd></div>
         </dl>
-      </a>
-      <a class="card" href="portfolio.html#ip">
-        <div class="kicker">Intellectual property</div>
-        <h3>Frameworks &amp; Methods</h3>
-        <p>Proprietary frameworks, methods, and systems developed and owned through Bailiwick Ventures, including Enterprise Venture Architecture.</p>
-        <dl class="meta">
-          <div><dt>Status</dt><dd>Held &amp; licensed</dd></div>
-          <div><dt>Origin</dt><dd>Bailiwick Ventures</dd></div>
+        <p class="body" style="margin-top:24px;margin-bottom:0">Each module runs on MGE, the Metrics Governance Engine. MGE is deterministic: the same records and rules always produce the same result, with no AI inference in the check. Countersign extends the same discipline to AI agents, approving or denying an agent&rsquo;s proposed action before it executes.</p>
+      </div>
+      <aside class="opp" aria-label="FohBoh.ai status and next steps">
+        <p class="eyebrow" style="margin-bottom:14px">Product status</p>
+        <dl class="status">
+          <div><dt>MGE Certified Intelligence</dt><dd>In staging; production release pending</dd></div>
+          <div><dt>Countersign</dt><dd>In development; not yet available</dd></div>
         </dl>
-      </a>
-      <a class="card" href="contact.html">
-        <div class="kicker">Open</div>
-        <h3>Next Venture</h3>
-        <p>We are actively evaluating new ventures, strategic investments, and partnerships where architecture can change value.</p>
-        <span class="tlink" style="margin-top:auto">Bring us an opportunity <span class="arrow">→</span></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="on-ink">
-  <div class="shell">
-    <p class="eyebrow">How it compounds</p>
-    <div class="split" style="margin-bottom:clamp(30px,3.6vw,44px)">
-      <div>
-        <h2 style="max-width:20ch">Bailiwick is a flywheel, not just a firm.</h2>
-      </div>
-      <div>
-        <p class="body" style="margin-bottom:14px">Each venture produces the thing the next one needs. The Studio architects, Vibe builds, the venture becomes an operating company &mdash; and the people who shipped it, along with the method that got them there, return to the top of the wheel.</p>
-        <p class="body" style="margin-bottom:0"><b>Every turn lowers the cost and raises the odds of the next one.</b> That is the asset. Not a headcount.</p>
-      </div>
-    </div>
-
-    <div class="fwbox">
-      <button class="fw-trigger" type="button" data-fw aria-label="Expand the flywheel diagram to full screen">
-        {_FLYWHEEL}
-        <span class="fw-hint">Expand <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M4 1H1v3M7 10h3V7" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round"/><path d="M1 10L10 1" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round" opacity=".55"/></svg></span>
-      </button>
-      <button class="fw-tap" type="button" data-fw>View the flywheel <span class="arrow">&rarr;</span></button>
-    </div>
-
-    <div class="fw-modal" id="fwm" hidden>
-      <button class="fw-close" type="button" aria-label="Close the flywheel">&times;</button>
-      <div class="fw-stage">{_FLYWHEEL_LG}</div>
-    </div>
-
-    <details class="reveal" style="margin-top:clamp(26px,3.2vw,40px)">
-      <summary>
-        <span class="rl">The four turns, in detail</span>
-        <span class="rn">What happens at each stage, and who does it</span>
-        <span class="chev"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="#AEBDCA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </summary>
-      <div class="rbody">
-        <div class="phases p4">
-          <div class="phase">
-            <div class="pn">01</div>
-            <h4>Architect</h4>
-            <p>Bailiwick Venture Studio designs the venture itself &mdash; thesis, operating model, governance, capital plan &mdash; before anything is built.</p>
-          </div>
-          <div class="phase">
-            <div class="pn">02</div>
-            <h4>Build</h4>
-            <p>BailiwickVibe carries the validated design into production: engineering, security, scale, productization, and market entry.</p>
-          </div>
-          <div class="phase">
-            <div class="pn">03</div>
-            <h4>Operate</h4>
-            <p>The venture becomes a company, held or co-founded through Bailiwick, staffed by the people who actually shipped it.</p>
-          </div>
-          <div class="phase">
-            <div class="pn">04</div>
-            <h4>Redeploy</h4>
-            <p>Those operators, engineers and hard-won methods return to the Studio &mdash; and the next venture starts further along than the last one did.</p>
-          </div>
+        <hr class="rule" style="margin:22px 0">
+        <p class="eyebrow" style="margin-bottom:12px">Seed round</p>
+        <p class="body" style="margin-bottom:22px">Bailiwick Ventures invites prospective investors to discuss participation in FohBoh.ai&rsquo;s Stage&nbsp;5 Seed round.</p>
+        <a class="btn btn-p" href="contact.html">Discuss the Seed Round <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="opp-links">
+          <a class="tlink" href="/downloads/bailiwick-investment-perspective-fohboh.pdf" target="_blank" rel="noopener">Download the investment perspective (PDF)</a>
+          <a class="tlink" href="https://fohboh.ai" target="_blank" rel="noopener">Learn about FohBoh.ai <span class="arrow" aria-hidden="true">&#8599;</span></a>
         </div>
-      </div>
-    </details>
-
-    <p class="fine" style="margin-top:clamp(24px,2.8vw,34px);color:#8195A6;max-width:70ch">Michael L. Atkinson is Chief Executive Officer of Bailiwick Ventures and the architect at the center of the wheel. The divisions hold the people; the parent holds the method, the intellectual property, and the ownership.</p>
+      </aside>
+    </div>
   </div>
 </section>
 
-{_FW_JS}
-
-<section class="bord">
+<section class="bord" aria-labelledby="h-michael">
   <div class="shell portrait-row">
     <div class="portrait"><img src="{portrait}" alt="Michael L. Atkinson" width="900" height="900" loading="lazy"></div>
     <div>
-      <p class="eyebrow">Michael L. Atkinson</p>
-      <h2>Enterprise Venture Architect. Investor. Strategic Advisor.</h2>
-      <p class="body" style="margin-top:22px">Michael is the Founder and Chief Executive Officer of Bailiwick Ventures. His career spans operations, CFO leadership, investment banking, investing, software and systems architecture, venture creation, and commercialization.</p>
-      <p class="body">That experience gives him an unusual ability to examine a business simultaneously through the lenses of enterprise architecture, capital and economics, and execution.</p>
-      <div class="btns" style="margin-top:26px">
-        <a class="btn btn-s" href="about.html">Meet Michael <span class="arrow">→</span></a>
+      <p class="eyebrow">Founder and Chief Executive Officer</p>
+      <h2 id="h-michael">Michael L. Atkinson</h2>
+      <p class="body" style="margin-top:22px">Michael brings experience across business operations, CFO leadership, investment banking, investing, software and systems architecture, and commercialization. He has owned and operated restaurants, served as CFO of restaurant companies, completed more than 200 transactions and assignments as an investment banker, and founded technology companies including FohBoh.ai.</p>
+      <p class="body">Through Bailiwick Ventures, he connects that experience to the work of designing, funding, and developing businesses. He is the author of <i>The Certified Enterprise</i>.</p>
+      <div class="btns" style="margin-top:22px">
+        <a class="btn btn-s" href="about.html">About Michael and Bailiwick <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="on-ink" aria-labelledby="h-talk">
+  <div class="shell talk">
+    <div>
+      <p class="eyebrow">Start a conversation</p>
+      <h2 id="h-talk">Let&rsquo;s explore where our interests align.</h2>
+      <p class="lede" style="margin-top:20px">Connect with Michael to discuss a venture, investment relationship, or strategic partnership.</p>
+      <p class="body" style="margin-bottom:0">Introductions from investors, fellow principals, wealth managers, and professional advisers are welcome.</p>
+    </div>
+    <div><a class="btn btn-light" href="contact.html">Start a Conversation <span class="arrow" aria-hidden="true">→</span></a></div>
   </div>
 </section>
 """
@@ -389,6 +257,8 @@ ORG_SVG = """
 
 
 def about(portrait):
+    _FLYWHEEL = _flywheel()
+    _FLYWHEEL_LG = _flywheel("fwx")
     return f"""
 <div class="hero">
   <div class="shell hero-in" style="padding-bottom:clamp(36px,4vw,60px)">
@@ -470,6 +340,81 @@ def about(portrait):
       </div>
     </div>
     <div class="portrait" style="border-color:#274259;margin-left:auto"><img src="{portrait}" alt="Michael L. Atkinson" width="900" height="900" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="on-ink">
+  <div class="shell">
+    <p class="eyebrow">How it compounds</p>
+    <div class="split" style="margin-bottom:clamp(30px,3.6vw,44px)">
+      <div>
+        <h2 style="max-width:20ch">Bailiwick is a flywheel, not just a firm.</h2>
+      </div>
+      <div>
+        <p class="body" style="margin-bottom:14px">Each venture produces the thing the next one needs. The Studio architects, Vibe builds, the venture becomes an operating company &mdash; and the people who shipped it, along with the method that got them there, return to the top of the wheel.</p>
+        <p class="body" style="margin-bottom:0"><b>Every turn lowers the cost and raises the odds of the next one.</b> That is the asset. Not a headcount.</p>
+      </div>
+    </div>
+
+    <div class="fwbox">
+      <button class="fw-trigger" type="button" data-fw aria-label="Expand the flywheel diagram to full screen">
+        {_FLYWHEEL}
+        <span class="fw-hint">Expand <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M4 1H1v3M7 10h3V7" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round"/><path d="M1 10L10 1" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round" opacity=".55"/></svg></span>
+      </button>
+      <button class="fw-tap" type="button" data-fw>View the flywheel <span class="arrow">&rarr;</span></button>
+    </div>
+
+    <div class="fw-modal" id="fwm" hidden>
+      <button class="fw-close" type="button" aria-label="Close the flywheel">&times;</button>
+      <div class="fw-stage">{_FLYWHEEL_LG}</div>
+    </div>
+
+    <details class="reveal" style="margin-top:clamp(26px,3.2vw,40px)">
+      <summary>
+        <span class="rl">The four turns, in detail</span>
+        <span class="rn">What happens at each stage, and who does it</span>
+        <span class="chev"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="#AEBDCA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </summary>
+      <div class="rbody">
+        <div class="phases p4">
+          <div class="phase">
+            <div class="pn">01</div>
+            <h4>Architect</h4>
+            <p>Bailiwick Venture Studio designs the venture itself &mdash; thesis, operating model, governance, capital plan &mdash; before anything is built.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">02</div>
+            <h4>Build</h4>
+            <p>BailiwickVibe carries the validated design into production: engineering, security, scale, productization, and market entry.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">03</div>
+            <h4>Operate</h4>
+            <p>The venture becomes a company, held or co-founded through Bailiwick, staffed by the people who actually shipped it.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">04</div>
+            <h4>Redeploy</h4>
+            <p>Those operators, engineers and hard-won methods return to the Studio &mdash; and the next venture starts further along than the last one did.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <p class="fine" style="margin-top:clamp(24px,2.8vw,34px);color:#8195A6;max-width:70ch">Michael L. Atkinson is Chief Executive Officer of Bailiwick Ventures and the architect at the center of the wheel. The divisions hold the people; the parent holds the method, the intellectual property, and the ownership.</p>
+  </div>
+</section>
+
+{_FW_JS}
+
+<section class="bord on-warm tight" id="bailiwick-overview">
+  <div class="shell" style="display:flex;justify-content:space-between;align-items:center;gap:20px 40px;flex-wrap:wrap">
+    <div>
+      <p class="eyebrow">Company &amp; Investor Overview</p>
+      <h2 style="max-width:30ch;font-size:clamp(22px,2.4vw,28px)">How the venture model works, from pre-seed to market.</h2>
+      <p class="body" style="margin:14px 0 0">Two public PDFs: the Bailiwick Ventures overview and the investment perspective on FohBoh.ai.</p>
+    </div>
+    <a class="btn btn-p" href="overview.html">View the overview <span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </section>
 

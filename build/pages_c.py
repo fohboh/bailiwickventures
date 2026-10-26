@@ -26,7 +26,7 @@ LEGACY_BOOK = """
     <details class="reveal">
       <summary>
         <span class="rl">The Certified Enterprise &mdash; the full book page</span>
-        <span class="rn">The universal problem, the author, and what publishes in November</span>
+        <span class="rn">The universal problem, the author, and where to get the book</span>
         <span class="chev"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="#12304F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </summary>
       <div class="rbody">
@@ -46,11 +46,12 @@ LEGACY_BOOK = """
 
         <hr class="rule" style="margin:clamp(26px,3vw,38px) 0">
 
-        <p class="eyebrow">Coming soon</p>
-        <p class="body" style="max-width:60ch">Expected November 2026, self-published on Amazon in hardcover and paperback. Pre-orders are open now.</p>
+        <p class="eyebrow">Available now</p>
+        <p class="body" style="max-width:60ch">Now available on Amazon, Apple Books and TheCertifiedEnterprise.com. Self-published, in hardcover and paperback.</p>
         <p class="pull" style="margin-top:20px;margin-bottom:24px">The future of AI in restaurants will not be defined by who builds the best model. It will be defined by who controls the integrity of the data those models rely on.</p>
         <div class="btns" style="margin-top:0">
-          <a class="btn btn-p" href="pre-order.html">Pre-Order <span class="arrow">&#8599;</span></a>
+          <a class="btn btn-p" href="https://a.co/d/0gAcJNJC" target="_blank" rel="noopener">Buy on Amazon <span class="arrow">&#8599;</span></a>
+          <a class="btn btn-s" href="https://books.apple.com/us/book/the-certified-enterprise/id6816266276" target="_blank" rel="noopener">Apple Books <span class="arrow">&#8599;</span></a>
           <a class="btn btn-s" href="contact.html">Bulk or speaking <span class="arrow">&rarr;</span></a>
         </div>
 
@@ -73,10 +74,11 @@ def book(cover):
         <p class="lede" style="margin-top:20px">A new competitive paradigm for organizations that have ended their internal data civil war and now compete on trusted intelligence. In an age of analytic abundance, the ultimate advantage is not more data, but certified truth.</p>
         <p class="pull">&ldquo;The next billion-dollar restaurant advantage won't be more AI — it will be knowing which numbers to believe.&rdquo;</p>
         <div class="btns">
-          <a class="btn btn-p" href="pre-order.html">Pre-Order <span class="arrow">↗</span></a>
-          <a class="btn btn-s" href="#fullpage">Read the full book page <span class="arrow">↓</span></a>
+          <a class="btn btn-p" href="https://a.co/d/0gAcJNJC" target="_blank" rel="noopener">Buy on Amazon <span class="arrow">&#8599;</span></a>
+          <a class="btn btn-s" href="https://books.apple.com/us/book/the-certified-enterprise/id6816266276" target="_blank" rel="noopener">Apple Books <span class="arrow">&#8599;</span></a>
+          <a class="btn btn-s" href="https://thecertifiedenterprise.com/" target="_blank" rel="noopener">TheCertifiedEnterprise.com <span class="arrow">&#8599;</span></a>
         </div>
-        <p class="fine" style="margin-top:20px">By Michael L. Atkinson · Self-published on Amazon · Expected November 2026 · Hardcover and paperback</p>
+        <p class="fine" style="margin-top:20px">By Michael L. Atkinson · Now available · <a class="tlink" href="#fullpage">Read the full book page <span class="arrow">↓</span></a></p>
       </div>
       <div>
         <img class="jacket" src="{cover}" alt="The Certified Enterprise, by Michael L. Atkinson — hardcover" width="760" height="897" loading="eager">
@@ -199,10 +201,12 @@ def book(cover):
     <p class="eyebrow">Publication</p>
     <div class="grid g4" style="margin-top:6px">
       <div><h4 style="margin-bottom:8px">Publisher</h4><p class="small">Self-published on Amazon.</p></div>
-      <div><h4 style="margin-bottom:8px">Expected</h4><p class="small">November 2026.</p></div>
+      <div><h4 style="margin-bottom:8px">Status</h4><p class="small">Available now.</p></div>
       <div><h4 style="margin-bottom:8px">Formats</h4><p class="small">Hardcover and paperback.</p></div>
-      <div><h4 style="margin-bottom:8px">Links</h4>
-        <p class="small" style="margin-bottom:8px"><a class="tlink" href="pre-order.html">Pre-order <span class="arrow">↗</span></a></p>
+      <div><h4 style="margin-bottom:8px">Get it</h4>
+        <p class="small" style="margin-bottom:8px"><a class="tlink" href="https://a.co/d/0gAcJNJC" target="_blank" rel="noopener">Amazon <span class="arrow">↗</span></a></p>
+        <p class="small" style="margin-bottom:8px"><a class="tlink" href="https://books.apple.com/us/book/the-certified-enterprise/id6816266276" target="_blank" rel="noopener">Apple Books <span class="arrow">↗</span></a></p>
+        <p class="small" style="margin-bottom:8px"><a class="tlink" href="https://thecertifiedenterprise.com/" target="_blank" rel="noopener">TheCertifiedEnterprise.com <span class="arrow">↗</span></a></p>
         <p class="small" style="margin-bottom:0"><a class="tlink" href="#fullpage">Full book page <span class="arrow">↓</span></a></p>
       </div>
     </div>
@@ -211,10 +215,11 @@ def book(cover):
 
 <section class="on-ink tight" id="notify">
   <div class="shell" style="text-align:center">
-    <h2 style="max-width:22ch;margin:0 auto">Be told when it publishes.</h2>
-    <p class="body" style="margin:18px auto 0;max-width:54ch">Pre-order now, or subscribe on Substack for the announcement and for the essays the book grew out of.</p>
+    <h2 style="max-width:22ch;margin:0 auto">Get the book.</h2>
+    <p class="body" style="margin:18px auto 0;max-width:54ch">Available now on Amazon, Apple Books and TheCertifiedEnterprise.com. Subscribe on Substack for the essays the book grew out of.</p>
     <div class="btns" style="justify-content:center">
-      <a class="btn btn-g" href="pre-order.html">Pre-Order <span class="arrow">↗</span></a>
+      <a class="btn btn-g" href="https://a.co/d/0gAcJNJC" target="_blank" rel="noopener">Buy on Amazon <span class="arrow">&#8599;</span></a>
+      <a class="btn btn-g" href="https://books.apple.com/us/book/the-certified-enterprise/id6816266276" target="_blank" rel="noopener">Apple Books <span class="arrow">&#8599;</span></a>
       <a class="btn btn-g" href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener">Subscribe on Substack <span class="arrow">↗</span></a>
       <a class="btn btn-g" href="contact.html">Bulk or Speaking <span class="arrow">→</span></a>
     </div>

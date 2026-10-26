@@ -88,7 +88,7 @@ p{margin:0 0 18px}
 .lede{font-size:clamp(17px,1.55vw,19.5px);line-height:1.62;color:var(--body);max-width:60ch}
 .body{color:var(--body);max-width:66ch}
 .small{font-size:14px;line-height:1.65;color:var(--body)}
-.fine{font-size:12.5px;line-height:1.6;color:#7A858F}
+.fine{font-size:12.5px;line-height:1.6;color:#5F6A74}
 .rule{height:1px;background:var(--line);border:0;margin:0}
 .accent{color:var(--bronze)}
 
@@ -133,11 +133,14 @@ p{margin:0 0 18px}
 .burger span{display:block;width:17px;height:1.5px;background:var(--navy);position:relative}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:17px;height:1.5px;background:var(--navy)}
 .burger span::before{top:-5.5px}.burger span::after{top:5.5px}
-@media (max-width:1080px){
+@media (max-width:760px){
   .menu,.nav-cta{display:none}
   .burger{display:flex}
   .nav-in{height:66px}
 }
+.menu .nav-cta{margin-left:10px;padding:9px 16px}
+.menu .nav-cta.on{background:var(--navy);color:var(--warm)}
+.burger:focus-visible,.menu a:focus-visible,.nav-cta:focus-visible,.btn:focus-visible,.tlink:focus-visible,footer.site a:focus-visible,.mobile a:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
 .mobile{display:none;border-top:1px solid var(--line);background:var(--warm)}
 .mobile.open{display:block}
 .mobile a{display:block;padding:15px var(--pad);text-decoration:none;font-size:15px;
@@ -332,7 +335,7 @@ footer.site a:hover{color:var(--warm)}
   border:1px solid #274259;border-radius:2px;color:#8FA1B1;transition:color .18s,border-color .18s,background .18s}
 .social a:hover{color:var(--warm);border-color:#3E5C77;background:rgba(255,255,255,.05)}
 .social svg{width:16px;height:16px}
-footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
+footer.site .ext{font-size:10px;opacity:.7;margin-left:2px}
 .f-brand .bn{font-family:var(--serif);font-size:20px;color:var(--warm)}
 .f-brand p{font-size:14px;line-height:1.65;color:#8FA1B1;margin-top:14px;max-width:34ch}
 .f-bot{margin-top:clamp(30px,4vw,44px);padding-top:24px;
@@ -538,36 +541,78 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
 /* org chart */
 .org{width:100%;height:auto}
 .org text{font-family:var(--sans)}
+/* ---------------- home (Oct 2026) ---------------- */
+section.hero{padding:0}
+.stages{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-bottom:clamp(26px,3vw,36px)}
+.stg{grid-row:1;grid-column:var(--i);background:var(--warm);border:1px solid var(--line);border-top:2px solid var(--navy);
+  border-radius:2px;padding:16px 15px 18px}
+.stg.out{border-top-color:var(--bronze)}
+.stg .n{display:block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A6232}
+.stg h3{font-size:18px;line-height:1.25;margin:8px 0 8px}
+.stg p{font-size:13.2px;line-height:1.5;color:var(--body);margin:0}
+.band{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:2px;
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 12px}
+.band.bv{grid-row:2;grid-column:1/5;background:var(--navy);color:var(--warm)}
+.band.inv{grid-row:2;grid-column:5/7;background:var(--sand);color:#5E4220;border:1px solid #DCCFBB}
+.band.ceo{grid-row:3;grid-column:4/7;color:#5E4220;text-transform:none;letter-spacing:0;font-size:13px;font-weight:600;
+  background:linear-gradient(90deg,rgba(168,118,62,0),rgba(168,118,62,.16) 22%,rgba(168,118,62,.16) 78%,rgba(168,118,62,0));
+  border-top:1px dashed var(--bronze);border-bottom:1px dashed var(--bronze);border-radius:0}
+.stage-notes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,40px);margin-bottom:22px;max-width:960px}
+.stage-notes p{margin:0;color:var(--body);font-size:15px;line-height:1.6;border-left:2px solid var(--line);padding-left:16px}
+.stage-notes b{color:var(--ink);font-weight:600}
+@media (max-width:860px){
+  .stages{grid-template-columns:minmax(0,1fr) 30px 30px;gap:8px}
+  .stg{grid-column:1;grid-row:var(--i)}
+  .band{writing-mode:vertical-rl;transform:rotate(180deg);padding:12px 6px;font-size:10px;letter-spacing:.12em}
+  .band.bv{grid-column:2;grid-row:1/5}
+  .band.inv{grid-column:2;grid-row:5/7}
+  .band.ceo{grid-column:3;grid-row:4/7;font-size:11.5px;
+    background:linear-gradient(0deg,rgba(168,118,62,0),rgba(168,118,62,.16) 18%,rgba(168,118,62,.16) 82%,rgba(168,118,62,0));
+    border:0;border-left:1px dashed var(--bronze);border-right:1px dashed var(--bronze)}
+  .stage-notes{grid-template-columns:1fr}
+}
+.mods{margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.mods>div{padding:15px 0;border-bottom:1px solid var(--line)}
+.mods dt{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:4px}
+.mods dd{margin:0;color:var(--body);font-size:15px;line-height:1.55}
+.opp{background:var(--ivory);border:1px solid var(--line);border-left:2px solid var(--bronze);border-radius:2px;
+  padding:clamp(22px,2.6vw,32px)}
+.status{margin:0;display:grid;gap:12px}
+.status dt{font-size:14px;font-weight:600;color:var(--ink)}
+.status dd{margin:2px 0 0;font-size:14px;color:var(--body)}
+.opp-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:22px}
+.talk{display:grid;grid-template-columns:minmax(0,1.5fr) auto;gap:clamp(24px,4vw,60px);align-items:end}
+@media (max-width:760px){.talk{grid-template-columns:1fr}}
+.btn-light{background:var(--warm);color:var(--navy);border-color:var(--warm)}
+.btn-light:hover{background:#fff}
+.dl-card{display:flex;flex-direction:column;align-items:flex-start}
+.dl-card .kicker{margin-top:18px}
+.dl-h{font-size:clamp(22px,2.4vw,28px);margin:2px 0 14px}
+.dl-card p{margin-bottom:26px}
+.on-ink .btn:focus-visible{outline-color:var(--bronze-lt)}
+
 """
 
 JS = """
-document.querySelectorAll('.drop').forEach(function(d){
-  var t;
-  d.addEventListener('mouseenter',function(){clearTimeout(t);d.open=true});
-  d.addEventListener('mouseleave',function(){t=setTimeout(function(){d.open=false},140)});
-});
-document.addEventListener('click',function(e){
-  document.querySelectorAll('.drop[open]').forEach(function(d){ if(!d.contains(e.target)) d.open=false; });
-});
 var bg=document.querySelector('.burger'), mo=document.querySelector('.mobile');
 if(bg){bg.addEventListener('click',function(){
   var o=mo.classList.toggle('open'); bg.setAttribute('aria-expanded',o?'true':'false');
 });}
 """
 
-# Investing moved out of the primary nav in Aug 2026: a top-level link on every
-# page read as solicitation and drew inbound from people wanting Bailiwick to
-# fund them. It now sits inside Company — present for anyone looking, not
-# advertised to everyone who is not.
-COMPANY = [
-    ("about.html", "About", "The firm, its structure, and Michael"),
-    ("investing.html", "Investing", "Thesis, conditions, and co-investment"),
-    ("portfolio.html", "Portfolio &amp; Holdings", "Operating companies and studio ventures"),
+# Oct 2026: the primary nav is four direct links — About, Portfolio, Investing,
+# Contact. The site now supports introductions with investors, fellow
+# principals, wealth managers and partners, so Investing returns to the top
+# level. Advisory, Plans & Pricing, the divisions and the writing keep their
+# pages and URLs and are reached from the footer and from interior pages.
+NAV = [
+    ("about.html", "About"),
+    ("portfolio.html", "Portfolio"),
+    ("investing.html", "Investing"),
 ]
-NAV_ITEMS = [
-    ("advisory.html", "Advisory"),
-    ("plans.html", "Plans &amp; Pricing"),
-]
+CONTACT = ("contact.html", "Contact")
+
+# Retained for interior pages that list the divisions.
 DIVISIONS = [
     ("studio.html", "Bailiwick Venture Studio", "Venture architecture &amp; POC / MVP development"),
     ("https://bailiwickventurestudio.com", "bailiwickventurestudio.com",
@@ -577,16 +622,6 @@ DIVISIONS = [
     ("https://bailiwickvibe.com", "bailiwickvibe.com",
      "BailiwickVibe&rsquo;s own site &mdash; method, plans, the Triage"),
 ]
-IDEAS = [
-    ("insights.html", "Insights", "Essays, themes, and speaking"),
-    ("blog.html", "Blog", "Shorter, more frequent working notes"),
-    ("book.html", "The Book", "<i>The Certified Enterprise</i>"),
-]
-NAV_TAIL = []
-
-
-CHEV = ('<svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">'
-        '<path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>')
 
 
 def _ext(h):
@@ -594,38 +629,15 @@ def _ext(h):
     return h.startswith("http")
 
 
-def _drop(label, entries, align_right=False):
-    sub = "".join(
-        f'<li><a href="{h}"'
-        + (' target="_blank" rel="noopener"' if _ext(h) else '')
-        + f'><span class="dt">{t}'
-        + (' <span class="ext">&#8599;</span>' if _ext(h) else '')
-        + f'</span><span class="dd">{d}</span></a></li>'
-        for h, t, d in entries)
-    side = ";left:auto;right:0" if align_right else ""
-    return ('<li><details class="drop">'
-            f'<summary><span>{label}</span>{CHEV}</summary>'
-            f'<ul class="drop-panel" style="list-style:none;margin:0;padding:8px{side}">{sub}</ul>'
-            '</details></li>')
-
-
 def nav(active):
-    items = _drop("Company", COMPANY)
-    for href, label in NAV_ITEMS:
-        on = ' class="on"' if href == active else ""
-        items += f'<li><a href="{href}"{on}>{label}</a></li>'
-    items += _drop("Divisions", DIVISIONS)
-    items += _drop("Ideas", IDEAS, align_right=True)
-
-    mob = "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in COMPANY)
-    mob += "".join(f'<a href="{h}">{l}</a>' for h, l in NAV_ITEMS)
-    mob += "".join(
-        f'<a href="{h}"' + (' target="_blank" rel="noopener"' if _ext(h) else '')
-        + f'>{t}' + (' <span class="ext">&#8599;</span>' if _ext(h) else '')
-        + f'<span class="md">{d}</span></a>'
-        for h, t, d in DIVISIONS)
-    mob += "".join(f'<a href="{h}">{t}<span class="md">{d}</span></a>' for h, t, d in IDEAS)
-    mob += '<a href="contact.html">Start a Conversation</a>'
+    def cur(h):
+        return ' aria-current="page"' if h == active else ""
+    items = "".join(
+        f'<li><a href="{h}"' + (' class="on"' if h == active else "") + f'{cur(h)}>{l}</a></li>'
+        for h, l in NAV)
+    ch, cl = CONTACT
+    items += (f'<li><a class="nav-cta' + (' on' if ch == active else '') + f'" href="{ch}"{cur(ch)}>{cl}</a></li>')
+    mob = "".join(f'<a href="{h}"{cur(h)}>{l}</a>' for h, l in NAV + [CONTACT])
 
     return f"""<header class="nav">
   <div class="nav-in">
@@ -634,24 +646,15 @@ def nav(active):
       <span><span class="bn">Bailiwick&nbsp;Ventures</span><span class="bs">Architecture · Execution · Capital</span></span>
     </a>
     <nav aria-label="Primary"><ul class="menu">{items}</ul></nav>
-    <a class="nav-cta" href="contact.html">Start a Conversation</a>
-    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
   </div>
-  <div class="mobile">{mob}</div>
+  <nav class="mobile" id="mnav" aria-label="Mobile">{mob}</nav>
 </header>"""
 
 
 FOOTER = """<footer class="site">
   <div class="shell">
-    <div class="eyebrow" style="color:#7F93A6">Where to go next</div>
-    <div class="handoff">
-      <div><div class="hw">Engage Michael</div><p>You need judgment, executive counsel, or an experienced perspective on a consequential decision.</p></div>
-      <div><div class="hw">Engage the Studio</div><p>You have an idea or an underdeveloped venture that must be architected, validated, and proven.</p></div>
-      <div><div class="hw">Engage BailiwickVibe</div><p>You have a proof of concept or MVP that must become secure, scalable, and commercially deployable.</p></div>
-      <div><div class="hw">Engage Bailiwick Ventures</div><p>You are seeking an investment, ownership, operating, or portfolio-level relationship.</p></div>
-    </div>
-
-    <div class="f-grid" style="margin-top:clamp(44px,5vw,66px)">
+    <div class="f-grid">
       <div class="f-brand">
         <div style="display:flex;align-items:center;gap:12px">
           MARK_REV
@@ -668,40 +671,42 @@ FOOTER = """<footer class="site">
       <div>
         <h4>Company</h4>
         <a href="about.html">About</a>
-        <a href="advisory.html">Advisory</a>
-        <a href="plans.html">Plans &amp; Pricing</a>
-        <a href="applied-ai.html">Applied AI</a>
+        <a href="portfolio.html">Portfolio &amp; Holdings</a>
         <a href="investing.html">Investing</a>
         <a href="investing.html#investors">For Investors</a>
-        <a href="portfolio.html">Portfolio &amp; Holdings</a>
-        <a href="contact.html">Start a Conversation</a>
-      </div>
-      <div>
-        <h4>Divisions</h4>
-        <a href="studio.html">Bailiwick Venture Studio</a>
-        <a href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">bailiwickventurestudio.com <span class="ext">&#8599;</span></a>
-        <a href="vibe.html">BailiwickVibe</a>
-        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">bailiwickvibe.com <span class="ext">&#8599;</span></a>
+        <a href="overview.html">Company &amp; Investor Overview</a>
+        <a href="contact.html">Contact</a>
         <h4 style="margin-top:22px">Portfolio</h4>
         <a href="portfolio.html#fohboh">FohBoh.ai</a>
         <a href="portfolio.html#kokomo">Club Kokomo Spirits</a>
       </div>
       <div>
-        <h4>Ideas</h4>
+        <h4>Divisions &amp; services</h4>
+        <a href="studio.html">Bailiwick Venture Studio</a>
+        <a href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">bailiwickventurestudio.com&nbsp;<span class="ext">&#8599;</span></a>
+        <a href="vibe.html">BailiwickVibe</a>
+        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">bailiwickvibe.com&nbsp;<span class="ext">&#8599;</span></a>
+        <a href="production-gate.html">The Production Gate</a>
+        <a href="advisory.html">Strategic Advisory</a>
+        <a href="applied-ai.html">Applied AI</a>
+        <a href="plans.html">Plans &amp; Pricing</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="book.html">The Book</a>
         <a href="insights.html">Insights</a>
         <a href="blog.html">Blog</a>
-        <a href="book.html">The Book</a>
         <a href="contact.html#media">Speaking &amp; Media</a>
       </div>
       <div>
         <h4>Elsewhere</h4>
-        <a href="https://www.linkedin.com/in/mlatkinson1/" target="_blank" rel="noopener">LinkedIn &nbsp;Michael L. Atkinson <span class="ext">↗</span></a>
-        <a href="https://x.com/Michaelatkinson" target="_blank" rel="noopener">X &nbsp;@Michaelatkinson <span class="ext">↗</span></a>
-        <a href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener">Substack <span class="ext">↗</span></a>
-        <a href="https://www.linkedin.com/groups/152325/" target="_blank" rel="noopener">FohBoh Restaurant Network <span class="ext">↗</span></a>
-        <a href="https://fohboh.ai" target="_blank" rel="noopener">FohBoh.ai <span class="ext">↗</span></a>
-        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">BailiwickVibe.com <span class="ext">↗</span></a>
-        <a href="https://michaelatkinson.me" target="_blank" rel="noopener">MichaelAtkinson.me <span class="ext">↗</span></a>
+        <a href="https://www.linkedin.com/in/mlatkinson1/" target="_blank" rel="noopener">LinkedIn &nbsp;Michael L. Atkinson&nbsp;<span class="ext">↗</span></a>
+        <a href="https://x.com/Michaelatkinson" target="_blank" rel="noopener">X &nbsp;@Michaelatkinson&nbsp;<span class="ext">↗</span></a>
+        <a href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener">Substack&nbsp;<span class="ext">↗</span></a>
+        <a href="https://www.linkedin.com/groups/152325/" target="_blank" rel="noopener">FohBoh Restaurant Network&nbsp;<span class="ext">↗</span></a>
+        <a href="https://fohboh.ai" target="_blank" rel="noopener">FohBoh.ai&nbsp;<span class="ext">↗</span></a>
+        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">BailiwickVibe.com&nbsp;<span class="ext">↗</span></a>
+        <a href="https://michaelatkinson.me" target="_blank" rel="noopener">MichaelAtkinson.me&nbsp;<span class="ext">↗</span></a>
         <a href="mailto:info@bailiwickventures.com">info@bailiwickventures.com</a>
       </div>
     </div>

@@ -7,6 +7,7 @@ import pages_c as C
 import pages_d as D
 import pages_f as F
 import pages_g as G
+import pages_h as H
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "site"
@@ -27,7 +28,7 @@ S = "Bailiwick Ventures, Inc."
 
 PAGES = [
  ("index.html", f"{S} — Architecture. Execution. Capital.",
-  "A privately held investment and operating company led by Enterprise Venture Architect Michael L. Atkinson. We build, own, and advise businesses at inflection points.",
+  "A privately held investment and operating company led by Michael L. Atkinson. We commit capital and operating experience to developing ventures, building businesses, and working with aligned investors and strategic partners.",
   "index.html", A.home(PORTRAIT_LG)),
 
  ("about.html", f"About — {S}",
@@ -62,6 +63,10 @@ PAGES = [
   "Three pre-priced engagements — Blueprint, Buildout and Venture — and the paid Triage that begins all of them. Published scope, published price, published exclusions.",
   "plans.html", F.plans()),
 
+ ("overview.html", f"Company &amp; Investor Overview — {S}",
+  "The Bailiwick Ventures venture model and the investment perspective on FohBoh.ai, as public PDFs — with an invitation to discuss FohBoh.ai's Stage 5 Seed round.",
+  "overview.html", H.overview()),
+
  ("insights.html", f"Insights — {S}",
   "Writing on enterprise venture architecture, AI governance, operational intelligence, and the systems that decide whether a company can be trusted with its own data.",
   "insights.html", B.insights()),
@@ -75,7 +80,7 @@ PAGES = [
   "blog.html", C.blog()),
 
  ("book.html", "The Certified Enterprise — Michael L. Atkinson",
-  "The Certified Enterprise: Taming Data Anarchy in the AI Era. Artificial intelligence is only as reliable as the evidence it consumes.",
+  "The Certified Enterprise: Taming Data Anarchy in the AI Era. Artificial intelligence is only as reliable as the evidence it consumes. Now available on Amazon, Apple Books and TheCertifiedEnterprise.com.",
   "book.html", C.book(BOOK_3D)),
 
  ("privacy.html", f"Privacy Policy — {S}",

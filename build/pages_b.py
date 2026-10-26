@@ -172,23 +172,27 @@ def investing():
     <h2 style="max-width:22ch">Invest alongside us, one company at a time.</h2>
     <p class="lede" style="margin-top:20px;margin-bottom:clamp(30px,3.6vw,44px)">Investors can participate directly in individual Bailiwick Venture Studio portfolio companies rather than committing to a blind pool. You see the venture, the architecture behind it, and the evidence it has produced before you decide.</p>
 
-    <div class="grid g2">
-      <div class="card">
-        <div class="kicker">The default</div>
-        <span class="fig">SPV<small>Special purpose vehicle</small></span>
-        <p style="margin-bottom:0">Every investment is made through a special purpose vehicle formed for that company. One vehicle, one venture, one decision — and the portfolio company's capitalization table stays clean, which protects its ability to raise the next round.</p>
+    <div class="split" style="margin-bottom:clamp(36px,4.4vw,56px)">
+      <div>
+        <h3 style="margin-bottom:14px">When outside investors join</h3>
+        <p class="body">Bailiwick Ventures funds a venture&rsquo;s early work: architecture and validation in Bailiwick Venture Studio, then MVP development in BailiwickVibe. Project investing begins at Stage&nbsp;5, the Seed round, after the MVP is complete at Stage&nbsp;4.</p>
+        <p class="body" style="margin-bottom:0">Investors participate in the selected venture under its project-specific structure and terms. That participation does not grant ownership in Bailiwick Ventures or its operating divisions.</p>
       </div>
-      <div class="card">
-        <div class="kicker">The threshold</div>
-        <span class="fig">$500,000<small>Minimum for a direct position</small></span>
-        <p style="margin-bottom:0">A direct position on the company's cap table is available at $500,000 and above. Below that, participation is through the SPV. There are no exceptions to the threshold — it exists to keep the cap table from becoming the venture's first structural problem.</p>
+      <div class="opp" id="investment-perspective">
+        <p class="eyebrow" style="margin-bottom:12px">Open now &middot; FohBoh.ai</p>
+        <p class="body">Bailiwick Ventures invites prospective investors to discuss participation in FohBoh.ai&rsquo;s Stage&nbsp;5 Seed round, supporting commercialization and go-to-market execution following MVP completion.</p>
+        <a class="btn btn-p" href="contact.html" style="margin-top:4px">Discuss FohBoh.ai&rsquo;s Seed Round <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="opp-links">
+          <a class="tlink" href="/downloads/bailiwick-investment-perspective-fohboh.pdf" target="_blank" rel="noopener">Investment Perspective &mdash; FohBoh.ai (PDF)</a>
+          <a class="tlink" href="overview.html">Company &amp; Investor Overview <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
       </div>
     </div>
 
-    <div style="margin-top:clamp(34px,4vw,52px)">
+    <div>
       <p class="eyebrow">How it works</p>
-      <h3 style="max-width:30ch;margin-bottom:18px">We do not send materials on request. We have a conversation first.</h3>
-      <p class="body" style="margin-bottom:clamp(24px,3vw,34px)">A short call is the only way either side can judge fit — and it means we know who we are dealing with before anything is shared. You learn how the Studio works and what is open; we learn what you invest in and what you are looking for.</p>
+      <h3 style="max-width:30ch;margin-bottom:18px">Start with a conversation.</h3>
+      <p class="body" style="margin-bottom:clamp(24px,3vw,34px)">We welcome introductory conversations with investors and potential partners. Explore our public overviews, then connect with Michael to discuss interests, fit, and relevant opportunities. Company-specific diligence and offering materials are shared at the appropriate next step.</p>
 
       <div class="phases p3">
         <div class="phase">
@@ -212,6 +216,24 @@ def investing():
         <p class="body" style="margin:0;max-width:46ch">Start with the call. There is no charge and no obligation on either side.</p>
         <a class="btn btn-p" href="https://calendly.com/michael-atkinson" target="_blank" rel="noopener">Contact Us for More Information <span class="arrow">↗</span></a>
       </div>
+    </div>
+
+    <div style="margin-top:clamp(40px,4.6vw,60px)">
+      <p class="eyebrow">The terms</p>
+      <h3 style="max-width:30ch;margin-bottom:clamp(20px,2.4vw,28px)">How participation is structured.</h3>
+    <div class="grid g2">
+      <div class="card">
+        <div class="kicker">The default</div>
+        <span class="fig">SPV<small>Special purpose vehicle</small></span>
+        <p style="margin-bottom:0">Every investment is made through a special purpose vehicle formed for that company. One vehicle, one venture, one decision — and the portfolio company's capitalization table stays clean, which protects its ability to raise the next round.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">The threshold</div>
+        <span class="fig">$500,000<small>Minimum for a direct position</small></span>
+        <p style="margin-bottom:0">A direct position on the company's cap table is available at $500,000 and above. Below that, participation is through the SPV. There are no exceptions to the threshold — it exists to keep the cap table from becoming the venture's first structural problem.</p>
+      </div>
+    </div>
+
     </div>
 
     <div class="legal">
@@ -265,6 +287,7 @@ def portfolio():
           <div><dt>Origin</dt><dd>Bailiwick Venture Studio</dd></div>
           <div><dt>Relationship</dt><dd>Operating company / strategic holding</dd></div>
         </dl>
+        <p class="fine" style="margin:14px 0 0">Product status: MGE Certified Intelligence is in staging, with production release pending. Countersign is in development. Investors can review the <a class="tlink" href="overview.html" style="font-size:12.5px">Company &amp; Investor Overview</a>.</p>
       </div>
       <div class="card" id="kokomo" style="border-left:2px solid var(--bronze)">
         <div class="kicker">Operating company</div>
