@@ -84,7 +84,7 @@ p{margin:0 0 18px}
 .lede{font-size:clamp(17px,1.55vw,19.5px);line-height:1.62;color:var(--body);max-width:60ch}
 .body{color:var(--body);max-width:66ch}
 .small{font-size:14px;line-height:1.65;color:var(--body)}
-.fine{font-size:12.5px;line-height:1.6;color:#7A858F}
+.fine{font-size:12.5px;line-height:1.6;color:#5F6A74}
 .rule{height:1px;background:var(--line);border:0;margin:0}
 .accent{color:var(--bronze)}
 
@@ -129,11 +129,14 @@ p{margin:0 0 18px}
 .burger span{display:block;width:17px;height:1.5px;background:var(--navy);position:relative}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:17px;height:1.5px;background:var(--navy)}
 .burger span::before{top:-5.5px}.burger span::after{top:5.5px}
-@media (max-width:1080px){
+@media (max-width:760px){
   .menu,.nav-cta{display:none}
   .burger{display:flex}
   .nav-in{height:66px}
 }
+.menu .nav-cta{margin-left:10px;padding:9px 16px}
+.menu .nav-cta.on{background:var(--navy);color:var(--warm)}
+.burger:focus-visible,.menu a:focus-visible,.nav-cta:focus-visible,.btn:focus-visible,.tlink:focus-visible,footer.site a:focus-visible,.mobile a:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
 .mobile{display:none;border-top:1px solid var(--line);background:var(--warm)}
 .mobile.open{display:block}
 .mobile a{display:block;padding:15px var(--pad);text-decoration:none;font-size:15px;
@@ -328,7 +331,7 @@ footer.site a:hover{color:var(--warm)}
   border:1px solid #274259;border-radius:2px;color:#8FA1B1;transition:color .18s,border-color .18s,background .18s}
 .social a:hover{color:var(--warm);border-color:#3E5C77;background:rgba(255,255,255,.05)}
 .social svg{width:16px;height:16px}
-footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
+footer.site .ext{font-size:10px;opacity:.7;margin-left:2px}
 .f-brand .bn{font-family:var(--serif);font-size:20px;color:var(--warm)}
 .f-brand p{font-size:14px;line-height:1.65;color:#8FA1B1;margin-top:14px;max-width:34ch}
 .f-bot{margin-top:clamp(30px,4vw,44px);padding-top:24px;
@@ -534,6 +537,56 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
 /* org chart */
 .org{width:100%;height:auto}
 .org text{font-family:var(--sans)}
+/* ---------------- home (Oct 2026) ---------------- */
+section.hero{padding:0}
+.stages{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-bottom:clamp(26px,3vw,36px)}
+.stg{grid-row:1;grid-column:var(--i);background:var(--warm);border:1px solid var(--line);border-top:2px solid var(--navy);
+  border-radius:2px;padding:16px 15px 18px}
+.stg.out{border-top-color:var(--bronze)}
+.stg .n{display:block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A6232}
+.stg h3{font-size:18px;line-height:1.25;margin:8px 0 8px}
+.stg p{font-size:13.2px;line-height:1.5;color:var(--body);margin:0}
+.band{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:2px;
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 12px}
+.band.bv{grid-row:2;grid-column:1/5;background:var(--navy);color:var(--warm)}
+.band.inv{grid-row:2;grid-column:5/7;background:var(--sand);color:#5E4220;border:1px solid #DCCFBB}
+.band.ceo{grid-row:3;grid-column:4/7;color:#5E4220;text-transform:none;letter-spacing:0;font-size:13px;font-weight:600;
+  background:linear-gradient(90deg,rgba(168,118,62,0),rgba(168,118,62,.16) 22%,rgba(168,118,62,.16) 78%,rgba(168,118,62,0));
+  border-top:1px dashed var(--bronze);border-bottom:1px dashed var(--bronze);border-radius:0}
+.stage-notes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,40px);margin-bottom:22px;max-width:960px}
+.stage-notes p{margin:0;color:var(--body);font-size:15px;line-height:1.6;border-left:2px solid var(--line);padding-left:16px}
+.stage-notes b{color:var(--ink);font-weight:600}
+@media (max-width:860px){
+  .stages{grid-template-columns:minmax(0,1fr) 30px 30px;gap:8px}
+  .stg{grid-column:1;grid-row:var(--i)}
+  .band{writing-mode:vertical-rl;transform:rotate(180deg);padding:12px 6px;font-size:10px;letter-spacing:.12em}
+  .band.bv{grid-column:2;grid-row:1/5}
+  .band.inv{grid-column:2;grid-row:5/7}
+  .band.ceo{grid-column:3;grid-row:4/7;font-size:11.5px;
+    background:linear-gradient(0deg,rgba(168,118,62,0),rgba(168,118,62,.16) 18%,rgba(168,118,62,.16) 82%,rgba(168,118,62,0));
+    border:0;border-left:1px dashed var(--bronze);border-right:1px dashed var(--bronze)}
+  .stage-notes{grid-template-columns:1fr}
+}
+.mods{margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.mods>div{padding:15px 0;border-bottom:1px solid var(--line)}
+.mods dt{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:4px}
+.mods dd{margin:0;color:var(--body);font-size:15px;line-height:1.55}
+.opp{background:var(--ivory);border:1px solid var(--line);border-left:2px solid var(--bronze);border-radius:2px;
+  padding:clamp(22px,2.6vw,32px)}
+.status{margin:0;display:grid;gap:12px}
+.status dt{font-size:14px;font-weight:600;color:var(--ink)}
+.status dd{margin:2px 0 0;font-size:14px;color:var(--body)}
+.opp-links{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:22px}
+.talk{display:grid;grid-template-columns:minmax(0,1.5fr) auto;gap:clamp(24px,4vw,60px);align-items:end}
+@media (max-width:760px){.talk{grid-template-columns:1fr}}
+.btn-light{background:var(--warm);color:var(--navy);border-color:var(--warm)}
+.btn-light:hover{background:#fff}
+.dl-card{display:flex;flex-direction:column;align-items:flex-start}
+.dl-card .kicker{margin-top:18px}
+.dl-h{font-size:clamp(22px,2.4vw,28px);margin:2px 0 14px}
+.dl-card p{margin-bottom:26px}
+.on-ink .btn:focus-visible{outline-color:var(--bronze-lt)}
+
 </style>
 </head>
 <body>
@@ -544,11 +597,10 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
       <svg class="mark" width="32" height="32" viewBox="0 0 64 64" role="img" aria-label="Bailiwick Ventures"><g stroke="#12304F" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M10 52 L30 38 M30 38 L52 14 M30 38 L50 50"/></g><circle cx="10" cy="52" r="7.0" fill="#12304F"/><circle cx="30" cy="38" r="7.0" fill="#12304F"/><circle cx="52" cy="14" r="9.0" fill="#E2551F"/><circle cx="50" cy="50" r="5.5" fill="#12304F"/></svg>
       <span><span class="bn">Bailiwick&nbsp;Ventures</span><span class="bs">Architecture · Execution · Capital</span></span>
     </a>
-    <nav aria-label="Primary"><ul class="menu"><li><details class="drop"><summary><span>Company</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px"><li><a href="about.html"><span class="dt">About</span><span class="dd">The firm, its structure, and Michael</span></a></li><li><a href="investing.html"><span class="dt">Investing</span><span class="dd">Thesis, conditions, and co-investment</span></a></li><li><a href="portfolio.html"><span class="dt">Portfolio &amp; Holdings</span><span class="dd">Operating companies and studio ventures</span></a></li></ul></details></li><li><a href="advisory.html">Advisory</a></li><li><a href="plans.html">Plans &amp; Pricing</a></li><li><details class="drop"><summary><span>Divisions</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px"><li><a href="studio.html"><span class="dt">Bailiwick Venture Studio</span><span class="dd">Venture architecture &amp; POC / MVP development</span></a></li><li><a href="https://bailiwickventurestudio.com" target="_blank" rel="noopener"><span class="dt">bailiwickventurestudio.com <span class="ext">&#8599;</span></span><span class="dd">The Studio&rsquo;s own site &mdash; model, six phases, ventures, engagement</span></a></li><li><a href="vibe.html"><span class="dt">BailiwickVibe</span><span class="dd">Production engineering, productization &amp; GTM</span></a></li><li><a href="production-gate.html"><span class="dt">The Production Gate</span><span class="dd">Where the Vibe method becomes evidence &mdash; two certification gates</span></a></li><li><a href="https://bailiwickvibe.com" target="_blank" rel="noopener"><span class="dt">bailiwickvibe.com <span class="ext">&#8599;</span></span><span class="dd">BailiwickVibe&rsquo;s own site &mdash; method, plans, the Triage</span></a></li></ul></details></li><li><details class="drop"><summary><span>Ideas</span><svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></summary><ul class="drop-panel" style="list-style:none;margin:0;padding:8px;left:auto;right:0"><li><a href="insights.html"><span class="dt">Insights</span><span class="dd">Essays, themes, and speaking</span></a></li><li><a href="blog.html"><span class="dt">Blog</span><span class="dd">Shorter, more frequent working notes</span></a></li><li><a href="book.html"><span class="dt">The Book</span><span class="dd"><i>The Certified Enterprise</i></span></a></li></ul></details></li></ul></nav>
-    <a class="nav-cta" href="contact.html">Start a Conversation</a>
-    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <nav aria-label="Primary"><ul class="menu"><li><a href="about.html" class="on" aria-current="page">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="investing.html">Investing</a></li><li><a class="nav-cta" href="contact.html">Contact</a></li></ul></nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
   </div>
-  <div class="mobile"><a href="about.html">About<span class="md">The firm, its structure, and Michael</span></a><a href="investing.html">Investing<span class="md">Thesis, conditions, and co-investment</span></a><a href="portfolio.html">Portfolio &amp; Holdings<span class="md">Operating companies and studio ventures</span></a><a href="advisory.html">Advisory</a><a href="plans.html">Plans &amp; Pricing</a><a href="studio.html">Bailiwick Venture Studio<span class="md">Venture architecture &amp; POC / MVP development</span></a><a href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">bailiwickventurestudio.com <span class="ext">&#8599;</span><span class="md">The Studio&rsquo;s own site &mdash; model, six phases, ventures, engagement</span></a><a href="vibe.html">BailiwickVibe<span class="md">Production engineering, productization &amp; GTM</span></a><a href="production-gate.html">The Production Gate<span class="md">Where the Vibe method becomes evidence &mdash; two certification gates</span></a><a href="https://bailiwickvibe.com" target="_blank" rel="noopener">bailiwickvibe.com <span class="ext">&#8599;</span><span class="md">BailiwickVibe&rsquo;s own site &mdash; method, plans, the Triage</span></a><a href="insights.html">Insights<span class="md">Essays, themes, and speaking</span></a><a href="blog.html">Blog<span class="md">Shorter, more frequent working notes</span></a><a href="book.html">The Book<span class="md"><i>The Certified Enterprise</i></span></a><a href="contact.html">Start a Conversation</a></div>
+  <nav class="mobile" id="mnav" aria-label="Mobile"><a href="about.html" aria-current="page">About</a><a href="portfolio.html">Portfolio</a><a href="investing.html">Investing</a><a href="contact.html">Contact</a></nav>
 </header>
 <main id="main">
 
@@ -705,6 +757,92 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
   </div>
 </section>
 
+<section class="on-ink">
+  <div class="shell">
+    <p class="eyebrow">How it compounds</p>
+    <div class="split" style="margin-bottom:clamp(30px,3.6vw,44px)">
+      <div>
+        <h2 style="max-width:20ch">Bailiwick is a flywheel, not just a firm.</h2>
+      </div>
+      <div>
+        <p class="body" style="margin-bottom:14px">Each venture produces the thing the next one needs. The Studio architects, Vibe builds, the venture becomes an operating company &mdash; and the people who shipped it, along with the method that got them there, return to the top of the wheel.</p>
+        <p class="body" style="margin-bottom:0"><b>Every turn lowers the cost and raises the odds of the next one.</b> That is the asset. Not a headcount.</p>
+      </div>
+    </div>
+
+    <div class="fwbox">
+      <button class="fw-trigger" type="button" data-fw aria-label="Expand the flywheel diagram to full screen">
+        <svg class="flywheel" viewBox="0 0 1000 672" role="img" aria-label="The Bailiwick flywheel: Bailiwick Venture Studio architects a venture, BailiwickVibe builds it, it becomes an operating company, and its people and methods return to the Studio — each turn starting further out than the last."><defs><marker id="fw-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#C08A4A"/></marker></defs><path d="M500.00 186.00 L503.93 186.05 L507.85 186.21 L511.77 186.46 L515.68 186.82 L519.58 187.28 L523.47 187.85 L527.34 188.51 L531.19 189.28 L535.02 190.14 L538.82 191.11 L542.60 192.18 L546.35 193.34 L550.07 194.60 L553.76 195.96 L557.40 197.42 L561.01 198.97 L564.58 200.61 L568.10 202.35 L571.57 204.18 L575.00 206.10 L578.37 208.10 L581.70 210.20 L584.96 212.38 L588.17 214.65 L591.31 217.00 L594.40 219.43 L597.42 221.94 L600.37 224.53 L603.25 227.19 L606.07 229.93 L608.81 232.75 L611.47 235.63 L614.06 238.58 L616.57 241.60 L619.00 244.69 L621.35 247.83 L623.62 251.04 L625.80 254.30 L627.90 257.63 L629.90 261.00 L631.82 264.43 L633.65 267.90 L635.39 271.42 L637.03 274.99 L638.58 278.60 L640.04 282.24 L641.40 285.93 L642.66 289.65 L643.82 293.40 L644.89 297.18 L645.86 300.98 L646.72 304.81 L647.49 308.66 L648.15 312.53 L648.72 316.42 L649.18 320.32 L649.54 324.23 L649.79 328.15 L649.95 332.07 L650.00 336.00 L649.95 339.93 L649.79 343.85 L649.54 347.77 L649.18 351.68 L648.72 355.58 L648.15 359.47 L647.49 363.34 L646.72 367.19 L645.86 371.02 L644.89 374.82 L643.82 378.60 L642.66 382.35 L641.40 386.07 L640.04 389.76 L638.58 393.40 L637.03 397.01 L635.39 400.58 L633.65 404.10 L631.82 407.57 L629.90 411.00 L627.90 414.37 L625.80 417.70 L623.62 420.96 L621.35 424.17 L619.00 427.31 L616.57 430.40 L614.06 433.42 L611.47 436.37 L608.81 439.25 L606.07 442.07 L603.25 444.81 L600.37 447.47 L597.42 450.06 L594.40 452.57 L591.31 455.00 L588.17 457.35 L584.96 459.62 L581.70 461.80 L578.37 463.90 L575.00 465.90 L571.57 467.82 L568.10 469.65 L564.58 471.39 L561.01 473.03 L557.40 474.58 L553.76 476.04 L550.07 477.40 L546.35 478.66 L542.60 479.82 L538.82 480.89 L535.02 481.86 L531.19 482.72 L527.34 483.49 L523.47 484.15 L519.58 484.72 L515.68 485.18 L511.77 485.54 L507.85 485.79 L503.93 485.95 L500.00 486.00 L496.07 485.95 L492.15 485.79 L488.23 485.54 L484.32 485.18 L480.42 484.72 L476.53 484.15 L472.66 483.49 L468.81 482.72 L464.98 481.86 L461.18 480.89 L457.40 479.82 L453.65 478.66 L449.93 477.40 L446.24 476.04 L442.60 474.58 L438.99 473.03 L435.42 471.39 L431.90 469.65 L428.43 467.82 L425.00 465.90 L421.63 463.90 L418.30 461.80 L415.04 459.62 L411.83 457.35 L408.69 455.00 L405.60 452.57 L402.58 450.06 L399.63 447.47 L396.75 444.81 L393.93 442.07 L391.19 439.25 L388.53 436.37 L385.94 433.42 L383.43 430.40 L381.00 427.31 L378.65 424.17 L376.38 420.96 L374.20 417.70 L372.10 414.37 L370.10 411.00 L368.18 407.57 L366.35 404.10 L364.61 400.58 L362.97 397.01 L361.42 393.40 L359.96 389.76 L358.60 386.07 L357.34 382.35 L356.18 378.60 L355.11 374.82 L354.14 371.02 L353.28 367.19 L352.51 363.34 L351.85 359.47 L351.28 355.58 L350.82 351.68 L350.46 347.77 L350.21 343.85 L350.05 339.93 L350.00 336.00" fill="none" stroke="#AEBDCA" stroke-width="1.7" stroke-linecap="round"/><path d="M350.00 336.00 L350.01 332.07 L350.04 328.14 L350.09 324.20 L350.17 320.25 L350.29 316.29 L350.43 312.31 L350.61 308.31 L350.84 304.30 L351.11 300.26 L351.44 296.19 L351.81 292.11 L352.25 287.99 L352.75 283.86 L353.32 279.70 L353.97 275.51 L354.69 271.30 L355.49 267.07 L356.38 262.82 L357.37 258.56 L358.45 254.27 L359.62 249.98 L360.91 245.67 L362.30 241.36 L363.80 237.05 L365.42 232.73 L367.16 228.42 L369.01 224.13 L371.00 219.85 L373.11 215.58 L375.35 211.35 L377.72 207.14 L380.23 202.98 L382.87 198.85 L385.64 194.78 L388.56 190.76 L391.61 186.81 L394.79 182.93 L398.12 179.12 L401.58 175.39 L405.18 171.76 L408.90 168.22 L412.77 164.79 L416.75 161.47 L420.87 158.27 L425.11 155.20 L429.47 152.26 L433.94 149.45 L438.52 146.80 L443.22 144.30 L448.01 141.96 L452.89 139.78 L457.87 137.78 L462.92 135.96 L468.06 134.32 L473.26 132.87 L478.52 131.62 L483.83 130.57 L489.19 129.72 L494.58 129.08 L500.00 128.65 L505.44 128.44 L510.88 128.45 L516.32 128.68 L521.74 129.14" fill="none" stroke="#C08A4A" stroke-width="3.2" stroke-linecap="round" marker-end="url(#fw-a)"/><g transform="translate(480.2 316.2) scale(0.62)" opacity="0.5"><g stroke="#8195A6" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M10 52 L30 38 M30 38 L52 14 M30 38 L50 50"/></g><g fill="#8195A6"><circle cx="10" cy="52" r="6.0"/><circle cx="30" cy="38" r="6.0"/><circle cx="52" cy="14" r="8.0"/><circle cx="50" cy="50" r="5.0"/></g></g><circle cx="500.00" cy="186.00" r="10.5" fill="#F6F1E8"/><text x="500.0" y="34.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">01</text><text x="500.0" y="63.0" text-anchor="middle" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Architect</text><text x="500.0" y="85.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">The venture is designed</text><circle cx="650.00" cy="336.00" r="8" fill="#F6F1E8"/><text x="716.0" y="310.0" text-anchor="start" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">02</text><text x="716.0" y="339.0" text-anchor="start" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Build</text><text x="716.0" y="361.0" text-anchor="start" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">The design is made real</text><circle cx="500.00" cy="486.00" r="8" fill="#F6F1E8"/><text x="500.0" y="574.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">03</text><text x="500.0" y="603.0" text-anchor="middle" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Operate</text><text x="500.0" y="625.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">It becomes a company</text><circle cx="350.00" cy="336.00" r="8" fill="#F6F1E8"/><text x="284.0" y="310.0" text-anchor="end" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">04</text><text x="284.0" y="339.0" text-anchor="end" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Redeploy</text><text x="284.0" y="361.0" text-anchor="end" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">People and method return</text></svg>
+        <span class="fw-hint">Expand <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M4 1H1v3M7 10h3V7" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round"/><path d="M1 10L10 1" stroke="#8195A6" stroke-width="1.4" stroke-linecap="round" opacity=".55"/></svg></span>
+      </button>
+      <button class="fw-tap" type="button" data-fw>View the flywheel <span class="arrow">&rarr;</span></button>
+    </div>
+
+    <div class="fw-modal" id="fwm" hidden>
+      <button class="fw-close" type="button" aria-label="Close the flywheel">&times;</button>
+      <div class="fw-stage"><svg class="flywheel" viewBox="0 0 1000 672" role="img" aria-label="The Bailiwick flywheel: Bailiwick Venture Studio architects a venture, BailiwickVibe builds it, it becomes an operating company, and its people and methods return to the Studio — each turn starting further out than the last."><defs><marker id="fwx-a" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#C08A4A"/></marker></defs><path d="M500.00 186.00 L503.93 186.05 L507.85 186.21 L511.77 186.46 L515.68 186.82 L519.58 187.28 L523.47 187.85 L527.34 188.51 L531.19 189.28 L535.02 190.14 L538.82 191.11 L542.60 192.18 L546.35 193.34 L550.07 194.60 L553.76 195.96 L557.40 197.42 L561.01 198.97 L564.58 200.61 L568.10 202.35 L571.57 204.18 L575.00 206.10 L578.37 208.10 L581.70 210.20 L584.96 212.38 L588.17 214.65 L591.31 217.00 L594.40 219.43 L597.42 221.94 L600.37 224.53 L603.25 227.19 L606.07 229.93 L608.81 232.75 L611.47 235.63 L614.06 238.58 L616.57 241.60 L619.00 244.69 L621.35 247.83 L623.62 251.04 L625.80 254.30 L627.90 257.63 L629.90 261.00 L631.82 264.43 L633.65 267.90 L635.39 271.42 L637.03 274.99 L638.58 278.60 L640.04 282.24 L641.40 285.93 L642.66 289.65 L643.82 293.40 L644.89 297.18 L645.86 300.98 L646.72 304.81 L647.49 308.66 L648.15 312.53 L648.72 316.42 L649.18 320.32 L649.54 324.23 L649.79 328.15 L649.95 332.07 L650.00 336.00 L649.95 339.93 L649.79 343.85 L649.54 347.77 L649.18 351.68 L648.72 355.58 L648.15 359.47 L647.49 363.34 L646.72 367.19 L645.86 371.02 L644.89 374.82 L643.82 378.60 L642.66 382.35 L641.40 386.07 L640.04 389.76 L638.58 393.40 L637.03 397.01 L635.39 400.58 L633.65 404.10 L631.82 407.57 L629.90 411.00 L627.90 414.37 L625.80 417.70 L623.62 420.96 L621.35 424.17 L619.00 427.31 L616.57 430.40 L614.06 433.42 L611.47 436.37 L608.81 439.25 L606.07 442.07 L603.25 444.81 L600.37 447.47 L597.42 450.06 L594.40 452.57 L591.31 455.00 L588.17 457.35 L584.96 459.62 L581.70 461.80 L578.37 463.90 L575.00 465.90 L571.57 467.82 L568.10 469.65 L564.58 471.39 L561.01 473.03 L557.40 474.58 L553.76 476.04 L550.07 477.40 L546.35 478.66 L542.60 479.82 L538.82 480.89 L535.02 481.86 L531.19 482.72 L527.34 483.49 L523.47 484.15 L519.58 484.72 L515.68 485.18 L511.77 485.54 L507.85 485.79 L503.93 485.95 L500.00 486.00 L496.07 485.95 L492.15 485.79 L488.23 485.54 L484.32 485.18 L480.42 484.72 L476.53 484.15 L472.66 483.49 L468.81 482.72 L464.98 481.86 L461.18 480.89 L457.40 479.82 L453.65 478.66 L449.93 477.40 L446.24 476.04 L442.60 474.58 L438.99 473.03 L435.42 471.39 L431.90 469.65 L428.43 467.82 L425.00 465.90 L421.63 463.90 L418.30 461.80 L415.04 459.62 L411.83 457.35 L408.69 455.00 L405.60 452.57 L402.58 450.06 L399.63 447.47 L396.75 444.81 L393.93 442.07 L391.19 439.25 L388.53 436.37 L385.94 433.42 L383.43 430.40 L381.00 427.31 L378.65 424.17 L376.38 420.96 L374.20 417.70 L372.10 414.37 L370.10 411.00 L368.18 407.57 L366.35 404.10 L364.61 400.58 L362.97 397.01 L361.42 393.40 L359.96 389.76 L358.60 386.07 L357.34 382.35 L356.18 378.60 L355.11 374.82 L354.14 371.02 L353.28 367.19 L352.51 363.34 L351.85 359.47 L351.28 355.58 L350.82 351.68 L350.46 347.77 L350.21 343.85 L350.05 339.93 L350.00 336.00" fill="none" stroke="#AEBDCA" stroke-width="1.7" stroke-linecap="round"/><path d="M350.00 336.00 L350.01 332.07 L350.04 328.14 L350.09 324.20 L350.17 320.25 L350.29 316.29 L350.43 312.31 L350.61 308.31 L350.84 304.30 L351.11 300.26 L351.44 296.19 L351.81 292.11 L352.25 287.99 L352.75 283.86 L353.32 279.70 L353.97 275.51 L354.69 271.30 L355.49 267.07 L356.38 262.82 L357.37 258.56 L358.45 254.27 L359.62 249.98 L360.91 245.67 L362.30 241.36 L363.80 237.05 L365.42 232.73 L367.16 228.42 L369.01 224.13 L371.00 219.85 L373.11 215.58 L375.35 211.35 L377.72 207.14 L380.23 202.98 L382.87 198.85 L385.64 194.78 L388.56 190.76 L391.61 186.81 L394.79 182.93 L398.12 179.12 L401.58 175.39 L405.18 171.76 L408.90 168.22 L412.77 164.79 L416.75 161.47 L420.87 158.27 L425.11 155.20 L429.47 152.26 L433.94 149.45 L438.52 146.80 L443.22 144.30 L448.01 141.96 L452.89 139.78 L457.87 137.78 L462.92 135.96 L468.06 134.32 L473.26 132.87 L478.52 131.62 L483.83 130.57 L489.19 129.72 L494.58 129.08 L500.00 128.65 L505.44 128.44 L510.88 128.45 L516.32 128.68 L521.74 129.14" fill="none" stroke="#C08A4A" stroke-width="3.2" stroke-linecap="round" marker-end="url(#fwx-a)"/><g transform="translate(480.2 316.2) scale(0.62)" opacity="0.5"><g stroke="#8195A6" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M10 52 L30 38 M30 38 L52 14 M30 38 L50 50"/></g><g fill="#8195A6"><circle cx="10" cy="52" r="6.0"/><circle cx="30" cy="38" r="6.0"/><circle cx="52" cy="14" r="8.0"/><circle cx="50" cy="50" r="5.0"/></g></g><circle cx="500.00" cy="186.00" r="10.5" fill="#F6F1E8"/><text x="500.0" y="34.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">01</text><text x="500.0" y="63.0" text-anchor="middle" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Architect</text><text x="500.0" y="85.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">The venture is designed</text><circle cx="650.00" cy="336.00" r="8" fill="#F6F1E8"/><text x="716.0" y="310.0" text-anchor="start" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">02</text><text x="716.0" y="339.0" text-anchor="start" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Build</text><text x="716.0" y="361.0" text-anchor="start" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">The design is made real</text><circle cx="500.00" cy="486.00" r="8" fill="#F6F1E8"/><text x="500.0" y="574.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">03</text><text x="500.0" y="603.0" text-anchor="middle" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Operate</text><text x="500.0" y="625.0" text-anchor="middle" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">It becomes a company</text><circle cx="350.00" cy="336.00" r="8" fill="#F6F1E8"/><text x="284.0" y="310.0" text-anchor="end" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.2em" fill="#C08A4A">04</text><text x="284.0" y="339.0" text-anchor="end" font-family="Source Serif 4,Palatino,Georgia,serif" font-size="26" fill="#F6F1E8">Redeploy</text><text x="284.0" y="361.0" text-anchor="end" font-family="Inter,ui-sans-serif,system-ui,sans-serif" font-size="13.5" fill="#8195A6">People and method return</text></svg></div>
+    </div>
+
+    <details class="reveal" style="margin-top:clamp(26px,3.2vw,40px)">
+      <summary>
+        <span class="rl">The four turns, in detail</span>
+        <span class="rn">What happens at each stage, and who does it</span>
+        <span class="chev"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" stroke="#AEBDCA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </summary>
+      <div class="rbody">
+        <div class="phases p4">
+          <div class="phase">
+            <div class="pn">01</div>
+            <h4>Architect</h4>
+            <p>Bailiwick Venture Studio designs the venture itself &mdash; thesis, operating model, governance, capital plan &mdash; before anything is built.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">02</div>
+            <h4>Build</h4>
+            <p>BailiwickVibe carries the validated design into production: engineering, security, scale, productization, and market entry.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">03</div>
+            <h4>Operate</h4>
+            <p>The venture becomes a company, held or co-founded through Bailiwick, staffed by the people who actually shipped it.</p>
+          </div>
+          <div class="phase">
+            <div class="pn">04</div>
+            <h4>Redeploy</h4>
+            <p>Those operators, engineers and hard-won methods return to the Studio &mdash; and the next venture starts further along than the last one did.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <p class="fine" style="margin-top:clamp(24px,2.8vw,34px);color:#8195A6;max-width:70ch">Michael L. Atkinson is Chief Executive Officer of Bailiwick Ventures and the architect at the center of the wheel. The divisions hold the people; the parent holds the method, the intellectual property, and the ownership.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  var m=document.getElementById('fwm'); if(!m) return;
+  var c=m.querySelector('.fw-close');
+  function open(){ m.hidden=false; document.body.style.overflow='hidden'; c.focus(); }
+  function shut(){ m.hidden=true; document.body.style.overflow=''; }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-fw]'),function(b){b.addEventListener('click',open);});
+  c.addEventListener('click',shut);
+  m.addEventListener('click',function(e){ if(e.target===m) shut(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!m.hidden) shut(); });
+})();
+</script>
+
+<section class="bord on-warm tight" id="bailiwick-overview">
+  <div class="shell" style="display:flex;justify-content:space-between;align-items:center;gap:20px 40px;flex-wrap:wrap">
+    <div>
+      <p class="eyebrow">Company &amp; Investor Overview</p>
+      <h2 style="max-width:30ch;font-size:clamp(22px,2.4vw,28px)">How the venture model works, from pre-seed to market.</h2>
+      <p class="body" style="margin:14px 0 0">Two public PDFs: the Bailiwick Ventures overview and the investment perspective on FohBoh.ai.</p>
+    </div>
+    <a class="btn btn-p" href="overview.html">View the overview <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
 <section class="bord">
   <div class="shell">
     <p class="eyebrow">The team</p>
@@ -747,15 +885,7 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
 </main>
 <footer class="site">
   <div class="shell">
-    <div class="eyebrow" style="color:#7F93A6">Where to go next</div>
-    <div class="handoff">
-      <div><div class="hw">Engage Michael</div><p>You need judgment, executive counsel, or an experienced perspective on a consequential decision.</p></div>
-      <div><div class="hw">Engage the Studio</div><p>You have an idea or an underdeveloped venture that must be architected, validated, and proven.</p></div>
-      <div><div class="hw">Engage BailiwickVibe</div><p>You have a proof of concept or MVP that must become secure, scalable, and commercially deployable.</p></div>
-      <div><div class="hw">Engage Bailiwick Ventures</div><p>You are seeking an investment, ownership, operating, or portfolio-level relationship.</p></div>
-    </div>
-
-    <div class="f-grid" style="margin-top:clamp(44px,5vw,66px)">
+    <div class="f-grid">
       <div class="f-brand">
         <div style="display:flex;align-items:center;gap:12px">
           <svg class="mark" width="28" height="28" viewBox="0 0 64 64" role="img" aria-label="Bailiwick Ventures"><g stroke="#FFFDF9" stroke-width="4.5" stroke-linecap="round" fill="none"><path d="M10 52 L30 38 M30 38 L52 14 M30 38 L50 50"/></g><circle cx="10" cy="52" r="7.5" fill="#FFFDF9"/><circle cx="30" cy="38" r="7.5" fill="#FFFDF9"/><circle cx="52" cy="14" r="9.5" fill="#E2551F"/><circle cx="50" cy="50" r="6.0" fill="#FFFDF9"/></svg>
@@ -772,40 +902,42 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
       <div>
         <h4>Company</h4>
         <a href="about.html">About</a>
-        <a href="advisory.html">Advisory</a>
-        <a href="plans.html">Plans &amp; Pricing</a>
-        <a href="applied-ai.html">Applied AI</a>
+        <a href="portfolio.html">Portfolio &amp; Holdings</a>
         <a href="investing.html">Investing</a>
         <a href="investing.html#investors">For Investors</a>
-        <a href="portfolio.html">Portfolio &amp; Holdings</a>
-        <a href="contact.html">Start a Conversation</a>
-      </div>
-      <div>
-        <h4>Divisions</h4>
-        <a href="studio.html">Bailiwick Venture Studio</a>
-        <a href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">bailiwickventurestudio.com <span class="ext">&#8599;</span></a>
-        <a href="vibe.html">BailiwickVibe</a>
-        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">bailiwickvibe.com <span class="ext">&#8599;</span></a>
+        <a href="overview.html">Company &amp; Investor Overview</a>
+        <a href="contact.html">Contact</a>
         <h4 style="margin-top:22px">Portfolio</h4>
         <a href="portfolio.html#fohboh">FohBoh.ai</a>
         <a href="portfolio.html#kokomo">Club Kokomo Spirits</a>
       </div>
       <div>
-        <h4>Ideas</h4>
+        <h4>Divisions &amp; services</h4>
+        <a href="studio.html">Bailiwick Venture Studio</a>
+        <a href="https://bailiwickventurestudio.com" target="_blank" rel="noopener">bailiwickventurestudio.com&nbsp;<span class="ext">&#8599;</span></a>
+        <a href="vibe.html">BailiwickVibe</a>
+        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">bailiwickvibe.com&nbsp;<span class="ext">&#8599;</span></a>
+        <a href="production-gate.html">The Production Gate</a>
+        <a href="advisory.html">Strategic Advisory</a>
+        <a href="applied-ai.html">Applied AI</a>
+        <a href="plans.html">Plans &amp; Pricing</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="book.html">The Book</a>
         <a href="insights.html">Insights</a>
         <a href="blog.html">Blog</a>
-        <a href="book.html">The Book</a>
         <a href="contact.html#media">Speaking &amp; Media</a>
       </div>
       <div>
         <h4>Elsewhere</h4>
-        <a href="https://www.linkedin.com/in/mlatkinson1/" target="_blank" rel="noopener">LinkedIn &nbsp;Michael L. Atkinson <span class="ext">↗</span></a>
-        <a href="https://x.com/Michaelatkinson" target="_blank" rel="noopener">X &nbsp;@Michaelatkinson <span class="ext">↗</span></a>
-        <a href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener">Substack <span class="ext">↗</span></a>
-        <a href="https://www.linkedin.com/groups/152325/" target="_blank" rel="noopener">FohBoh Restaurant Network <span class="ext">↗</span></a>
-        <a href="https://fohboh.ai" target="_blank" rel="noopener">FohBoh.ai <span class="ext">↗</span></a>
-        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">BailiwickVibe.com <span class="ext">↗</span></a>
-        <a href="https://michaelatkinson.me" target="_blank" rel="noopener">MichaelAtkinson.me <span class="ext">↗</span></a>
+        <a href="https://www.linkedin.com/in/mlatkinson1/" target="_blank" rel="noopener">LinkedIn &nbsp;Michael L. Atkinson&nbsp;<span class="ext">↗</span></a>
+        <a href="https://x.com/Michaelatkinson" target="_blank" rel="noopener">X &nbsp;@Michaelatkinson&nbsp;<span class="ext">↗</span></a>
+        <a href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener">Substack&nbsp;<span class="ext">↗</span></a>
+        <a href="https://www.linkedin.com/groups/152325/" target="_blank" rel="noopener">FohBoh Restaurant Network&nbsp;<span class="ext">↗</span></a>
+        <a href="https://fohboh.ai" target="_blank" rel="noopener">FohBoh.ai&nbsp;<span class="ext">↗</span></a>
+        <a href="https://bailiwickvibe.com" target="_blank" rel="noopener">BailiwickVibe.com&nbsp;<span class="ext">↗</span></a>
+        <a href="https://michaelatkinson.me" target="_blank" rel="noopener">MichaelAtkinson.me&nbsp;<span class="ext">↗</span></a>
         <a href="mailto:info@bailiwickventures.com">info@bailiwickventures.com</a>
       </div>
     </div>
@@ -822,14 +954,6 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
   </div>
 </footer>
 <script>
-document.querySelectorAll('.drop').forEach(function(d){
-  var t;
-  d.addEventListener('mouseenter',function(){clearTimeout(t);d.open=true});
-  d.addEventListener('mouseleave',function(){t=setTimeout(function(){d.open=false},140)});
-});
-document.addEventListener('click',function(e){
-  document.querySelectorAll('.drop[open]').forEach(function(d){ if(!d.contains(e.target)) d.open=false; });
-});
 var bg=document.querySelector('.burger'), mo=document.querySelector('.mobile');
 if(bg){bg.addEventListener('click',function(){
   var o=mo.classList.toggle('open'); bg.setAttribute('aria-expanded',o?'true':'false');
