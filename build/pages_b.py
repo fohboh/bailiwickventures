@@ -10,20 +10,21 @@ CASES = """
 
     <div class="grid g3">
 
-      <article class="card" style="border-left:2px solid var(--bronze)">
-        <div class="kicker">Case study 01 &middot; Operating company</div>
-        <h3>StarBar &middot; SnapCount</h3>
-        <p><b>The problem.</b> Periodic inventory is still done on a clipboard and typed in afterward. It is slow, it is error-prone, and because it is unpleasant it gets done late or approximated &mdash; which corrupts every cost metric downstream of it. Beverage shrinkage runs 15&ndash;25% at industry average, and one ounce in five from a keg never generates revenue.</p>
-        <p><b>What was architected.</b> SnapCount&trade;: per-shift, voice-driven counting against a locked watchlist. One item at a time, spoken, with tenthing for partial bottles. Mid-shift breakage and transfers are captured with a photo, so the variance math stays clean and custody is never inferred.</p>
-        <p><b>What changed.</b> The count stops being a chore performed against the operator and becomes two minutes of talking &mdash; and stops being an estimate. Certification is deterministic: named opening count, named closing count, both inside the shift window, variance within threshold, trust score at or above 85, and no open exception. All six or it is not certified. Every certified event is SHA-256 anchored and publicly verifiable.</p>
-        <p><b>The long way round.</b> The first version of this shipped on 17 March 2020 &mdash; the day American dining rooms closed. The product worked; the market disappeared. It was rebuilt on a certification layer that did not exist five years ago, which is why the count is now evidence rather than a number somebody typed in.</p>
+      <article class="card" id="starbar-case" style="border-left:2px solid #E58150">
+        <div class="kicker">Case study 01 &middot; Studio graduate</div>
+        <h3>StarBar.ai &middot; SnapCount</h3>
+        <div style="padding:14px 16px;margin-bottom:16px;border-radius:8px;background:#161311">
+          <img src="assets/starbar-lockup-ivory.svg" alt="" width="180" height="48" style="display:block;max-width:100%;height:auto">
+        </div>
+        <p><b>The problem.</b> Bar teams need a reliable count at shift change. Paper counts and later data entry can leave the next shift guessing what was counted and who verified it.</p>
+        <p><b>What was architected.</b> SnapCount&trade; gives staff a watchlist of items to count. They speak or enter quantities, including partial bottles, check each entry, and review the count before handing it off.</p>
+        <p><b>What the workflow makes possible.</b> Managers can see who counted what and when. Incoming staff can verify the handoff with an independent count when required.</p>
         <dl class="meta">
           <div><dt>Role</dt><dd>Majority owned</dd></div>
-          <div><dt>Sector</dt><dd>ResTech</dd></div>
-          <div><dt>Trust layer</dt><dd>MGE licensee</dd></div>
+          <div><dt>Sector</dt><dd>Hospitality technology</dd></div>
+          <div><dt>Origin</dt><dd>Bailiwick Venture Studio</dd></div>
         </dl>
-        <p class="fine" style="margin-top:-4px">StarBar is majority owned by Bailiwick Ventures and partners with FohBoh.ai as a licensee of the Metrics Governance Engine, shipping as a module within FohBoh Sentry&trade;.</p>
-        <a class="tlink" href="https://starbar.ai" target="_blank" rel="noopener" style="margin-top:auto">starbar.ai <span class="arrow">&#8599;</span></a>
+        <a class="tlink" href="https://www.starbar.ai/" style="margin-top:auto">Visit StarBar.ai <span class="arrow" aria-hidden="true">&#8599;</span></a>
       </article>
       <article class="card" style="border-left:2px solid var(--cobalt)">
         <div class="kicker">Case study 02 &middot; Certified infrastructure</div>
@@ -330,8 +331,8 @@ def portfolio():
       </div>
       <div class="card" style="border-left:2px solid var(--bronze)">
         <div class="kicker">Operating company</div>
-        <h3><a href="https://starbar.ai" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--bronze)">StarBar.ai <span style="font-size:12px;opacity:.6">↗</span></a></h3>
-        <p>Certified inventory intelligence for restaurants and bars. SnapCount&trade; replaces the clipboard with per-shift voice counting, then certifies the result against six deterministic conditions and anchors it to an immutable ledger. Licensee of FohBoh&rsquo;s Metrics Governance Engine; ships as a module within FohBoh Sentry&trade;.</p>
+        <h3><a href="https://www.starbar.ai/" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--bronze)">StarBar.ai <span style="font-size:12px;opacity:.6">↗</span></a></h3>
+        <p>Voice-first beverage inventory for bars, restaurants, and hospitality groups. With SnapCount&trade;, staff say the count, check the quantity, and hand off a record to the next shift. <a class="tlink" href="vibe.html#starbar-use-case">See the use case</a></p>
         <dl class="meta">
           <div><dt>Status</dt><dd>Operating</dd></div>
           <div><dt>Sector</dt><dd>ResTech</dd></div>
@@ -588,6 +589,31 @@ def vibe():
     <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:clamp(26px,3vw,38px)">
       <p class="body" style="margin:0;max-width:48ch">The full case study, the method in detail, and the Vibe Score calculator live on the BailiwickVibe site.</p>
       <a class="btn btn-g" href="https://bailiwickvibe.com" target="_blank" rel="noopener">See the Case Study <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="on-ink" id="starbar-use-case" style="background:#161311;color:#F6EEE4">
+  <div class="shell">
+    <p class="eyebrow" style="color:#E58150">VIBE in action</p>
+    <div class="split" style="margin-bottom:clamp(28px,3.4vw,40px)">
+      <div>
+        <img src="assets/starbar-lockup-ivory.svg" alt="StarBar.ai" width="240" height="65" style="display:block;max-width:100%;height:auto;margin-bottom:16px">
+        <h2 style="max-width:17ch;color:inherit">Count what matters.</h2>
+      </div>
+      <div>
+        <p class="body" style="color:inherit;margin-bottom:14px">SnapCount&trade; is a standalone, voice-first beverage inventory app for bars, restaurants, and hospitality groups. Staff count a shift watchlist one item at a time, confirm the quantity, and pass the record to the next shift.</p>
+        <p class="body" style="color:inherit;margin-bottom:0">Bailiwick Venture Studio built the workflow around the shift handoff. Managers can see who counted what and when, and the next person can verify the count independently when required.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div><div class="v" style="color:#E58150">Say the count</div><div class="l" style="color:#F6EEE4">Speak quantities, including partial bottles, or enter them by tap.</div></div>
+      <div><div class="v" style="color:#E58150">Check the number</div><div class="l" style="color:#F6EEE4">Confirm what SnapCount heard before saving the entry.</div></div>
+      <div><div class="v" style="color:#E58150">Hand off the shift</div><div class="l" style="color:#F6EEE4">Review the saved count and pass it to the next person.</div></div>
+    </div>
+    <div class="btns" style="margin-top:clamp(26px,3vw,38px)">
+      <a class="btn btn-g" href="https://www.starbar.ai/">Visit StarBar.ai <span class="arrow" aria-hidden="true">&#8599;</span></a>
+      <a class="btn btn-g" href="https://app.starbar.ai/">Open SnapCount <span class="arrow" aria-hidden="true">&#8599;</span></a>
     </div>
   </div>
 </section>
