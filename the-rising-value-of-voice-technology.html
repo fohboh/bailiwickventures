@@ -340,6 +340,10 @@ footer.site a:hover{color:var(--warm)}
   border:1px solid #274259;border-radius:2px;color:#8FA1B1;transition:color .18s,border-color .18s,background .18s}
 .social a:hover{color:var(--warm);border-color:#3E5C77;background:rgba(255,255,255,.05)}
 .social svg{width:16px;height:16px}
+footer.site .social a{position:relative}
+footer.site .social .icon-name{position:absolute;z-index:3;inset:auto auto calc(100% + 7px) 0;width:max-content;max-width:150px;padding:6px 8px;border:1px solid #46647d;border-radius:4px;background:#102337;color:#fffdf9;font-size:12px;font-weight:600;line-height:1.35;visibility:hidden;pointer-events:none;box-shadow:0 2px 8px #0004}
+footer.site .social a:hover .icon-name,footer.site .social a:focus-visible .icon-name{visibility:visible}
+
 footer.site .ext{font-size:10px;opacity:.5;margin-left:3px}
 .f-brand .bn{font-family:var(--serif);font-size:20px;color:var(--warm)}
 .f-brand p{font-size:14px;line-height:1.65;color:#8FA1B1;margin-top:14px;max-width:34ch}
@@ -613,10 +617,10 @@ details.reveal .rbody{padding:clamp(22px,2.6vw,32px)}
         </div>
         <p>A privately held investment and operating company led by Enterprise Venture Architect Michael&nbsp;L.&nbsp;Atkinson.</p>
         <div class="social">
-          <a href="https://www.linkedin.com/in/mlatkinson1/" target="_blank" rel="noopener" aria-label="Michael L. Atkinson on LinkedIn" title="Michael on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05a4.2 4.2 0 0 1 3.77-2.07c4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4V9z"/></svg></a>
-          <a href="https://x.com/Michaelatkinson" target="_blank" rel="noopener" aria-label="Michael L. Atkinson on X" title="@Michaelatkinson on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.64 21h-5.97l-4.68-6.12L5.62 21H2.65l6.94-7.93L2.36 3h6.12l4.23 5.59L17.53 3zm-1.04 16.2h1.65L7.6 4.71H5.83L16.49 19.2z"/></svg></a>
-          <a href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener" aria-label="Michael L. Atkinson on Substack" title="Substack"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.5 3h17v2.3h-17V3zm0 4.3h17v2.3h-17V7.3zM3.5 11.6 12 16.4l8.5-4.8V21L12 16.2 3.5 21v-9.4z"/></svg></a>
-          <a href="https://www.linkedin.com/groups/152325/" target="_blank" rel="noopener" aria-label="FohBoh Restaurant Network on LinkedIn" title="FohBoh Restaurant Network"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.5 11a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm8 .4a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4zM8.5 12.6c-3 0-6 1.5-6 3.6V19h12v-2.8c0-2.1-3-3.6-6-3.6zm8 .4c-.8 0-1.6.11-2.3.33 1.2.86 1.9 1.96 1.9 3.16V19h6v-2.4c0-1.86-2.6-3.6-5.6-3.6z"/></svg></a>
+          <a href="https://www.linkedin.com/in/mlatkinson1/" target="_blank" rel="noopener" aria-label="Michael L. Atkinson on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05a4.2 4.2 0 0 1 3.77-2.07c4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4V9z"/></svg><span class="icon-name" aria-hidden="true">LinkedIn</span></a>
+          <a href="https://x.com/Michaelatkinson" target="_blank" rel="noopener" aria-label="Michael L. Atkinson on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.64 21h-5.97l-4.68-6.12L5.62 21H2.65l6.94-7.93L2.36 3h6.12l4.23 5.59L17.53 3zm-1.04 16.2h1.65L7.6 4.71H5.83L16.49 19.2z"/></svg><span class="icon-name" aria-hidden="true">X</span></a>
+          <a href="https://substack.com/@michaellatkinson1" target="_blank" rel="noopener" aria-label="Michael L. Atkinson on Substack"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.5 3h17v2.3h-17V3zm0 4.3h17v2.3h-17V7.3zM3.5 11.6 12 16.4l8.5-4.8V21L12 16.2 3.5 21v-9.4z"/></svg><span class="icon-name" aria-hidden="true">Substack</span></a>
+          <a href="https://www.linkedin.com/groups/152325/" target="_blank" rel="noopener" aria-label="FohBoh Restaurant Network on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.5 11a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm8 .4a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4zM8.5 12.6c-3 0-6 1.5-6 3.6V19h12v-2.8c0-2.1-3-3.6-6-3.6zm8 .4c-.8 0-1.6.11-2.3.33 1.2.86 1.9 1.96 1.9 3.16V19h6v-2.4c0-1.86-2.6-3.6-5.6-3.6z"/></svg><span class="icon-name" aria-hidden="true">FohBoh Restaurant Network</span></a>
         </div>
         <a class="f-book-feature" href="https://www.thecertifiedenterprise.com/">
           <img src="/assets/the-certified-enterprise-footer.webp" alt="" width="216" height="255" loading="lazy" decoding="async">
