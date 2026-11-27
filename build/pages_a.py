@@ -141,17 +141,13 @@ def home(portrait):
       <aside class="opp" aria-label="FohBoh.ai status and next steps">
         <p class="eyebrow" style="margin-bottom:14px">Product status</p>
         <dl class="status">
-          <div><dt>MGE Certified Intelligence</dt><dd>In staging; production release pending</dd></div>
+          <div><dt>MGE Certified Intelligence</dt><dd>In production</dd></div>
+          <div><dt>Sentry</dt><dd>Production-ready</dd></div>
           <div><dt>Countersign</dt><dd>In development; not yet available</dd></div>
         </dl>
         <hr class="rule" style="margin:22px 0">
-        <p class="eyebrow" style="margin-bottom:12px">Seed round</p>
-        <p class="body" style="margin-bottom:22px">Bailiwick Ventures invites prospective investors to discuss participation in FohBoh.ai&rsquo;s Stage&nbsp;5 Seed round.</p>
-        <a class="btn btn-p" href="contact.html">Discuss the Seed Round <span class="arrow" aria-hidden="true">→</span></a>
-        <div class="opp-links">
-          <a class="tlink" href="/downloads/bailiwick-investment-perspective-fohboh.pdf" target="_blank" rel="noopener">Download the investment perspective (PDF)</a>
-          <a class="tlink" href="https://fohboh.ai" target="_blank" rel="noopener">Learn about FohBoh.ai <span class="arrow" aria-hidden="true">&#8599;</span></a>
-        </div>
+        <a class="btn btn-p" href="portfolio.html#fohboh">View FohBoh.ai in the portfolio <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="opp-links"><a class="tlink" href="https://fohboh.ai" target="_blank" rel="noopener">Learn about FohBoh.ai</a></div>
       </aside>
     </div>
   </div>

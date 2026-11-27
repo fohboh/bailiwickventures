@@ -35,7 +35,7 @@ CASES = """
         <dl class="meta">
           <div><dt>Role</dt><dd>Founded and architected</dd></div>
           <div><dt>Sector</dt><dd>Restaurant infrastructure</dd></div>
-          <div><dt>Status</dt><dd>Operating &middot; raising</dd></div>
+          <div><dt>Status</dt><dd>Operating</dd></div>
         </dl>
         <a class="tlink" href="https://fohboh.ai" target="_blank" rel="noopener" style="margin-top:auto">fohboh.ai <span class="arrow">&#8599;</span></a>
       </article>
@@ -180,13 +180,9 @@ def investing():
         <p class="body" style="margin-bottom:0">Investors participate in the selected venture under its project-specific structure and terms. That participation does not grant ownership in Bailiwick Ventures or its operating divisions.</p>
       </div>
       <div class="opp" id="investment-perspective">
-        <p class="eyebrow" style="margin-bottom:12px">Open now &middot; FohBoh.ai</p>
-        <p class="body">Bailiwick Ventures invites prospective investors to discuss participation in FohBoh.ai&rsquo;s Stage&nbsp;5 Seed round, supporting commercialization and go-to-market execution following MVP completion.</p>
-        <a class="btn btn-p" href="contact.html" style="margin-top:4px">Discuss FohBoh.ai&rsquo;s Seed Round <span class="arrow" aria-hidden="true">→</span></a>
-        <div class="opp-links">
-          <a class="tlink" href="/downloads/bailiwick-investment-perspective-fohboh.pdf" target="_blank" rel="noopener">Investment Perspective &mdash; FohBoh.ai (PDF)</a>
-          <a class="tlink" href="overview.html">Company &amp; Investor Overview <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
+        <p class="eyebrow">Portfolio company &middot; FohBoh.ai</p>
+        <p class="body">FohBoh.ai checks business data against evidence and governing rules. MGE is in production. Sentry is production-ready.</p>
+        <a class="btn btn-p" href="portfolio.html#fohboh">View FohBoh.ai in the portfolio <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
 
@@ -288,7 +284,7 @@ def portfolio():
           <div><dt>Origin</dt><dd>Bailiwick Venture Studio</dd></div>
           <div><dt>Relationship</dt><dd>Operating company / strategic holding</dd></div>
         </dl>
-        <p class="fine" style="margin:14px 0 0">Product status: MGE Certified Intelligence is in staging, with production release pending. Countersign is in development. Investors can review the <a class="tlink" href="overview.html" style="font-size:12.5px">Company &amp; Investor Overview</a>.</p>
+        <p class="fine" style="margin:14px 0 0">Product status: MGE is in production. Sentry is production-ready.</p>
       </div>
       <div class="card" id="kokomo" style="border-left:2px solid var(--bronze)">
         <div class="kicker">Operating company</div>

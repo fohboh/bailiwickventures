@@ -64,7 +64,7 @@ PAGES = [
   "plans.html", F.plans()),
 
  ("overview.html", f"Company &amp; Investor Overview — {S}",
-  "The Bailiwick Ventures venture model and the investment perspective on FohBoh.ai, as public PDFs — with an invitation to discuss FohBoh.ai's Stage 5 Seed round.",
+  "Learn how Bailiwick builds ventures and see FohBoh.ai in its portfolio.",
   "overview.html", H.overview()),
 
  ("insights.html", f"Insights — {S}",
