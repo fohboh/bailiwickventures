@@ -365,7 +365,7 @@ def portfolio():
     <div class="grid g3">
       <div class="card"><h3>Enterprise Venture Architecture</h3><p>The structural design process applied by Bailiwick Venture Studio to move a venture from diagnosis through capital calibration and execution.</p></div>
       <div class="card"><h3>Certified Intelligence</h3><p>The framework behind <i>The Certified Enterprise</i> — the argument that AI should never be trusted more than the evidence on which it depends.</p></div>
-      <div class="card"><h3>The Certified Enterprise</h3><p>The book. <i>Taming Data Anarchy in the AI Era</i> — self-published on Amazon, expected November 2026. <a class="tlink" href="book.html">Read more</a></p></div>
+      <div class="card"><h3>The Certified Enterprise</h3><p>The book. <i>Taming Data Anarchy in the AI Era</i> — Published October 1, 2026. <a class="tlink" href="book.html">Read more</a></p></div>
       <div class="card"><h3>Roadmap to Certified</h3><p>The phased certification framework that moves an organization from tribal knowledge to governed logic.</p></div>
       <div class="card"><h3>Published work</h3><p>Essays, frameworks, research, and applied methods developed and held through Bailiwick Ventures. <a class="tlink" href="blog.html">See the writing</a></p></div>
     </div>
