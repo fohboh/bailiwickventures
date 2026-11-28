@@ -264,6 +264,19 @@ def about(portrait):
   </div>
 </div>
 
+<section class="tight bord" id="intro-video" aria-labelledby="intro-video-h">
+  <div class="shell">
+    <p class="eyebrow">Introduction</p>
+    <h2 id="intro-video-h" style="margin-bottom:clamp(24px,3vw,36px)">Bailiwick Ventures in brief.</h2>
+    <div style="border:1px solid var(--line);border-radius:3px;background:var(--navy-deep);overflow:hidden">
+      <video controls preload="metadata" playsinline poster="assets/about-intro-poster.jpg" style="display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--navy-deep)">
+        <source src="assets/about-intro.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="assets/about-intro.mp4">Download the introduction video</a>.
+      </video>
+    </div>
+  </div>
+</section>
+
 <section class="on-warm">
   <div class="shell split">
     <div>
